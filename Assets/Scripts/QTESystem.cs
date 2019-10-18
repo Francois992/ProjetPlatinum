@@ -12,10 +12,27 @@ public class QTESystem : MonoBehaviour
     public int WaitingForKey;         //Delais pour afficher la touche
     public int CorrectKey;            //Verifie si la touche appuyé est correcte
     public int CountingDown;          //Delais pour appuyer sur la touche
-    
+    public bool IsOk;
+
+    void Start()
+    {
+        IsOk = false;
+    }
+
     void Update()
     {
-        
+
+        if (Input.GetKeyDown("space"))
+        {
+            IsOk = true;
+        }
+        if (Input.GetKeyDown("p"))
+        {
+            IsOk = false;
+        }
+
+        if(IsOk == true)
+        {
         if (WaitingForKey == 0)
         {
             QTEGen = Random.Range(1, 4);
@@ -84,6 +101,7 @@ public class QTESystem : MonoBehaviour
                     StartCoroutine(KeyPressing());
                 }
             }
+        }
         }
     }
 
