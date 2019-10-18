@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 1034964124}
   - component: {fileID: 1034964123}
   m_Layer: 0
-  m_Name: QTESystem
+  m_Name: QTEManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -399,6 +399,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayBox: {fileID: 1962558111}
   PassBox: {fileID: 1259735460}
+  InputToPress: {fileID: 426618817}
+  PassFailTxt: {fileID: 499424670}
+  QTEManager: {fileID: 1034964122}
   QTEGen: 0
   WaitingForKey: 0
   CorrectKey: 0
