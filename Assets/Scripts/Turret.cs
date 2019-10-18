@@ -45,11 +45,15 @@ public class Turret : MonoBehaviour
 
             Canon.transform.localRotation = Quaternion.Euler(rotX, Canon.transform.eulerAngles.y, Canon.transform.eulerAngles.z);
         }
-        
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Shoot();
+        }
     }
 
     private void Shoot()
     {
-
+        Instantiate(bullet, Canon.transform.position, Canon.transform.rotation);
     }
 }
