@@ -61,6 +61,22 @@ public class PlayerRigidBodyEntity : MonoBehaviour
     public bool isGrabing = false;
     public GameObject ressourceItem;
     public GameObject holdItem;
+    private bool holdItem1 = false;
+    private bool holdItem2 = false;
+    private bool holdItem3 = false;
+    [SerializeField]
+    private GameObject spriteItem1;
+    [SerializeField]
+    private GameObject spriteItem2;
+    [SerializeField]
+    private GameObject spriteItem3;
+
+    [SerializeField]
+    private GameObject prefabItem1;
+    [SerializeField]
+    private GameObject prefabItem2;
+    [SerializeField]
+    private GameObject prefabItem3;
     public GameObject playerHands;
 
 
@@ -79,6 +95,9 @@ public class PlayerRigidBodyEntity : MonoBehaviour
     void Start()
     {
         //rigidBody.gravityscale = 0f;
+        spriteItem1.SetActive(false);
+        spriteItem2.SetActive(false);
+        spriteItem3.SetActive(false);
     }
 
     // Update is called once per frame
@@ -223,27 +242,85 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         if (isGrabing) return;
 
         Debug.Log("Grab");
-        holdItem = ressourceItem;
-        ressourceItem = null;
-        holdItem.transform.position = playerHands.transform.position;
-        holdItem.transform.parent = playerHands.transform;
+        //holdItem = ressourceItem;
+        //ressourceItem = null;
+        if(ressourceItem.gameObject.tag == "RessourceItem")
+        {
+            holdItem1 = true;
+            holdItem2 = false;
+            holdItem3 = false;
+
+            spriteItem1.SetActive(true);
+            spriteItem2.SetActive(false);
+            spriteItem3.SetActive(false);
+        }
+        else if (ressourceItem.gameObject.tag == "RessourceItem2")
+        {
+            holdItem2 = true;
+            holdItem1 = false;
+            holdItem3 = false;
+
+            spriteItem1.SetActive(false);
+            spriteItem2.SetActive(true);
+            spriteItem3.SetActive(false);
+        }
+        else if (ressourceItem.gameObject.tag == "RessourceItem3")
+        {
+            holdItem3 = true;
+            holdItem1 = false;
+            holdItem2 = false;
+
+            spriteItem1.SetActive(false);
+            spriteItem2.SetActive(false);
+            spriteItem3.SetActive(true);
+        }
+        Destroy(ressourceItem.gameObject);
+        //holdItem.transform.position = playerHands.transform.position;
+        //holdItem.transform.parent = playerHands.transform;
+        canGrab = false;
         isGrabing = true;
         
     }
 
     private void ActionUngrab()
     {
-        if (holdItem == null) return;
+        //if (holdItem == null) return;
         if (!isGrabing) return;
 
-        holdItem.transform.parent = null;
-        holdItem = null;
+        /*holdItem.transform.parent = null;
+        holdItem = null;*/
+        if (holdItem1)
+        {
+            Debug.Log("Reposer");
+            spriteItem1.SetActive(false);
+            GameObject newItem;
+            newItem = Instantiate(prefabItem1);
+            newItem.transform.position = playerHands.transform.position;
+            holdItem1 = false;
+        }
+        else if (holdItem2)
+        {
+            spriteItem2.SetActive(false);
+            GameObject newItem;
+            newItem = Instantiate(prefabItem2);
+            newItem.transform.position = playerHands.transform.position;
+            holdItem2 = false;
+        }
+        else if (holdItem3)
+        {
+            spriteItem3.SetActive(false);
+            GameObject newItem;
+            newItem = Instantiate(prefabItem3);
+            newItem.transform.position = playerHands.transform.position;
+            holdItem3 = false;
+        }
+
         isGrabing = false;
     }
 
     private void OnCollisionStay(Collision collision)
     {
-        if(collision.gameObject.tag == "RessourceItem")
+        if(collision.gameObject.tag == "RessourceItem" || collision.gameObject.tag == "RessourceItem2" || collision.gameObject.tag == "RessourceItem3")
         {
             canGrab = true;
             if(!isGrabing)
@@ -262,7 +339,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.tag == "RessourceItem")
+        if (collision.gameObject.tag == "RessourceItem" || collision.gameObject.tag == "RessourceItem2" || collision.gameObject.tag == "RessourceItem3")
         {
             canGrab = false;
             ressourceItem = null;

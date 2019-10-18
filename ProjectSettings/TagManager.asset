@@ -6,6 +6,8 @@ TagManager:
   tags:
   - RessourceItem
   - InteractItem
+  - RessourceItem3
+  - RessourceItem2
   layers:
   - Default
   - TransparentFX
