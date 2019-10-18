@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerRigidBodyEntity : MonoBehaviour
 {
+    //Clarence Berard
 
     [System.Serializable]
     public class FrictionSettings
@@ -373,8 +374,9 @@ public class PlayerRigidBodyEntity : MonoBehaviour
     }
     private void _UpdateGroundCheck()
     {
-        if(transform.position.y <= groundY)
+        if(Physics.Raycast(transform.position, Vector3.down, 1))
         {
+            
             _isGrounded = true;
             _verticalSpeed = 0;
             Vector3 newPos = transform.position;

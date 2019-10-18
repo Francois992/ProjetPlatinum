@@ -5,6 +5,8 @@ using UnityEngine;
 public class InteractItem : MonoBehaviour
 {
 
+    //Clarence Berard
+
     public GameObject QTESprite;
 
     // Start is called before the first frame update
