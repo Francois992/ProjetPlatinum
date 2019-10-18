@@ -383,17 +383,17 @@ PrefabInstance:
     - target: {fileID: 3698542203318886903, guid: 726d7b59e9d0cd34080236d35839b120,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 3698542203318886903, guid: 726d7b59e9d0cd34080236d35839b120,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3698542203318886903, guid: 726d7b59e9d0cd34080236d35839b120,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3698542203318886903, guid: 726d7b59e9d0cd34080236d35839b120,
         type: 3}
@@ -437,9 +437,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573980974238546097, guid: 726d7b59e9d0cd34080236d35839b120,
         type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 5471194505920018257, guid: 7e5707c183d6a7f4594d112e7d6367c1,
+      propertyPath: targetSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539844650108487471, guid: 726d7b59e9d0cd34080236d35839b120,
         type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539844650108487471, guid: 726d7b59e9d0cd34080236d35839b120,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539844650108487471, guid: 726d7b59e9d0cd34080236d35839b120,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4539844650108487471, guid: 726d7b59e9d0cd34080236d35839b120,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 726d7b59e9d0cd34080236d35839b120, type: 3}
