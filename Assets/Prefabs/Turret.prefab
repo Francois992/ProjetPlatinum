@@ -262,7 +262,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3698542203318886903
 Transform:
   m_ObjectHideFlags: 0
@@ -295,8 +295,11 @@ MonoBehaviour:
   bullet: {fileID: 5471194505920018257, guid: 7e5707c183d6a7f4594d112e7d6367c1, type: 3}
   Canon: {fileID: 56310416967193777}
   target: {fileID: 2042054489558907429}
-  targetSpeed: 5
+  targetSpeed: 15
   bulletSpread: 15
+  maxCanonRot: 45
+  minCanonRot: -45
+  shotCoolDown: 3
   isActivated: 0
 --- !u!1 &4349575336100406370
 GameObject:
@@ -356,8 +359,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7089823314092524060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 3}
   m_Children: []
   m_Father: {fileID: 2213442324625399494}
   m_RootOrder: 0

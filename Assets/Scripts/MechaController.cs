@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
 
+//Made by Francois Dessarts
 public class MechaController : MonoBehaviour
 {
     private Player _mainPlayer;

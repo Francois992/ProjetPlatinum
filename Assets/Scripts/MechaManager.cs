@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Made by Francois Dessarts
 public class MechaManager : MonoBehaviour
 {
     public float _dirX;
     public float _dirY;
+
+    public bool isActivated = true;
 
     private float _orientX = 0f;
     private float _orientY = 0f;
@@ -34,71 +37,75 @@ public class MechaManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_dirX != 0)
+        if (isActivated)
         {
-            if (_dirX * _orientX <= 0f)
+            if (_dirX != 0)
             {
-                _speedX -= waterFriction.turnAroundFriction * Time.fixedDeltaTime;
-                if (_speedX <= 0f)
+                if (_dirX * _orientX <= 0f)
                 {
+                    _speedX -= waterFriction.turnAroundFriction * Time.fixedDeltaTime;
+                    if (_speedX <= 0f)
+                    {
+                        _orientX = Mathf.Sign(_dirX);
+                        _speedX = 0f;
+                    }
+                }
+                else
+                {
+                    _speedX += accelerationX * Time.fixedDeltaTime;
+                    if (_speedX >= speedMax)
+                    {
+                        _speedX = speedMax;
+                    }
                     _orientX = Mathf.Sign(_dirX);
+                }
+                _UpdatePosition();
+            }
+
+            else if (_speedX > 0f)
+            {
+                _speedX -= waterFriction.friction * Time.fixedDeltaTime;
+                if (_speedX < 0f)
+                {
                     _speedX = 0f;
                 }
             }
-            else
+
+            if (_dirY != 0)
             {
-                _speedX += accelerationX * Time.fixedDeltaTime;
-                if (_speedX >= speedMax)
+                if (_dirY * _orientY <= 0f)
                 {
-                    _speedX = speedMax;
+                    _speedY -= waterFriction.turnAroundFriction * Time.fixedDeltaTime;
+                    if (_speedY <= 0f)
+                    {
+                        _orientY = Mathf.Sign(_dirY);
+                        _speedY = 0f;
+                    }
                 }
-                _orientX = Mathf.Sign(_dirX);
-            }
-            _UpdatePosition();
-        }
-
-        else if (_speedX > 0f)
-        {
-            _speedX -= waterFriction.friction * Time.fixedDeltaTime;
-            if (_speedX < 0f)
-            {
-                _speedX = 0f;
-            }
-        }
-
-        if (_dirY != 0)
-        {
-            if (_dirY * _orientY <= 0f)
-            {
-                _speedY -= waterFriction.turnAroundFriction * Time.fixedDeltaTime;
-                if (_speedY <= 0f)
+                else
                 {
+                    _speedY += accelerationY * Time.fixedDeltaTime;
+                    if (_speedY >= speedMax)
+                    {
+                        _speedY = speedMax;
+                    }
                     _orientY = Mathf.Sign(_dirY);
+                }
+                _UpdatePosition();
+            }
+
+            else if (_speedY > 0f)
+            {
+                _speedY -= waterFriction.friction * Time.fixedDeltaTime;
+                if (_speedY < 0f)
+                {
                     _speedY = 0f;
                 }
             }
-            else
-            {
-                _speedY += accelerationY * Time.fixedDeltaTime;
-                if (_speedY >= speedMax)
-                {
-                    _speedY = speedMax;
-                }
-                _orientY = Mathf.Sign(_dirY);
-            }
+
             _UpdatePosition();
         }
-
-        else if (_speedY > 0f)
-        {
-            _speedY -= waterFriction.friction * Time.fixedDeltaTime;
-            if (_speedY < 0f)
-            {
-                _speedY = 0f;
-            }
-        }
-
-        _UpdatePosition();
+        
     }
 
     public void HorizontalMovement(float dirX)
