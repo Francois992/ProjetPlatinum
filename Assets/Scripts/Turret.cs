@@ -13,6 +13,10 @@ public class Turret : MonoBehaviour
     [SerializeField] private float maxCanonRot = 45;
     [SerializeField] private float minCanonRot = -45f;
 
+    [SerializeField] private float shotCoolDown = 3f;
+
+    private bool hasShot = false;
+
     public bool isActivated = false;
 
     // Start is called before the first frame update
@@ -46,14 +50,26 @@ public class Turret : MonoBehaviour
             Canon.transform.localRotation = Quaternion.Euler(rotX, Canon.transform.eulerAngles.y, Canon.transform.eulerAngles.z);
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && !hasShot)
         {
             Shoot();
+        }
+
+        if (hasShot)
+        {
+            shotCoolDown -= Time.deltaTime;
+        }
+
+        if(shotCoolDown <= 0)
+        {
+            hasShot = false;
+            shotCoolDown = 3f;
         }
     }
 
     private void Shoot()
     {
+        hasShot = true;
         Instantiate(bullet, Canon.transform.position, Canon.transform.rotation);
     }
 }

@@ -15,4 +15,14 @@ public class MechaManager : MonoBehaviour
     {
         
     }
+
+    public void HorizontalMovement(float dirX)
+    {
+
+    }
+
+    public void VerticalMovement(float dirY)
+    {
+
+    }
 }
