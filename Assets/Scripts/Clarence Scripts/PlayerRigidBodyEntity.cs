@@ -37,6 +37,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
     [Header("Ground")]
     public float groundY = 0f;
     public bool _isGrounded = false;
+    private Vector3 halfBox;
 
 
     //Jump
@@ -99,6 +100,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         spriteItem1.SetActive(false);
         spriteItem2.SetActive(false);
         spriteItem3.SetActive(false);
+        halfBox = new Vector3(0.5f, 0.5f, 0.5f);
     }
 
     // Update is called once per frame
@@ -374,19 +376,27 @@ public class PlayerRigidBodyEntity : MonoBehaviour
     }
     private void _UpdateGroundCheck()
     {
-        if(Physics.Raycast(transform.position, Vector3.down, 1))
+        RaycastHit raycastHit;
+        Vector3 raycastOrigin = transform.position;
+        raycastOrigin.y += 0.005f;
+        if(Physics.BoxCast(raycastOrigin, halfBox, Vector3.down,out raycastHit, transform.rotation, 0.01f))
         {
-            
-            _isGrounded = true;
-            _verticalSpeed = 0;
-            Vector3 newPos = transform.position;
-            newPos.y = groundY;
-            transform.position = newPos;
+            if (raycastHit.collider != null)
+            {
+                _isGrounded = true;
+                _verticalSpeed = 0;
+                Vector3 newPos = transform.position;
+                //newPos.y = hit.transform.position.y;
+                transform.position = newPos;
+            }
         }
         else
         {
             _isGrounded = false;
         }
+
+
+        
     }
     #endregion
 
