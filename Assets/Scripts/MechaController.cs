@@ -6,21 +6,23 @@ using Rewired;
 //Made by Francois Dessarts
 public class MechaController : MonoBehaviour
 {
-    private Player _mainPlayer;
+    private Player playerHorizontal;
+    private Player playerVertical;
 
     public MechaManager mecha;
 
     // Start is called before the first frame update
     void Start()
     {
-        _mainPlayer = ReInput.players.GetPlayer("PlayerMecha");
+        playerHorizontal = ReInput.players.GetPlayer("PlayerMecha");
+        playerVertical = ReInput.players.GetPlayer("PlayerMecha");
     }
 
     // Update is called once per frame
     void Update()
     {
-        float dirX = _mainPlayer.GetAxis("MoveHorizontal");
-        float dirY = _mainPlayer.GetAxis("MoveVertical");
+        float dirX = playerHorizontal.GetAxis("MoveHorizontal");
+        float dirY = playerVertical.GetAxis("MoveVertical");
 
         mecha.HorizontalMovement(dirX);
         mecha.VerticalMovement(dirY);

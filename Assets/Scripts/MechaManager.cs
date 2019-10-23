@@ -28,6 +28,11 @@ public class MechaManager : MonoBehaviour
         public float turnAroundFriction = 10f;
     }
 
+    [SerializeField] private MechFace top;
+    [SerializeField] private MechFace bottom;
+    [SerializeField] private MechFace front;
+    [SerializeField] private MechFace back;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,8 +44,31 @@ public class MechaManager : MonoBehaviour
     {
         if (isActivated)
         {
-            if (_dirX != 0)
+            if (_dirX > 0)
             {
+                front.checkCollisions = true;
+                back.checkCollisions = false;
+            }
+            else if (_dirX < 0)
+            {
+                back.checkCollisions = true;
+                front.checkCollisions = false;
+            }
+
+            if (_dirY > 0)
+            {
+                top.checkCollisions = true;
+                bottom.checkCollisions = false;
+            }
+            else if (_dirY < 0)
+            {
+                bottom.checkCollisions = true;
+                top.checkCollisions = false;
+            }
+
+            if (_dirX != 0)
+            { 
+
                 if (_dirX * _orientX <= 0f)
                 {
                     _speedX -= waterFriction.turnAroundFriction * Time.fixedDeltaTime;
@@ -101,6 +129,24 @@ public class MechaManager : MonoBehaviour
                 {
                     _speedY = 0f;
                 }
+            }
+
+            if(front.isColliding && _dirX > 0)
+            {
+                _speedX = 0;
+            }
+            else if(back.isColliding && _dirX < 0)
+            {
+                _speedX = 0;
+            }
+
+            if (top.isColliding && _dirY > 0)
+            {
+                _speedY = 0;
+            }
+            else if (bottom.isColliding && _dirY < 0)
+            {
+                _speedY = 0;
             }
 
             _UpdatePosition();
