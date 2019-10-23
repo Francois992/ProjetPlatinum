@@ -4,16 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - RessourceItem
-  - InteractItem
-  - RessourceItem3
-  - RessourceItem2
-  - Plateforme
-<<<<<<< Updated upstream
   - Teleporter
-=======
-  - Mur
->>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
@@ -23,7 +14,7 @@ TagManager:
   - UI
   - 
   - 
-  - Platform
+  - 
   - 
   - 
   - 
