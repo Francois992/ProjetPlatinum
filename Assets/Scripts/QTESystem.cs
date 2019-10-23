@@ -8,147 +8,137 @@ public class QTESystem : MonoBehaviour
 
     public GameObject DisplayBox;     //Texte contenant la lettre a appuyé
     public GameObject PassBox;        //Text affichant la reussite ou l'echec du QTE
-    public int QTEGen;                //Variable generant une touche du QTE
-    public int WaitingForKey;         //Delais pour afficher la touche
-    public int CorrectKey;            //Verifie si la touche appuyé est correcte
-    public int CountingDown;          //Delais pour appuyer sur la touche
-    public bool IsOk;
+    private int QTEGen;               //Variable generant une touche du QTE
+
+
+    private float timer = 0f;
+    public bool isPlay = false;
+    private float timerMax = 3.5f;
+
+    public static QTESystem instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+
+
 
     void Start()
     {
-        IsOk = false;
+        LaunchQTEPhase();
     }
 
     void Update()
     {
-
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown(KeyCode.Space) && !isPlay)
         {
-            IsOk = true;
-        }
-        if (Input.GetKeyDown("p"))
-        {
-            IsOk = false;
+            LaunchQTEPhase();
         }
 
-        if(IsOk == true)
+
+        if (isPlay && timer < timerMax)
         {
-        if (WaitingForKey == 0)
+            timer += Time.deltaTime;
+            PlayQTE();
+        }
+        
+        
+    }
+
+    public void PlayQTE()
+    {
+        if (timer < timerMax && isPlay)
         {
-            QTEGen = Random.Range(1, 4);
-            CountingDown = 1;
-            StartCoroutine(CountDown());
-            if(QTEGen == 1)
+
+            PassBox.GetComponent<Text>().text = "";
+
+            if (QTEGen == 1)
             {
-                WaitingForKey = 1;
                 DisplayBox.GetComponent<Text>().text = "[E]";
+                if (Input.anyKeyDown)
+                {
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        PassBox.GetComponent<Text>().text = "PASS!";
+                        isPlay = false;
+                    }
+                    else if (Input.GetKeyDown(KeyCode.Space))
+                    {
+
+                    }
+                    else
+                    {
+                        PassBox.GetComponent<Text>().text = "FAIL!";
+                        isPlay = false;
+
+                    }
+                }
             }
-            if (QTEGen == 2)
+            else if (QTEGen == 2)
             {
-                WaitingForKey = 1;
                 DisplayBox.GetComponent<Text>().text = "[R]";
+                if (Input.anyKeyDown)
+                {
+                    if (Input.GetKeyDown(KeyCode.R))
+                    {
+                        PassBox.GetComponent<Text>().text = "PASS!";
+                        isPlay = false;
+                    }
+                    else if (Input.GetKeyDown(KeyCode.Space))
+                    {
+
+                    }
+                    else
+                    {
+                        PassBox.GetComponent<Text>().text = "FAIL!";
+                        isPlay = false;
+
+                    }
+                }
             }
-            if (QTEGen == 3)
+            else if (QTEGen == 3)
             {
-                WaitingForKey = 1;
                 DisplayBox.GetComponent<Text>().text = "[T]";
+                if (Input.anyKeyDown)
+                {
+                    if (Input.GetKeyDown(KeyCode.T))
+                    {
+                        PassBox.GetComponent<Text>().text = "PASS!";
+                        isPlay = false;
+                    }
+                    else if (Input.GetKeyDown(KeyCode.Space))
+                    {
+
+                    }
+                    else
+                    {
+                        PassBox.GetComponent<Text>().text = "FAIL!";
+                        isPlay = false;
+
+                    }
+                }
             }
         }
-        if (QTEGen == 1)
+        else
         {
-            if (Input.anyKeyDown)
-            {
-                if (Input.GetButtonDown("EKey"))
-                {
-                    CorrectKey = 1;
-                    StartCoroutine(KeyPressing());
-                }
-                else
-                {
-                    CorrectKey = 2;
-                    StartCoroutine(KeyPressing());
-                }
-            }
-        }
-        if (QTEGen == 2)
-        {
-            if (Input.anyKeyDown)
-            {
-                if (Input.GetButtonDown("RKey"))
-                {
-                    CorrectKey = 1;
-                    StartCoroutine(KeyPressing());
-                }
-                else
-                {
-                    CorrectKey = 2;
-                    StartCoroutine(KeyPressing());
-                }
-            }
-        }
-        if (QTEGen == 3)
-        {
-            if (Input.anyKeyDown)
-            {
-                if (Input.GetButtonDown("TKey"))
-                {
-                    CorrectKey = 1;
-                    StartCoroutine(KeyPressing());
-                }
-                else
-                {
-                    CorrectKey = 2;
-                    StartCoroutine(KeyPressing());
-                }
-            }
-        }
+            PassBox.GetComponent<Text>().text = "FAIL!";
+            isPlay = false;
+            return;
         }
     }
 
-    IEnumerator KeyPressing()
+
+    public void LaunchQTEPhase()
     {
-        QTEGen = 4;
-        if (CorrectKey == 1) 
-        {
-            CountingDown = 2;
-            PassBox.GetComponent<Text>().text = "PASS!";
-            yield return new WaitForSeconds(1.5f);
-            CorrectKey = 0;
-            PassBox.GetComponent<Text>().text = "";
-            DisplayBox.GetComponent<Text>().text = "";
-            yield return new WaitForSeconds(1.5f);
-            WaitingForKey = 0;
-            CountingDown = 1;
-        }
-        if (CorrectKey == 2)
-        {
-            CountingDown = 2;
-            PassBox.GetComponent<Text>().text = "FAIL!";
-            yield return new WaitForSeconds(1.5f);
-            CorrectKey = 0;
-            PassBox.GetComponent<Text>().text = "";
-            DisplayBox.GetComponent<Text>().text = "";
-            yield return new WaitForSeconds(1.5f);
-            WaitingForKey = 0;
-            CountingDown = 1;
-        }
+        timer = 0f;
+        QTEGen = Random.Range(1, 4);
+        PassBox.GetComponent<Text>().text = "";
+        DisplayBox.GetComponent<Text>().text = "";
+        isPlay = true;
     }
 
-    IEnumerator CountDown()
-    {
-        yield return new WaitForSeconds(3.5f);
-        if(CountingDown == 1)
-        {
-            QTEGen = 4;
-            CountingDown = 2;
-            PassBox.GetComponent<Text>().text = "FAIL!";
-            yield return new WaitForSeconds(1.5f);
-            CorrectKey = 0;
-            PassBox.GetComponent<Text>().text = "";
-            DisplayBox.GetComponent<Text>().text = "";
-            yield return new WaitForSeconds(1.5f);
-            WaitingForKey = 0;
-            CountingDown = 1;
-        }
-    }
+
+   
 }
