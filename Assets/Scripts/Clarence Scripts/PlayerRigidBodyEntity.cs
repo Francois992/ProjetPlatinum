@@ -71,6 +71,12 @@ public class PlayerRigidBodyEntity : MonoBehaviour
     private bool holdItem2 = false;
     private bool holdItem3 = false;
 
+    //Resurrect
+    [Header("Resurrect")]
+    public bool canResurrect = false;
+    private PlayerRigidBodyEntity downedPlayer;
+
+    //UI Above player : Gives information about his state or what he holds
     [Header("Player UI")]
     [SerializeField]
     private GameObject spriteItem1;
@@ -78,6 +84,8 @@ public class PlayerRigidBodyEntity : MonoBehaviour
     private GameObject spriteItem2;
     [SerializeField]
     private GameObject spriteItem3;
+    [SerializeField]
+    private GameObject KOSprite;
 
     [Header("PlayerOxygen")]
     [SerializeField]
@@ -128,6 +136,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         spriteItem1.SetActive(false);
         spriteItem2.SetActive(false);
         spriteItem3.SetActive(false);
+        KOSprite.SetActive(false);
         oxygenBar.enabled = false;
 
         oxygenAmount = maxOxygenAmount;
@@ -232,6 +241,12 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         {
             isDown = true;
             oxygenAmount = 0;
+            KOSprite.SetActive(true);
+        }
+        else
+        {
+            isDown = false;
+            KOSprite.SetActive(false);
         }
     }
 
@@ -307,6 +322,8 @@ public class PlayerRigidBodyEntity : MonoBehaviour
     #region Action Commands
     public void Actions()
     {
+
+
         if (canGrab && !isGrabing)
         {
             ActionGrab();
@@ -332,6 +349,23 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             return;
         }
             
+    }
+
+    public void ActionResurrect()
+    {
+        if (downedPlayer == null) return;
+        if (canResurrect)
+        {
+            downedPlayer.IsResurrected();
+            downedPlayer = null;
+            canResurrect = false;
+        }
+    }
+
+    public void IsResurrected()
+    {
+        oxygenAmount = maxOxygenAmount / 2;
+        isDown = false;
     }
 
     private void ActionInteract()
@@ -430,10 +464,18 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         else if (holdItem3)
         {
             spriteItem3.SetActive(false);
-            GameObject newItem;
-            newItem = Instantiate(prefabItem3);
-            newItem.transform.position = playerHands.transform.position;
-            holdItem3 = false;
+            if (!canResurrect)
+            {
+                GameObject newItem;
+                newItem = Instantiate(prefabItem3);
+                newItem.transform.position = playerHands.transform.position;
+                holdItem3 = false;
+            }
+            else
+            {
+                ActionResurrect();
+                holdItem3 = false;
+            }
         }
 
         isGrabing = false;
@@ -456,6 +498,14 @@ public class PlayerRigidBodyEntity : MonoBehaviour
                 interactQTE = collision.gameObject.GetComponent<InteractItem>();
             }
         }
+        else if(collision.gameObject.tag == "Player")
+        {
+            if (collision.gameObject.GetComponent<PlayerRigidBodyEntity>().isDown && holdItem3)
+            {
+                canResurrect = true;
+                downedPlayer = collision.gameObject.GetComponent<PlayerRigidBodyEntity>();
+            }
+        }
     }
 
     private void OnCollisionExit(Collision collision)
@@ -470,6 +520,14 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             canInteractQTE = false; ;
             interactQTE = null;
             interactItem = null;
+        }
+        else if (collision.gameObject.tag == "Player" && holdItem3)
+        {
+            if (collision.gameObject.GetComponent<PlayerRigidBodyEntity>().isDown)
+            {
+                canResurrect = false;
+                downedPlayer = null;
+            }
         }
     }
     #endregion
