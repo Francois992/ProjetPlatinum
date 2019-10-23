@@ -128,14 +128,20 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             teleportCountDown--;
 
             Debug.Log(invisibleColor.a);
-            myRenderer.GetComponent<MeshRenderer>().material.color = Color.Lerp(myRenderer.GetComponent<MeshRenderer>().material.color, invisibleColor, elapsedTime/1f );
+            myRenderer.GetComponent<MeshRenderer>().material.color = Color.Lerp(myRenderer.GetComponent<MeshRenderer>().material.color, invisibleColor, elapsedTime/0.5f );
+
+            if(elapsedTime >= 0.5)
+            {
+                myRenderer.GetComponent<MeshRenderer>().material.color = Color.Lerp(invisibleColor, fullColor, elapsedTime / 1f);
+                transform.position = new Vector3(myTeleport.arrival.transform.position.x, myTeleport.arrival.transform.position.y, transform.position.z);
+            }
 
             if (teleportCountDown <= 0)
             {
                 isTeleporting = false;
                 teleportCountDown = 60;
                 elapsedTime = 0f;
-                transform.position = new Vector3(myTeleport.arrival.transform.position.x, myTeleport.arrival.transform.position.y, transform.position.z);
+                //transform.position = new Vector3(myTeleport.arrival.transform.position.x, myTeleport.arrival.transform.position.y, transform.position.z);
 
                 myRenderer.GetComponent<MeshRenderer>().material.color = fullColor;
             }
