@@ -88,6 +88,18 @@ public class PlayerRigidBodyEntity : MonoBehaviour
 
     private Rigidbody rigidBody;
 
+    //Teleport
+    private Teleporter myTeleport;
+
+    public GameObject myRenderer;
+    private bool isTeleporting = false;
+    private int teleportCountDown = 60;
+
+    public Color invisibleColor;
+    private Color fullColor;
+
+    private float elapsedTime;
+
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody>();
@@ -101,27 +113,79 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         spriteItem2.SetActive(false);
         spriteItem3.SetActive(false);
         halfBox = new Vector3(0.5f, 0.5f, 0.5f);
+
+       
+        fullColor = myRenderer.GetComponent<MeshRenderer>().material.color;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (_isJumping)
+        if (isTeleporting)
         {
-            _UpdateJump();
+            elapsedTime += Time.deltaTime;
+
+            teleportCountDown--;
+
+            Debug.Log(invisibleColor.a);
+            myRenderer.GetComponent<MeshRenderer>().material.color = Color.Lerp(myRenderer.GetComponent<MeshRenderer>().material.color, invisibleColor, elapsedTime/1f );
+
+            if (teleportCountDown <= 0)
+            {
+                isTeleporting = false;
+                teleportCountDown = 60;
+                elapsedTime = 0f;
+                transform.position = new Vector3(myTeleport.arrival.transform.position.x, myTeleport.arrival.transform.position.y, transform.position.z);
+
+                myRenderer.GetComponent<MeshRenderer>().material.color = fullColor;
+            }
         }
         else
         {
-            _UpdateGroundCheck();
-            _UpdateGravity();
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+
+                RaycastHit hit;
+
+                Debug.DrawRay(transform.position, transform.forward, Color.blue);
+
+                if (Physics.Raycast(transform.position, Vector3.forward, out hit, 5f))
+                {
+                    if (hit.transform.tag == "Teleporter")
+                    {
+                        myTeleport = hit.transform.GetComponent<Teleporter>();
+                        StartTeleport();
+                        //transform.position = hit.transform.GetComponent<Teleporter>().arrival.transform.position;
+                    }
+                }
+            }
+
+            if (_isJumping)
+            {
+                _UpdateJump();
+            }
+            else
+            {
+                _UpdateGroundCheck();
+                _UpdateGravity();
+            }
+            _UpdateMove();
+
+            Vector3 velocity = transform.position;
+            velocity.x = _speed * _orientX;
+            velocity.y = _verticalSpeed;
+            rigidBody.velocity = velocity;
         }
-        _UpdateMove();
 
-        Vector3 velocity = transform.position;
-        velocity.x = _speed * _orientX;
-        velocity.y = _verticalSpeed;
-        rigidBody.velocity = velocity;
+        
 
+    }
+
+    private void StartTeleport()
+    {
+        isTeleporting = true;
+        //myRenderer.GetComponent<MeshRenderer>().material.color = invisibleColor;
+        
     }
 
     #region Move
