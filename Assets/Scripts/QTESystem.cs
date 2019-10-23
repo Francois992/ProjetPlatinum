@@ -11,27 +11,56 @@ public class QTESystem : MonoBehaviour
     private int QTEGen;               //Variable generant une touche du QTE
 
 
-    private float timer = 0f;
+    public float timer = 0f;
     public bool isPlay = false;
     private float timerMax = 3.5f;
+    public Slider timerSld;
 
     public static QTESystem instance;
+
+    Result _result = Result.None;
+
+    public enum Result
+    {
+        None,
+        Success,
+        Fail,
+    }
+
+    private void LaunchSuccess()
+    {
+        _result = Result.Success;
+        PassBox.GetComponent<Text>().text = "PASS!";
+        isPlay = false;
+    }
+
+    private void LaunchFail()
+    {
+        _result = Result.Fail;
+        PassBox.GetComponent<Text>().text = "FAIL!";
+        isPlay = false;
+    }
+
+    public Result GetResult()
+    {
+        return _result;
+    }
 
     private void Awake()
     {
         instance = this;
     }
 
-
-
-
     void Start()
     {
         LaunchQTEPhase();
+        timerSld.maxValue = timerMax;
+        
     }
 
     void Update()
     {
+        timerSld.value = timer;
         if (Input.GetKeyDown(KeyCode.Space) && !isPlay)
         {
             LaunchQTEPhase();
@@ -47,6 +76,10 @@ public class QTESystem : MonoBehaviour
         
     }
 
+   
+        
+    
+
     public void PlayQTE()
     {
         if (timer < timerMax && isPlay)
@@ -61,8 +94,7 @@ public class QTESystem : MonoBehaviour
                 {
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        PassBox.GetComponent<Text>().text = "PASS!";
-                        isPlay = false;
+                        LaunchSuccess();
                     }
                     else if (Input.GetKeyDown(KeyCode.Space))
                     {
@@ -70,9 +102,7 @@ public class QTESystem : MonoBehaviour
                     }
                     else
                     {
-                        PassBox.GetComponent<Text>().text = "FAIL!";
-                        isPlay = false;
-
+                        LaunchFail();
                     }
                 }
             }
@@ -83,8 +113,7 @@ public class QTESystem : MonoBehaviour
                 {
                     if (Input.GetKeyDown(KeyCode.R))
                     {
-                        PassBox.GetComponent<Text>().text = "PASS!";
-                        isPlay = false;
+                        LaunchSuccess();
                     }
                     else if (Input.GetKeyDown(KeyCode.Space))
                     {
@@ -92,9 +121,7 @@ public class QTESystem : MonoBehaviour
                     }
                     else
                     {
-                        PassBox.GetComponent<Text>().text = "FAIL!";
-                        isPlay = false;
-
+                        LaunchFail();
                     }
                 }
             }
@@ -105,8 +132,7 @@ public class QTESystem : MonoBehaviour
                 {
                     if (Input.GetKeyDown(KeyCode.T))
                     {
-                        PassBox.GetComponent<Text>().text = "PASS!";
-                        isPlay = false;
+                        LaunchSuccess();
                     }
                     else if (Input.GetKeyDown(KeyCode.Space))
                     {
@@ -114,17 +140,14 @@ public class QTESystem : MonoBehaviour
                     }
                     else
                     {
-                        PassBox.GetComponent<Text>().text = "FAIL!";
-                        isPlay = false;
-
+                        LaunchFail();
                     }
                 }
             }
         }
         else
         {
-            PassBox.GetComponent<Text>().text = "FAIL!";
-            isPlay = false;
+            LaunchFail();
             return;
         }
     }
@@ -137,6 +160,7 @@ public class QTESystem : MonoBehaviour
         PassBox.GetComponent<Text>().text = "";
         DisplayBox.GetComponent<Text>().text = "";
         isPlay = true;
+       
     }
 
 
