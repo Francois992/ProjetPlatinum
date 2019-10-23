@@ -6,6 +6,8 @@ using Rewired;
 public class PlayerController : MonoBehaviour
 {
 
+    //Clarence Berard
+
     public PlayerRigidBodyEntity _playerRigidBody;
 
     private Player _mainPlayer;
