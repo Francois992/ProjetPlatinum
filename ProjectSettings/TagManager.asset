@@ -10,6 +10,7 @@ TagManager:
   - RessourceItem2
   - Plateforme
   - Teleporter
+  - Walls
   layers:
   - Default
   - TransparentFX
