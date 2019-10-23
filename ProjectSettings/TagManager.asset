@@ -9,7 +9,11 @@ TagManager:
   - RessourceItem3
   - RessourceItem2
   - Plateforme
+<<<<<<< Updated upstream
   - Teleporter
+=======
+  - Mur
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
