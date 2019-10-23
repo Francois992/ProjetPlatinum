@@ -92,6 +92,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
     private Teleporter myTeleport;
 
     public GameObject myRenderer;
+    private MeshRenderer myMesh;
     private bool isTeleporting = false;
     private int teleportCountDown = 60;
 
@@ -103,6 +104,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody>();
+        myMesh = myRenderer.GetComponent<MeshRenderer>();
     }
 
     // Start is called before the first frame update
@@ -115,7 +117,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         halfBox = new Vector3(0.5f, 0.5f, 0.5f);
 
        
-        fullColor = myRenderer.GetComponent<MeshRenderer>().material.color;
+        fullColor = myMesh.material.color;
     }
 
     // Update is called once per frame
@@ -127,12 +129,11 @@ public class PlayerRigidBodyEntity : MonoBehaviour
 
             teleportCountDown--;
 
-            Debug.Log(invisibleColor.a);
-            myRenderer.GetComponent<MeshRenderer>().material.color = Color.Lerp(myRenderer.GetComponent<MeshRenderer>().material.color, invisibleColor, elapsedTime/0.5f );
+            myMesh.material.color = Color.Lerp(myMesh.material.color, invisibleColor, elapsedTime/0.5f );
 
             if(elapsedTime >= 0.5)
             {
-                myRenderer.GetComponent<MeshRenderer>().material.color = Color.Lerp(invisibleColor, fullColor, elapsedTime / 1f);
+                myMesh.material.color = Color.Lerp(invisibleColor, fullColor, elapsedTime / 1f);
                 transform.position = new Vector3(myTeleport.arrival.transform.position.x, myTeleport.arrival.transform.position.y, transform.position.z);
             }
 
@@ -143,7 +144,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
                 elapsedTime = 0f;
                 //transform.position = new Vector3(myTeleport.arrival.transform.position.x, myTeleport.arrival.transform.position.y, transform.position.z);
 
-                myRenderer.GetComponent<MeshRenderer>().material.color = fullColor;
+                myMesh.material.color = fullColor;
             }
         }
         else

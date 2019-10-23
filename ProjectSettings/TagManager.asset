@@ -11,9 +11,7 @@ TagManager:
   - Plateforme
 <<<<<<< Updated upstream
   - Teleporter
-=======
-  - Mur
->>>>>>> Stashed changes
+  - Walls
   layers:
   - Default
   - TransparentFX
