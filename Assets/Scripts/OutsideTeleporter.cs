@@ -2,16 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Teleporter : MonoBehaviour
+public class OutsideTeleporter : Teleporter
 {
-    public Teleporter arrival;
-
-    public bool isActivated = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        isActivated = false;
+        ExploratonTeleporter.teleporters.Add(this);
     }
 
     // Update is called once per frame
