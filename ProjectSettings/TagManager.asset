@@ -11,6 +11,7 @@ TagManager:
   - RessourceItem3
   - InteractItem
   - MovePanel
+  - Plateforme
   layers:
   - Default
   - TransparentFX
