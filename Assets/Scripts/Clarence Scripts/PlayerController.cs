@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _playerRigidBody.reController = playerID;
         _mainPlayer = ReInput.players.GetPlayer(playerID);
     }
 
