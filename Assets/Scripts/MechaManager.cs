@@ -8,6 +8,8 @@ public class MechaManager : MonoBehaviour
     public float _dirX;
     public float _dirY;
 
+    public int hitPoints = 15;
+
     public bool isActivated = true;
 
     private float _orientX = 0f;
