@@ -177,23 +177,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-
-                RaycastHit hit;
-
-                Debug.DrawRay(transform.position, transform.forward, Color.blue);
-
-                if (Physics.Raycast(transform.position, Vector3.forward, out hit, 5f))
-                {
-                    if (hit.transform.tag == "Teleporter")
-                    {
-                        myTeleport = hit.transform.GetComponent<Teleporter>();
-                        StartTeleport();
-                        //transform.position = hit.transform.GetComponent<Teleporter>().arrival.transform.position;
-                    }
-                }
-            }
+            
 
             if (_isJumping)
             {
@@ -211,17 +195,9 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             velocity.y = _verticalSpeed;
             rigidBody.velocity = velocity;
         }
-
-        
-
     }
 
-    private void StartTeleport()
-    {
-        isTeleporting = true;
-        //myRenderer.GetComponent<MeshRenderer>().material.color = invisibleColor;
-        
-    }
+    
 
     private void Update()
     {
@@ -324,7 +300,14 @@ public class PlayerRigidBodyEntity : MonoBehaviour
     #region Action Commands
     public void Actions()
     {
+        if (isTeleporting) return;
 
+        if (!isTeleporting)
+        {
+            CheckTeleport();
+        }
+
+        if (isTeleporting) return;
 
         if (canGrab && !isGrabing)
         {
@@ -351,6 +334,34 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             return;
         }
             
+    }
+
+    private void CheckTeleport()
+    {
+        RaycastHit hit;
+
+        Debug.DrawRay(transform.position, transform.forward, Color.blue);
+
+        if (Physics.Raycast(transform.position, Vector3.forward, out hit, 5f))
+        {
+            if (hit.transform.tag == "Teleporter")
+            {
+                if (hit.transform.GetComponent<Teleporter>().isActivated)
+                {
+                    myTeleport = hit.transform.GetComponent<Teleporter>();
+                    StartTeleport();
+                    //transform.position = hit.transform.GetComponent<Teleporter>().arrival.transform.position;
+                }
+
+            }
+        }
+    }
+
+    private void StartTeleport()
+    {
+        isTeleporting = true;
+        //myRenderer.GetComponent<MeshRenderer>().material.color = invisibleColor;
+
     }
 
     public void ActionResurrect()
