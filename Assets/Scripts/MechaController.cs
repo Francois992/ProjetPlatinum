@@ -6,10 +6,13 @@ using Rewired;
 //Made by Francois Dessarts
 public class MechaController : MonoBehaviour
 {
-    private Player playerHorizontal;
-    private Player playerVertical;
+    public Player playerHorizontal;
+    public Player playerVertical;
 
     public MechaManager mecha;
+
+    public bool isActivatedHor = false;
+    public bool isActivatedVer = false;
 
     // Start is called before the first frame update
     void Start()
@@ -21,10 +24,20 @@ public class MechaController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float dirX = playerHorizontal.GetAxis("MoveHorizontal");
-        float dirY = playerVertical.GetAxis("MoveVertical");
+        if(isActivatedHor)
+        {
+            float dirX = playerHorizontal.GetAxis("MoveHorizontal");
 
-        mecha.HorizontalMovement(dirX);
-        mecha.VerticalMovement(dirY);
+            mecha.HorizontalMovement(dirX);
+            
+        }
+
+        if (isActivatedVer)
+        {
+            float dirY = playerVertical.GetAxis("MoveVertical");
+
+            mecha.VerticalMovement(dirY);
+        }
+        
     }
 }

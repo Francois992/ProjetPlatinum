@@ -123,6 +123,8 @@ public class PlayerRigidBodyEntity : MonoBehaviour
 
     private float elapsedTime;
 
+    public string reController;
+
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody>();
@@ -373,21 +375,46 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         if (interactItem == null) return;
         if (isInteracting) return;
 
-        //interactItem.QTE(); -----> Lancer la fonction de QTE
-        interactQTE.StartQTE();
-        Debug.Log("Lancemennt du QTE");
-        isInteracting = true;
+        if (interactItem.gameObject.tag == "MovePanel")
+        {
+            interactItem.GetComponent<MovementPanel>().user = this;
+            interactItem.GetComponent<MovementPanel>().OnUsed();
+            isInteracting = true;
+
+            
+        }
+        else
+        {
+            //interactItem.QTE(); -----> Lancer la fonction de QTE
+            interactQTE.StartQTE();
+            Debug.Log("Lancemennt du QTE");
+            isInteracting = true;
+        }
+
+        
     }
 
     private void ActionStopInteract()
     {
         if(!isInteracting) return;
         if (interactItem == null) return;
-        if (interactQTE == null) return;
+        
 
-        Debug.Log("Fin du QTE, peut bouger à nouveau");
-        interactQTE.EndQTE();
-        isInteracting = false;
+        if(interactItem.gameObject.tag == "MovePanel")
+        {
+            isInteracting = false;
+            interactItem.GetComponent<MovementPanel>().OnDropped();
+        }
+        else
+        {
+            if (interactQTE == null) return;
+
+            Debug.Log("Fin du QTE, peut bouger à nouveau");
+            interactQTE.EndQTE();
+            isInteracting = false;
+        }
+
+        
     }
 
 
@@ -504,6 +531,14 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             {
                 canResurrect = true;
                 downedPlayer = collision.gameObject.GetComponent<PlayerRigidBodyEntity>();
+            }
+        }
+        else if(collision.gameObject.tag == "MovePanel")
+        {
+            canInteractQTE = true;
+            if (!isInteracting)
+            {
+                interactItem = collision.gameObject;
             }
         }
     }

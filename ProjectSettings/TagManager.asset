@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Teleporter
+  - Walls
+  - RessourceItem
+  - RessourceItem2
+  - RessourceItem3
+  - InteractItem
+  - MovePanel
   layers:
   - Default
   - TransparentFX
