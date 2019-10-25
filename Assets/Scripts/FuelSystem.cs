@@ -30,7 +30,7 @@ public class FuelSystem : MonoBehaviour
     {
 
         //reduce the fuel level and update the UI
-        startFuel -= Time.deltaTime * fuelConsumptionRate;
+        
         UpdateUI();
 
     }
@@ -64,6 +64,11 @@ public class FuelSystem : MonoBehaviour
         UpdateUI();
 
 
+    }
+
+    public void LoseFuel()
+    {
+        startFuel -= Time.deltaTime * fuelConsumptionRate;
     }
 
 }
