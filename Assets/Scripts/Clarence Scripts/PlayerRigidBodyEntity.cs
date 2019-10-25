@@ -162,7 +162,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             if(elapsedTime >= 0.5)
             {
                 myMesh.material.color = Color.Lerp(invisibleColor, fullColor, elapsedTime / 1f);
-                transform.position = new Vector3(myTeleport.arrival.transform.position.x, myTeleport.arrival.transform.position.y, transform.position.z);
+                transform.position = new Vector3(myTeleport.arrival.transform.position.x, myTeleport.arrival.transform.position.y, myTeleport.arrival.transform.position.z -2);
             }
 
             if (teleportCountDown <= 0)
@@ -563,7 +563,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         }
         else if (collision.gameObject.tag == "InteractItem")
         {
-            canInteractQTE = false; ;
+            canInteractQTE = false; 
             interactQTE = null;
             interactItem = null;
         }
@@ -574,6 +574,11 @@ public class PlayerRigidBodyEntity : MonoBehaviour
                 canResurrect = false;
                 downedPlayer = null;
             }
+        }
+        else if (collision.gameObject.tag == "MovePanel")
+        {
+            canInteractQTE = false;
+            interactItem = null;
         }
     }
     #endregion
