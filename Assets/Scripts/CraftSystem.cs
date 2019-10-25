@@ -45,7 +45,7 @@ public class CraftSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_craftOK == true)
+        if (_craftOK)
         {
             QTE.LaunchQTEPhase();
             //Instantiate(FuelMaterial, SpawnPoint.transform.position, SpawnPoint.rotation);
