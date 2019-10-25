@@ -5,13 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Teleporter
-  - Walls
-  - RessourceItem
   - RessourceItem2
   - RessourceItem3
-  - InteractItem
+  - RessourceItem
   - MovePanel
-  - Plateforme
+  - GasCan
+  - FuelBase
+  - MedicBase
+  - MedicKit
   layers:
   - Default
   - TransparentFX
