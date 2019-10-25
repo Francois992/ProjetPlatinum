@@ -33,6 +33,8 @@ public class MechaManager : MonoBehaviour
     [SerializeField] private MechFace front;
     [SerializeField] private MechFace back;
 
+    public FuelSystem fuel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -148,6 +150,8 @@ public class MechaManager : MonoBehaviour
             }
 
             _UpdatePosition();
+
+        if (_speedX > 0 || _speedY > 0) fuel.LoseFuel();
         
     }
 

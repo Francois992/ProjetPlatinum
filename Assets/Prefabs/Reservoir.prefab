@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8726570107433591227}
   - component: {fileID: 8726570107433591231}
   - component: {fileID: 8726570107433591230}
+  - component: {fileID: 4574446526046440152}
   m_Layer: 0
   m_Name: Reservoir
   m_TagString: Untagged
@@ -127,3 +128,16 @@ MonoBehaviour:
   fuelConsumptionRate: 0.2
   fuelIndicatorSld: {fileID: 0}
   fuelIndicatorTxt: {fileID: 0}
+--- !u!65 &4574446526046440152
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8726570107433591217}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.559043, y: 1.2383732, z: 1}
+  m_Center: {x: 0.7183243, y: 0.119186945, z: 0}
