@@ -13,6 +13,9 @@ TagManager:
   - FuelBase
   - MedicBase
   - MedicKit
+  - Plateforme
+  - ExplorationTeleporter
+  - Walls
   layers:
   - Default
   - TransparentFX

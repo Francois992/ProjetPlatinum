@@ -213,6 +213,11 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             if (oxygenBar.enabled) return;
             oxygenBar.enabled = true;
         }
+        else if (!isOutside)
+        {
+            if (!oxygenBar.enabled) return;
+            oxygenBar.enabled = false;
+        }
     }
 
     #region Oxygen
