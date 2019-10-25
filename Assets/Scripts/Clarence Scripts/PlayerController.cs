@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
 
     public PlayerRigidBodyEntity _playerRigidBody;
 
+    public QTESystem QTEVerification;
+
     private Player _mainPlayer;
 
 
@@ -29,7 +31,7 @@ public class PlayerController : MonoBehaviour
     {
         float dirX = _mainPlayer.GetAxis("MoveHorizontal");
 
-        if (!_playerRigidBody.isInteracting && !_playerRigidBody.isDown)
+        if (!_playerRigidBody.isInteracting && !_playerRigidBody.isDown && !QTEVerification.isPlay)
         {
             _playerRigidBody.Move(dirX);
         }
@@ -38,7 +40,7 @@ public class PlayerController : MonoBehaviour
             _playerRigidBody._speed = 0;
         }
         
-        if(_mainPlayer.GetButtonDown("jump") && _playerRigidBody.IsOnGround() && !_playerRigidBody.isInteracting && !_playerRigidBody.isDown)
+        if(_mainPlayer.GetButtonDown("jump") && _playerRigidBody.IsOnGround() && !_playerRigidBody.isInteracting && !_playerRigidBody.isDown && !QTEVerification.isPlay)
         {
             _playerRigidBody.Jump();
         }

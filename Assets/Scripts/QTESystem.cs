@@ -37,12 +37,12 @@ public class QTESystem : MonoBehaviour
         isPlay = false;
         QTEWindow.SetActive(false);
 
-        if(Craft._craftFuel == true)
+        if(Craft._craftFuel)
         {
             Instantiate(Craft.FuelMaterial, Craft.SpawnPoint.transform.position, Craft.SpawnPoint.rotation);
             Craft._craftFuel = false;
         }
-        if (Craft._craftMedic == true)
+        if (Craft._craftMedic)
         {
             Instantiate(Craft.MedicMaterial, Craft.SpawnPoint.transform.position, Craft.SpawnPoint.rotation);
             Craft._craftMedic = false;
