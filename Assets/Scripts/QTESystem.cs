@@ -16,6 +16,8 @@ public class QTESystem : MonoBehaviour
     private float timerMax = 3.5f;
     public Slider timerSld;
 
+    public CraftSystem Craft;
+
     //public static QTESystem instance;
 
     Result _result = Result.None;
@@ -34,13 +36,14 @@ public class QTESystem : MonoBehaviour
         PassBox.GetComponent<Text>().text = "PASS!";
         isPlay = false;
         QTEWindow.SetActive(false);
+        Instantiate(Craft.FuelMaterial, Craft.SpawnPoint.transform.position, Craft.SpawnPoint.rotation);
     }
 
     private void LaunchFail()
     {
         _result = Result.Fail;
         PassBox.GetComponent<Text>().text = "FAIL!";
-        isPlay = false;
+        //isPlay = false;
         LaunchQTEPhase();
     }
 

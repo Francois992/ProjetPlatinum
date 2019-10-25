@@ -5,18 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Teleporter
-<<<<<<< HEAD
-  - GasCan
-  - FuelBase
-=======
-  - Walls
-  - RessourceItem
   - RessourceItem2
   - RessourceItem3
-  - InteractItem
+  - RessourceItem
   - MovePanel
-  - Plateforme
->>>>>>> master
+  - GasCan
+  - FuelBase
   layers:
   - Default
   - TransparentFX
