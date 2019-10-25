@@ -36,7 +36,18 @@ public class QTESystem : MonoBehaviour
         PassBox.GetComponent<Text>().text = "PASS!";
         isPlay = false;
         QTEWindow.SetActive(false);
-        Instantiate(Craft.FuelMaterial, Craft.SpawnPoint.transform.position, Craft.SpawnPoint.rotation);
+
+        if(Craft._craftFuel == true)
+        {
+            Instantiate(Craft.FuelMaterial, Craft.SpawnPoint.transform.position, Craft.SpawnPoint.rotation);
+            Craft._craftFuel = false;
+        }
+        if (Craft._craftMedic == true)
+        {
+            Instantiate(Craft.MedicMaterial, Craft.SpawnPoint.transform.position, Craft.SpawnPoint.rotation);
+            Craft._craftMedic = false;
+        }
+
     }
 
     private void LaunchFail()

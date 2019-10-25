@@ -11,6 +11,8 @@ TagManager:
   - MovePanel
   - GasCan
   - FuelBase
+  - MedicBase
+  - MedicKit
   layers:
   - Default
   - TransparentFX

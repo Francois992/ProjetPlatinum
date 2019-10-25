@@ -7,8 +7,11 @@ public class CraftSystem : MonoBehaviour
 
     public Transform SpawnPoint;
     public GameObject FuelMaterial;
+    public GameObject MedicMaterial;
 
-    private bool _craftOK = false;
+    public bool _craftOK = false;
+    public bool _craftMedic = false;
+    public bool _craftFuel = false;
     public QTESystem QTE;
 
 
@@ -20,14 +23,22 @@ public class CraftSystem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "FuelBase")
+        if (other.gameObject.tag == "FuelBase" && !_craftOK )
         {
             //Instantiate(FuelMaterial, SpawnPoint.transform.position, SpawnPoint.rotation);
             _craftOK = true;
+            _craftFuel = true;
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.tag == "MedicBase" && !_craftOK)
+        {
+            //Instantiate(FuelMaterial, SpawnPoint.transform.position, SpawnPoint.rotation);
+            _craftOK = true;
+            _craftMedic = true;
             Destroy(other.gameObject);
         }
 
-        
+
     }
 
 
