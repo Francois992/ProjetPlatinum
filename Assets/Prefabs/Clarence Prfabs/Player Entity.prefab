@@ -250,6 +250,7 @@ Transform:
   - {fileID: 1860121036469156126}
   - {fileID: 11802744328752938}
   - {fileID: 2559838442532073853}
+  - {fileID: 6488681636433938461}
   - {fileID: 3405176343767414076}
   - {fileID: 4971485471227238048}
   - {fileID: 9205275786238659006}
@@ -309,18 +310,21 @@ MonoBehaviour:
   ressourceItem: {fileID: 0}
   holdItem: {fileID: 0}
   canResurrect: 0
-  spriteItem1: {fileID: 4918096006227087931}
-  spriteItem2: {fileID: 2466727752563028750}
-  spriteItem3: {fileID: 7685162792900805905}
+  fuelBaseSprite: {fileID: 4918096006227087931}
+  fuelJerrycanSprite: {fileID: 2466727752563028750}
+  mediBaseSprite: {fileID: 8587401148286026305}
+  medikitSprite: {fileID: 7685162792900805905}
   KOSprite: {fileID: 2897378495864668603}
   oxygenBar: {fileID: 2625017566925565933}
   isOutside: 0
   isDown: 0
-  prefabItem1: {fileID: 4577953417744300534, guid: 1a65c6a9000871248bf8c0df10225813,
+  fuelBasePrefab: {fileID: 9146320919917888453, guid: 1ddf3c09d8df793448d7aac6dc136ea1,
     type: 3}
-  prefabItem2: {fileID: 8619127754162279772, guid: e80161d42a2d0604582f6562e56f4220,
+  fuelJerrycanPrefab: {fileID: 7139361860969969396, guid: 5f866a1bb6d8f314286daf1d14eebcdf,
     type: 3}
-  prefabItem3: {fileID: 5368698722287566266, guid: 7d603939967efb549aefb8c20cd2f52d,
+  MediBasePrefab: {fileID: 2333232972721966150, guid: 9dc1debf5ec44934e9ced02a2040a035,
+    type: 3}
+  MedikitPrefab: {fileID: 4573479701527263411, guid: 5893027945d512a47909664de904dbd9,
     type: 3}
   playerHands: {fileID: 1860121036795646027}
   debugMode: 0
@@ -351,7 +355,7 @@ GameObject:
   - component: {fileID: 2559838442532073853}
   - component: {fileID: 5177117142007140074}
   m_Layer: 0
-  m_Name: spriteItem2
+  m_Name: fuelJerrycanSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -410,7 +414,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 60ea8620e7f042946a2fc4ae4dbb1c82, type: 3}
-  m_Color: {r: 0.43529415, g: 0.058823533, b: 0.058823533, a: 1}
+  m_Color: {r: 0.43529412, g: 0.19283806, b: 0.058823522, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -449,7 +453,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1860121037596510476}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3044780494328669200
 SpriteRenderer:
@@ -532,7 +536,7 @@ RectTransform:
   m_Children:
   - {fileID: 6696605046473929371}
   m_Father: {fileID: 1860121037596510476}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -683,7 +687,7 @@ GameObject:
   - component: {fileID: 11802744328752938}
   - component: {fileID: 5739109900320147145}
   m_Layer: 0
-  m_Name: spriteItem1
+  m_Name: fuelBaseSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -742,7 +746,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 60ea8620e7f042946a2fc4ae4dbb1c82, type: 3}
-  m_Color: {r: 0.50980395, g: 0.48627454, b: 0.427451, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -763,7 +767,7 @@ GameObject:
   - component: {fileID: 3405176343767414076}
   - component: {fileID: 888239949295139665}
   m_Layer: 0
-  m_Name: spriteItem3
+  m_Name: medicKitSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -781,7 +785,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1860121037596510476}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &888239949295139665
 SpriteRenderer:
@@ -822,7 +826,87 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 60ea8620e7f042946a2fc4ae4dbb1c82, type: 3}
-  m_Color: {r: 0.9811321, g: 0.722372, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.4339623, b: 0.029700983, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.3, y: 0.27}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &8587401148286026305
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6488681636433938461}
+  - component: {fileID: 8331436735473823081}
+  m_Layer: 0
+  m_Name: medicBaseSprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &6488681636433938461
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8587401148286026305}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.99, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_Children: []
+  m_Father: {fileID: 1860121037596510476}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &8331436735473823081
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8587401148286026305}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 60ea8620e7f042946a2fc4ae4dbb1c82, type: 3}
+  m_Color: {r: 0.22433226, g: 0.8207547, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
