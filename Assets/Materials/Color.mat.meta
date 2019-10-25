@@ -1,12 +1,14 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
-guid: dd8a0a4e70ffa2d488b52e769766f078
+<<<<<<< HEAD:Assets/Scripts/Color.mat.meta
+guid: ecc53d4db4fc79f4494a1416bfdb203f
+NativeFormatImporter:
 =======
 guid: c14d993468c9c44428ca9f096793c22a
->>>>>>> Stashed changes
 folderAsset: yes
 DefaultImporter:
+>>>>>>> master:Assets/Materials.meta
   externalObjects: {}
+  mainObjectFileID: 2100000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
