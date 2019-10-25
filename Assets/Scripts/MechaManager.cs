@@ -42,8 +42,6 @@ public class MechaManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isActivated)
-        {
             if (_dirX > 0)
             {
                 front.checkCollisions = true;
@@ -150,7 +148,6 @@ public class MechaManager : MonoBehaviour
             }
 
             _UpdatePosition();
-        }
         
     }
 

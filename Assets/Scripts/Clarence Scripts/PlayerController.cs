@@ -13,10 +13,15 @@ public class PlayerController : MonoBehaviour
     private Player _mainPlayer;
 
 
+    public string playerID;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
-        _mainPlayer = ReInput.players.GetPlayer("Player0");
+        _playerRigidBody.reController = playerID;
+        _mainPlayer = ReInput.players.GetPlayer(playerID);
     }
 
     // Update is called once per frame
@@ -24,12 +29,16 @@ public class PlayerController : MonoBehaviour
     {
         float dirX = _mainPlayer.GetAxis("MoveHorizontal");
 
-        if (!_playerRigidBody.isInteracting)
+        if (!_playerRigidBody.isInteracting && !_playerRigidBody.isDown)
         {
             _playerRigidBody.Move(dirX);
         }
+        else
+        {
+            _playerRigidBody._speed = 0;
+        }
         
-        if(_mainPlayer.GetButtonDown("jump") && _playerRigidBody.IsOnGround() && !_playerRigidBody.isInteracting)
+        if(_mainPlayer.GetButtonDown("jump") && _playerRigidBody.IsOnGround() && !_playerRigidBody.isInteracting && !_playerRigidBody.isDown)
         {
             _playerRigidBody.Jump();
         }
