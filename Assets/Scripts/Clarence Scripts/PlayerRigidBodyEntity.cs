@@ -355,9 +355,20 @@ public class PlayerRigidBodyEntity : MonoBehaviour
                 {
                     myTeleport = hit.transform.GetComponent<Teleporter>();
                     StartTeleport();
+                    isOutside = false;
                     //transform.position = hit.transform.GetComponent<Teleporter>().arrival.transform.position;
                 }
 
+            }
+            else if(hit.transform.tag == "ExplorationTeleporter")
+            {
+                if (hit.transform.GetComponent<Teleporter>().isActivated)
+                {
+                    myTeleport = hit.transform.GetComponent<Teleporter>();
+                    StartTeleport();
+                    isOutside = true;
+                    //transform.position = hit.transform.GetComponent<Teleporter>().arrival.transform.position;
+                }
             }
         }
     }
