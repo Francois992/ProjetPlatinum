@@ -16,6 +16,7 @@ TagManager:
   - Plateforme
   - ExplorationTeleporter
   - Walls
+  - GunPanel
   layers:
   - Default
   - TransparentFX

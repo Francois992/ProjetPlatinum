@@ -412,8 +412,12 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             interactItem.GetComponent<MovementPanel>().user = this;
             interactItem.GetComponent<MovementPanel>().OnUsed();
             isInteracting = true;
-
-            
+        }
+        else if (interactItem.gameObject.tag == "GunPanel")
+        {
+            interactItem.GetComponent<GunPanel>().user = this;
+            interactItem.GetComponent<GunPanel>().OnUsed();
+            isInteracting = true;
         }
         else
         {
@@ -436,6 +440,11 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         {
             isInteracting = false;
             interactItem.GetComponent<MovementPanel>().OnDropped();
+        }
+        else if (interactItem.gameObject.tag == "GunPanel")
+        {
+            isInteracting = false;
+            interactItem.GetComponent<GunPanel>().OnDropped();
         }
         else
         {
@@ -590,6 +599,14 @@ public class PlayerRigidBodyEntity : MonoBehaviour
                 interactItem = collision.gameObject;
             }
         }
+        else if(collision.gameObject.tag == "GunPanel")
+        {
+            canInteractQTE = true;
+            if (!isInteracting)
+            {
+                interactItem = collision.gameObject;
+            }
+        }
     }
 
     private void OnCollisionExit(Collision collision)
@@ -608,6 +625,11 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             }
         }
         else if (collision.gameObject.tag == "MovePanel")
+        {
+            canInteractQTE = false;
+            interactItem = null;
+        }
+        else if (collision.gameObject.tag == "GunPanel")
         {
             canInteractQTE = false;
             interactItem = null;

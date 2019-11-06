@@ -20,6 +20,9 @@ public class Turret : MonoBehaviour
 
     public bool isActivated = false;
 
+    public float _dirX;
+    public float _dirY;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,49 +31,63 @@ public class Turret : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        if (isActivated)
+    {     
+        if (target.transform.position.x >= Canon.transform.position.x)
         {
-            if (target.transform.position.x >= Canon.transform.position.x)
+            float newPosX = target.transform.position.x;
+            float newPosY = target.transform.position.y;
+
+            if(_dirX != 0)
             {
-                float newPosX = target.transform.position.x + Input.GetAxis("Horizontal");
+                newPosX = target.transform.position.x + _dirX;
                 newPosX = Mathf.Clamp(newPosX, Canon.transform.position.x, Canon.transform.position.x + 30);
+            }
+            else
+            {
+                newPosX = target.transform.position.x;
+            }
 
-                float newPosY = target.transform.position.y + Input.GetAxis("Vertical");
+            if (_dirY != 0)
+            {
+                newPosY = target.transform.position.y + _dirY;
                 newPosY = Mathf.Clamp(newPosY, Canon.transform.position.y - 10, Canon.transform.position.y + 10);
-
-                Vector3 newPos = new Vector3(newPosX, newPosY, target.transform.position.z);
-                target.transform.position = Vector3.MoveTowards(target.transform.position, newPos, targetSpeed * Time.deltaTime);
-
-                Canon.transform.LookAt(target.transform);
-
-                float rotX = Canon.transform.eulerAngles.x;
-
-                if (rotX >= 180) rotX -= 360;
-
-                rotX = Mathf.Clamp(rotX, minCanonRot, maxCanonRot);
-
-                Canon.transform.localRotation = Quaternion.Euler(rotX, Canon.transform.eulerAngles.y, Canon.transform.eulerAngles.z);
             }
-
-            if (Input.GetKeyDown(KeyCode.F) && !hasShot)
+            else
             {
-                Shoot();
+                newPosY = target.transform.position.y;
             }
 
-            if (hasShot)
-            {
-                shotCoolDown -= Time.deltaTime;
-            }
 
-            if (shotCoolDown <= 0)
-            {
-                hasShot = false;
-                shotCoolDown = 3f;
-            }
+            Vector3 newPos = new Vector3(newPosX, newPosY, target.transform.position.z);
+            target.transform.position = Vector3.MoveTowards(target.transform.position, newPos, targetSpeed * Time.deltaTime);
+
+            Canon.transform.LookAt(target.transform);
+
+            float rotX = Canon.transform.eulerAngles.x;
+
+            if (rotX >= 180) rotX -= 360;
+
+            rotX = Mathf.Clamp(rotX, minCanonRot, maxCanonRot);
+
+            Canon.transform.localRotation = Quaternion.Euler(rotX, Canon.transform.eulerAngles.y, Canon.transform.eulerAngles.z);
         }
-        
-        
+
+        if (hasShot)
+        {
+            shotCoolDown -= Time.deltaTime;
+        }
+
+        if (shotCoolDown <= 0)
+        {
+            hasShot = false;
+            shotCoolDown = 3f;
+        }
+                
+    }
+
+    public void Action()
+    {
+        if(!hasShot) Shoot();
     }
 
     private void Shoot()
@@ -78,4 +95,11 @@ public class Turret : MonoBehaviour
         hasShot = true;
         Instantiate(bullet, Canon.transform.position, Canon.transform.rotation);
     }
+
+    public void targetMovement(float dirX, float dirY)
+    {
+        _dirX = dirX;
+        _dirY = dirY;
+    }
+
 }
