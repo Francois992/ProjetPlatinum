@@ -20,6 +20,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
 
     //Movement
     [Header("Movement")]
+    [Range(10, 30)]
     public float acceleration = 20f;
     [Range(0f, 30f)]
     public float speedMax = 10f;
@@ -33,6 +34,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
 
     //Gravity
     [Header("Gravity")]
+    [Range(10, 30)]
     public float gravity = 20f;
     public float fallSpeedMax = 10f;
     private float _verticalSpeed = 0f;
@@ -46,6 +48,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
 
     //Jump
     [Header("Jump")]
+    [Range(1, 10)]
     public float jumpSpeed = 5f;
     public float jumpDuration = 0.3f;
     private float _jumpCountdown = 0.1f;
