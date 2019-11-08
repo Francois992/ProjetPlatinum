@@ -17,6 +17,8 @@ TagManager:
   - ExplorationTeleporter
   - Walls
   - GunPanel
+  - HubTeleporter
+  - SpecialPlatform
   layers:
   - Default
   - TransparentFX
@@ -26,10 +28,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - SpecialPlatform
+  - Players
+  - Map
+  - Mecha
   - 
   - 
   - 

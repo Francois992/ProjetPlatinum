@@ -152,13 +152,15 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         oxygenAmount = maxOxygenAmount;
         halfBox = new Vector3(0.5f, 0.5f, 0.5f);
 
-       
+        Physics.IgnoreLayerCollision(9, 9);
         fullColor = myMesh.material.color;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        
+
         if (isTeleporting)
         {
             elapsedTime += Time.deltaTime;
@@ -364,7 +366,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
                     myTeleport = hit.transform.GetComponent<Teleporter>();
                     StartTeleport();
                     isOutside = false;
-                    //transform.position = hit.transform.GetComponent<Teleporter>().arrival.transform.position;
+                   
                 }
 
             }
@@ -375,7 +377,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
                     myTeleport = hit.transform.GetComponent<Teleporter>();
                     StartTeleport();
                     isOutside = true;
-                    //transform.position = hit.transform.GetComponent<Teleporter>().arrival.transform.position;
+                    
                 }
             }
         }
@@ -610,6 +612,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
                 interactItem = collision.gameObject;
             }
         }
+
     }
 
     private void OnCollisionExit(Collision collision)
@@ -637,6 +640,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             canInteractQTE = false;
             interactItem = null;
         }
+
     }
     #endregion
 
@@ -692,6 +696,8 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         _isJumping = true;
         _jumpCountdown = jumpDuration;
         _isGrounded = false;
+
+        
     }
 
     public void StopJump()
@@ -713,7 +719,6 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             _verticalSpeed = jumpSpeed;
         }
     }
-
 
     #endregion
 

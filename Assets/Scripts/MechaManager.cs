@@ -87,7 +87,6 @@ public class MechaManager : MonoBehaviour
                     }
                     _orientX = Mathf.Sign(_dirX);
                 }
-                _UpdatePosition();
             }
 
             else if (_speedX > 0f)
@@ -119,7 +118,6 @@ public class MechaManager : MonoBehaviour
                     }
                     _orientY = Mathf.Sign(_dirY);
                 }
-                _UpdatePosition();
             }
 
             else if (_speedY > 0f)
