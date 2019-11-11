@@ -12,6 +12,7 @@ TagManager:
   - InteractItem
   - MovePanel
   - Plateforme
+  - Mines
   layers:
   - Default
   - TransparentFX
