@@ -16,6 +16,10 @@ public class Turret : MonoBehaviour
 
     [SerializeField] private float shotCoolDown = 3f;
 
+    [SerializeField] private float minOffsetX = 4f;
+    [SerializeField] private float maxOffsetX = 30f;
+    [SerializeField] private float maxOffsetY = 10f;
+
     private bool hasShot = false;
 
     public bool isActivated = false;
@@ -40,7 +44,7 @@ public class Turret : MonoBehaviour
             if(_dirX != 0)
             {
                 newPosX = target.transform.position.x + _dirX;
-                newPosX = Mathf.Clamp(newPosX, Canon.transform.position.x, Canon.transform.position.x + 30);
+                newPosX = Mathf.Clamp(newPosX, Canon.transform.position.x + minOffsetX, Canon.transform.position.x + maxOffsetX);
             }
             else
             {
@@ -50,7 +54,7 @@ public class Turret : MonoBehaviour
             if (_dirY != 0)
             {
                 newPosY = target.transform.position.y + _dirY;
-                newPosY = Mathf.Clamp(newPosY, Canon.transform.position.y - 10, Canon.transform.position.y + 10);
+                newPosY = Mathf.Clamp(newPosY, Canon.transform.position.y - maxOffsetY, Canon.transform.position.y + maxOffsetY);
             }
             else
             {

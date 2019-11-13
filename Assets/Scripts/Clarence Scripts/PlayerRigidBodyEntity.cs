@@ -20,6 +20,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
 
     //Movement
     [Header("Movement")]
+    [Range(10, 30)]
     public float acceleration = 20f;
     [Range(0f, 30f)]
     public float speedMax = 10f;
@@ -33,6 +34,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
 
     //Gravity
     [Header("Gravity")]
+    [Range(10, 30)]
     public float gravity = 20f;
     public float fallSpeedMax = 10f;
     private float _verticalSpeed = 0f;
@@ -46,6 +48,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
 
     //Jump
     [Header("Jump")]
+    [Range(1, 10)]
     public float jumpSpeed = 5f;
     public float jumpDuration = 0.3f;
     private float _jumpCountdown = 0.1f;
@@ -149,13 +152,15 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         oxygenAmount = maxOxygenAmount;
         halfBox = new Vector3(0.5f, 0.5f, 0.5f);
 
-       
+        Physics.IgnoreLayerCollision(9, 9);
         fullColor = myMesh.material.color;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        
+
         if (isTeleporting)
         {
             elapsedTime += Time.deltaTime;
@@ -361,7 +366,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
                     myTeleport = hit.transform.GetComponent<Teleporter>();
                     StartTeleport();
                     isOutside = false;
-                    //transform.position = hit.transform.GetComponent<Teleporter>().arrival.transform.position;
+                   
                 }
 
             }
@@ -372,7 +377,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
                     myTeleport = hit.transform.GetComponent<Teleporter>();
                     StartTeleport();
                     isOutside = true;
-                    //transform.position = hit.transform.GetComponent<Teleporter>().arrival.transform.position;
+                    
                 }
             }
         }
@@ -577,6 +582,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
+        
         if(collision.gameObject.tag == "FuelBase" || collision.gameObject.tag == "GasCan" || collision.gameObject.tag == "MedicBase" || collision.gameObject.tag == "MedicKit")
         {
             canGrab = true;
@@ -607,6 +613,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
                 interactItem = collision.gameObject;
             }
         }
+
     }
 
     private void OnCollisionExit(Collision collision)
@@ -634,6 +641,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             canInteractQTE = false;
             interactItem = null;
         }
+
     }
     #endregion
 
@@ -689,6 +697,8 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         _isJumping = true;
         _jumpCountdown = jumpDuration;
         _isGrounded = false;
+
+        
     }
 
     public void StopJump()
@@ -710,7 +720,6 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             _verticalSpeed = jumpSpeed;
         }
     }
-
 
     #endregion
 

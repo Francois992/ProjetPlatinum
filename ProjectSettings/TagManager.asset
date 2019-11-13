@@ -21,6 +21,9 @@ TagManager:
   - Oxygen
   - Ammo
   - RepairKit
+  - HubTeleporter
+  - SpecialPlatform
+  - Rocks
   layers:
   - Default
   - TransparentFX
@@ -30,10 +33,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - SpecialPlatform
+  - Players
+  - Map
+  - Mecha
   - 
   - 
   - 

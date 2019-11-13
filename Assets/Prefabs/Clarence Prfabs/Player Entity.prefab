@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1555495598}
   - component: {fileID: 1555495597}
   - component: {fileID: 1555495596}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player Direction(temporarly)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,8 +104,7 @@ GameObject:
   - component: {fileID: 1860121036469156126}
   - component: {fileID: 1860121036469156115}
   - component: {fileID: 1860121036469156112}
-  - component: {fileID: 1860121036469156113}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,19 +173,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1860121036469156113
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1860121036469156127}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1860121036795646027
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1860121036795646026}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerHands
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +215,7 @@ GameObject:
   - component: {fileID: 1860121037596510478}
   - component: {fileID: 1860121037596510479}
   - component: {fileID: 1860121037596510465}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player Entity
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -287,7 +273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visualCube: {fileID: 1860121036469156126}
   acceleration: 30
-  speedMax: 10
+  speedMax: 12.3
   _speed: 0
   groundFriction:
     friction: 45
@@ -295,12 +281,12 @@ MonoBehaviour:
   airFriction:
     friction: 30
     turnAroundFriction: 50
-  gravity: 20
-  fallSpeedMax: 10
+  gravity: 30
+  fallSpeedMax: 11
   groundY: 0
   _isGrounded: 0
-  jumpSpeed: 6
-  jumpDuration: 0.5
+  jumpSpeed: 9.5
+  jumpDuration: 0.2
   _isJumping: 0
   canGrab: 0
   canInteractQTE: 0
@@ -338,7 +324,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1860121037596510477}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6c3f6587397722c4598b5f5bb2e910d0, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -354,7 +340,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2559838442532073853}
   - component: {fileID: 5177117142007140074}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: fuelJerrycanSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4971485471227238048}
   - component: {fileID: 3044780494328669200}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: KOSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -516,7 +502,7 @@ GameObject:
   - component: {fileID: 1826482195010625145}
   - component: {fileID: 1494855292078763687}
   - component: {fileID: 886836288584202177}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,7 +600,7 @@ GameObject:
   - component: {fileID: 6696605046473929371}
   - component: {fileID: 5522416155472465954}
   - component: {fileID: 2625017566925565933}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: OxygenBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -686,7 +672,7 @@ GameObject:
   m_Component:
   - component: {fileID: 11802744328752938}
   - component: {fileID: 5739109900320147145}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: fuelBaseSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -766,7 +752,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3405176343767414076}
   - component: {fileID: 888239949295139665}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: medicKitSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -846,7 +832,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6488681636433938461}
   - component: {fileID: 8331436735473823081}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: medicBaseSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

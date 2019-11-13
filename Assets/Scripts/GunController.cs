@@ -25,7 +25,7 @@ public class GunController : MonoBehaviour
             float dirX = player.GetAxis("MoveHorizontal");
             float dirY = player.GetAxis("MoveVertical");
 
-            if (player.GetButtonUp("Action"))
+            if (player.GetButtonUp("Shoot"))
             {
                 turret.Action();
             }
