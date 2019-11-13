@@ -424,11 +424,14 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             interactItem.GetComponent<GunPanel>().OnUsed();
             isInteracting = true;
         }
-        else
+        else if (interactItem.gameObject.tag == "CraftTable")
         {
             //interactItem.QTE(); -----> Lancer la fonction de QTE
-            interactQTE.StartQTE();
+            //interactQTE.StartQTE();
             Debug.Log("Lancemennt du QTE");
+            interactItem.GetComponent<CraftTable>().user = this;
+            interactItem.GetComponent<CraftTable>().OnUsed();
+            Spinner.instance.LaunchWheel();
             isInteracting = true;
         }
 
@@ -451,12 +454,20 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             isInteracting = false;
             interactItem.GetComponent<GunPanel>().OnDropped();
         }
+        else if (interactItem.gameObject.tag == "CraftTable")
+        {
+            //interactItem.QTE(); -----> Lancer la fonction de QTE
+            //interactQTE.StartQTE();
+            Debug.Log("Lancemennt du QTE");
+            interactItem.GetComponent<CraftTable>().OnDropped();
+            Spinner.instance.StopWheel();
+            isInteracting = false;
+        }
         else
         {
             if (interactQTE == null) return;
 
             Debug.Log("Fin du QTE, peut bouger à nouveau");
-            interactQTE.EndQTE();
             isInteracting = false;
         }
 
@@ -606,6 +617,14 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             }
         }
         else if(collision.gameObject.tag == "GunPanel")
+        {
+            canInteractQTE = true;
+            if (!isInteracting)
+            {
+                interactItem = collision.gameObject;
+            }
+        }
+        else if (collision.gameObject.tag == "CraftTable")
         {
             canInteractQTE = true;
             if (!isInteracting)
