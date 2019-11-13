@@ -692,9 +692,9 @@ MonoBehaviour:
   _dirX: 0
   _dirY: 0
   isActivated: 0
-  accelerationX: 0.2
-  accelerationY: 0.2
-  speedMax: 2
+  accelerationX: 0.5
+  accelerationY: 0.5
+  speedMax: 3
   _speedX: 0
   _speedY: 0
   waterFriction:
@@ -705,6 +705,15 @@ MonoBehaviour:
   front: {fileID: 3502852158536001334}
   back: {fileID: 1235102921551271150}
   fuel: {fileID: 2268355248904661889}
+  CameraPoint: {fileID: 365195031}
+  camPointSpeed: 25
+  wantedCamPosX: 0
+  wantedCamOffsetX: 20
+  wantedCamPosY: 0
+  wantedCamOffsetY: 20
+  CamDezoom: -35
+  isCamMoving: 0
+  cameraMultiple: {fileID: 1745184437}
 --- !u!1 &1521117781539229003
 GameObject:
   m_ObjectHideFlags: 0
@@ -2272,10 +2281,10 @@ MonoBehaviour:
   - {fileID: 1481693873389534446}
   - {fileID: 1761311726077727072}
   - {fileID: 365195032}
-  offset: {x: 0, y: 0, z: -20}
+  offset: {x: 0, y: 1.5, z: -20}
   smoothTime: 0.5
-  minZoom: 100
-  maxZoom: 65
+  minZoom: 75
+  maxZoom: 55
   zoomLimiter: 50
 --- !u!1001 &1329646567
 PrefabInstance:
@@ -2805,7 +2814,7 @@ PrefabInstance:
     - target: {fileID: 1860121037596510476, guid: 5891679bb5bfac246813498acf078e66,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 1860121037596510476, guid: 5891679bb5bfac246813498acf078e66,
         type: 3}
@@ -3152,7 +3161,7 @@ PrefabInstance:
     - target: {fileID: 1860121037596510476, guid: 5891679bb5bfac246813498acf078e66,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1860121037596510476, guid: 5891679bb5bfac246813498acf078e66,
         type: 3}

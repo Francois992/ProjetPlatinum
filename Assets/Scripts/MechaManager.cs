@@ -60,7 +60,11 @@ public class MechaManager : MonoBehaviour
     public float wantedCamPosY = 0f;
     public float wantedCamOffsetY = 20f;
 
+    public float CamDezoom = -30;
+
     public bool isCamMoving;
+
+    public multipleTargetCamera cameraMultiple;
 
     // Start is called before the first frame update
     void Start()
@@ -73,11 +77,13 @@ public class MechaManager : MonoBehaviour
     {
         if(_dirX > 0)
         {
-            wantedCamPosX = 25;
+            wantedCamPosX = wantedCamOffsetX;
+            cameraMultiple.offset.z = CamDezoom;
         }
         else if(_dirX < 0)
         {
-            wantedCamPosX = -25;
+            wantedCamPosX = -wantedCamOffsetX;
+            cameraMultiple.offset.z = CamDezoom;
         }
         else
         {
@@ -87,15 +93,22 @@ public class MechaManager : MonoBehaviour
 
         if (_dirY > 0)
         {
-            wantedCamPosY = 25;
+            wantedCamPosY = wantedCamOffsetY;
+            cameraMultiple.offset.z = CamDezoom;
         }
         else if (_dirY < 0)
         {
-            wantedCamPosY = -25;
+            wantedCamPosY = -wantedCamOffsetY;
+            cameraMultiple.offset.z = CamDezoom;
         }
         else
         {
             wantedCamPosY = 0;
+        }
+        
+        if(wantedCamPosX == 0 && wantedCamPosY == 0)
+        {
+            cameraMultiple.offset.z = -20;
         }
 
         if (_speedX > 0)
