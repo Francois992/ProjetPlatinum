@@ -24,6 +24,8 @@ TagManager:
   - HubTeleporter
   - SpecialPlatform
   - Rocks
+  - Mecha
+  - Bullet
   layers:
   - Default
   - TransparentFX
