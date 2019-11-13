@@ -17,6 +17,10 @@ TagManager:
   - ExplorationTeleporter
   - Walls
   - GunPanel
+  - Fuel
+  - Oxygen
+  - Ammo
+  - RepairKit
   - HubTeleporter
   - SpecialPlatform
   - Rocks
