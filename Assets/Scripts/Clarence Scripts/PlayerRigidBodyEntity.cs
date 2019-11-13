@@ -580,6 +580,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
+        
         if(collision.gameObject.tag == "FuelBase" || collision.gameObject.tag == "GasCan" || collision.gameObject.tag == "MedicBase" || collision.gameObject.tag == "MedicKit")
         {
             canGrab = true;

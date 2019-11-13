@@ -104,7 +104,6 @@ GameObject:
   - component: {fileID: 1860121036469156126}
   - component: {fileID: 1860121036469156115}
   - component: {fileID: 1860121036469156112}
-  - component: {fileID: 1860121036469156113}
   m_Layer: 0
   m_Name: Player Cube
   m_TagString: Untagged
@@ -174,19 +173,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1860121036469156113
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1860121036469156127}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1860121036795646027
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,7 +273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visualCube: {fileID: 1860121036469156126}
   acceleration: 30
-  speedMax: 10
+  speedMax: 12.3
   _speed: 0
   groundFriction:
     friction: 45
@@ -295,12 +281,12 @@ MonoBehaviour:
   airFriction:
     friction: 30
     turnAroundFriction: 50
-  gravity: 20
-  fallSpeedMax: 10
+  gravity: 30
+  fallSpeedMax: 11
   groundY: 0
   _isGrounded: 0
-  jumpSpeed: 6
-  jumpDuration: 0.5
+  jumpSpeed: 9.5
+  jumpDuration: 0.2
   _isJumping: 0
   canGrab: 0
   canInteractQTE: 0
@@ -338,7 +324,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1860121037596510477}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6c3f6587397722c4598b5f5bb2e910d0, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
