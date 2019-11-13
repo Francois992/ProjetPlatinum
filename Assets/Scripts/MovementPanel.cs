@@ -42,10 +42,12 @@ public class MovementPanel : MonoBehaviour
     {
         if (horOrientation)
         {
+            
             mechaController.isActivatedHor = false;
         }
         else
         {
+
             mechaController.isActivatedVer = false;
         }
     }
