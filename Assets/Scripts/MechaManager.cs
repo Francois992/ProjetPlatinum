@@ -44,25 +44,25 @@ public class MechaManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            if (_dirX > 0)
+            if (_speedX > 0)
             {
                 front.checkCollisions = true;
-                back.checkCollisions = false;
-            }
-            else if (_dirX < 0)
-            {
                 back.checkCollisions = true;
+            }
+            else if (_speedX < 0)
+            {
+                back.checkCollisions = false;
                 front.checkCollisions = false;
             }
 
-            if (_dirY > 0)
+            if (_speedY > 0)
             {
                 top.checkCollisions = true;
-                bottom.checkCollisions = false;
-            }
-            else if (_dirY < 0)
-            {
                 bottom.checkCollisions = true;
+            }
+            else if (_speedY < 0)
+            {
+                bottom.checkCollisions = false;
                 top.checkCollisions = false;
             }
 

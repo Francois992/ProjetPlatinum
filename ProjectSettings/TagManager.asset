@@ -19,6 +19,7 @@ TagManager:
   - GunPanel
   - HubTeleporter
   - SpecialPlatform
+  - Rocks
   layers:
   - Default
   - TransparentFX
