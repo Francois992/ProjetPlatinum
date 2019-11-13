@@ -31,12 +31,20 @@ public class MechaController : MonoBehaviour
             mecha.HorizontalMovement(dirX);
             
         }
+        else
+        {
+            mecha.HorizontalMovement(0);
+        }
 
         if (isActivatedVer)
         {
             float dirY = playerVertical.GetAxis("MoveVertical");
 
             mecha.VerticalMovement(dirY);
+        }
+        else
+        {
+            mecha.VerticalMovement(0);
         }
         
     }
