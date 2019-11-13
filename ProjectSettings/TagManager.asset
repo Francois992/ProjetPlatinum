@@ -25,6 +25,8 @@ TagManager:
   - SpecialPlatform
   - Rocks
   - CraftTable
+  - Mecha
+  - Bullet
   layers:
   - Default
   - TransparentFX
