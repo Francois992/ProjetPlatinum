@@ -78,12 +78,14 @@ public class MechaManager : MonoBehaviour
         if(_dirX > 0)
         {
             wantedCamPosX = wantedCamOffsetX;
-            cameraMultiple.offset.z = CamDezoom;
+            cameraMultiple.minZoom = 100;
+            if (!isCamMoving) isCamMoving = true;
         }
         else if(_dirX < 0)
         {
             wantedCamPosX = -wantedCamOffsetX;
-            cameraMultiple.offset.z = CamDezoom;
+            cameraMultiple.minZoom = 100;
+            if (!isCamMoving) isCamMoving = true;
         }
         else
         {
@@ -94,21 +96,24 @@ public class MechaManager : MonoBehaviour
         if (_dirY > 0)
         {
             wantedCamPosY = wantedCamOffsetY;
-            cameraMultiple.offset.z = CamDezoom;
+            cameraMultiple.minZoom = 100;
+            if (!isCamMoving) isCamMoving = true;
         }
         else if (_dirY < 0)
         {
             wantedCamPosY = -wantedCamOffsetY;
-            cameraMultiple.offset.z = CamDezoom;
+            cameraMultiple.minZoom = 100;
+            if (!isCamMoving) isCamMoving = true;
         }
         else
         {
             wantedCamPosY = 0;
         }
         
-        if(wantedCamPosX == 0 && wantedCamPosY == 0)
+        if(wantedCamPosX == 0 && wantedCamPosY == 0 && isCamMoving)
         {
-            cameraMultiple.offset.z = -20;
+            cameraMultiple.minZoom = 75;
+            isCamMoving = false;
         }
 
         if (_speedX > 0)

@@ -8,6 +8,7 @@ public class Turret : MonoBehaviour
     [SerializeField] private GameObject bullet;
     [SerializeField] private GameObject Canon;
     [SerializeField] private GameObject target;
+    [SerializeField] private GameObject muzzle;
     [SerializeField] private float targetSpeed = 15f;
 
     [SerializeField] private float bulletSpread = 15f;
@@ -20,6 +21,8 @@ public class Turret : MonoBehaviour
     [SerializeField] private float maxOffsetX = 30f;
     [SerializeField] private float minOffsetY = 10f;
     [SerializeField] private float maxOffsetY = 10f;
+
+    [SerializeField] private ParticleSystem flash;
 
     private bool hasShot = false;
 
@@ -80,12 +83,14 @@ public class Turret : MonoBehaviour
         if (hasShot)
         {
             shotCoolDown -= Time.deltaTime;
+            
         }
 
         if (shotCoolDown <= 0)
         {
             hasShot = false;
             shotCoolDown = 3f;
+            flash.Stop();
         }
                 
     }
@@ -98,7 +103,8 @@ public class Turret : MonoBehaviour
     private void Shoot()
     {
         hasShot = true;
-        Instantiate(bullet, Canon.transform.position, Canon.transform.rotation);
+        Instantiate(bullet, muzzle.transform.position, muzzle.transform.rotation);
+        flash.Play();
     }
 
     public void targetMovement(float dirX, float dirY)
