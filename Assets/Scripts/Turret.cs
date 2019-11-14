@@ -28,6 +28,8 @@ public class Turret : MonoBehaviour
 
     public bool isActivated = false;
 
+    public GunPanel panel;
+
     public float _dirX;
     public float _dirY;
 
@@ -104,6 +106,7 @@ public class Turret : MonoBehaviour
     {
         hasShot = true;
         Instantiate(bullet, muzzle.transform.position, muzzle.transform.rotation);
+        panel.OnShoot();
         flash.Play();
     }
 
