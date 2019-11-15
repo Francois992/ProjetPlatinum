@@ -105,7 +105,7 @@ public class Turret : MonoBehaviour
     private void Shoot()
     {
         hasShot = true;
-        Instantiate(bullet, muzzle.transform.position, muzzle.transform.rotation);
+        Instantiate(bullet, muzzle.transform.position, Canon.transform.rotation);
         panel.OnShoot();
         flash.Play();
     }

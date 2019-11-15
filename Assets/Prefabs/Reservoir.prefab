@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8726570107433591217
+--- !u!1 &3771694468234886990
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8726570107433591226}
-  - component: {fileID: 8726570107433591229}
-  - component: {fileID: 8726570107433591228}
-  - component: {fileID: 8726570107433591227}
-  - component: {fileID: 8726570107433591231}
-  - component: {fileID: 8726570107433591230}
-  - component: {fileID: 4574446526046440152}
+  - component: {fileID: 6917556193003915561}
+  - component: {fileID: 7426948579978910081}
+  - component: {fileID: 2493143552915864993}
+  - component: {fileID: 4114503929526853776}
   m_Layer: 0
-  m_Name: Reservoir
+  m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8726570107433591226
+--- !u!4 &6917556193003915561
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8726570107433591217}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -399, y: -153, z: 669.4}
-  m_LocalScale: {x: 74.65, y: 71.27, z: 82.55}
+  m_GameObject: {fileID: 3771694468234886990}
+  m_LocalRotation: {x: -0.0000020823861, y: -0.70710784, z: -0.7071058, w: 0.0000021606684}
+  m_LocalPosition: {x: 0, y: -0.5, z: 1.91}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 8726570107433591226}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8726570107433591229
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -180.00002}
+--- !u!33 &7426948579978910081
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8726570107433591217}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &8726570107433591228
+  m_GameObject: {fileID: 3771694468234886990}
+  m_Mesh: {fileID: 1973893103929547111, guid: 8b7bfcdfd2d10804b8f467ecabaf3b92, type: 3}
+--- !u!23 &2493143552915864993
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8726570107433591217}
+  m_GameObject: {fileID: 3771694468234886990}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -82,6 +79,54 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &4114503929526853776
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3771694468234886990}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4389112, y: 5.563637, z: 1.4319178}
+  m_Center: {x: 0.40245727, y: 0.0000007829756, z: 0.71595824}
+--- !u!1 &8726570107433591217
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8726570107433591226}
+  - component: {fileID: 8726570107433591227}
+  - component: {fileID: 8726570107433591231}
+  - component: {fileID: 8726570107433591230}
+  - component: {fileID: 4574446526046440152}
+  m_Layer: 0
+  m_Name: Reservoir
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8726570107433591226
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8726570107433591217}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -399, y: -153, z: 669.4}
+  m_LocalScale: {x: 74.65, y: 71.27, z: 82.55}
+  m_Children:
+  - {fileID: 6917556193003915561}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &8726570107433591227
 Rigidbody:
   m_ObjectHideFlags: 0
