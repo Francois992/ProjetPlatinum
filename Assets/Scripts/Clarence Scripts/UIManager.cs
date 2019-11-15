@@ -27,6 +27,7 @@ public class UIManager : MonoBehaviour
 
     public static UIManager instance;
 
+
     private void Awake()
     {
         instance = this;
@@ -39,7 +40,7 @@ public class UIManager : MonoBehaviour
         fuelJerrycanAmount = 0;
         ammoAmount = 0;
         repairKitAmount = 0;
-        scrapsAmount = 0;
+        scrapsAmount = 5;
 
         UpdateHUD();
     }

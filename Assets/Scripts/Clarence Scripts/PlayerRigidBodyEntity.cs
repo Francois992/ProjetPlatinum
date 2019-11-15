@@ -428,6 +428,8 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         {
             //interactItem.QTE(); -----> Lancer la fonction de QTE
             //interactQTE.StartQTE();
+            if (UIManager.instance.scrapsAmount <= 0) return;
+
             Debug.Log("Lancemennt du QTE");
             interactItem.GetComponent<CraftTable>().user = this;
             interactItem.GetComponent<CraftTable>().OnUsed();
@@ -458,6 +460,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         {
             //interactItem.QTE(); -----> Lancer la fonction de QTE
             //interactQTE.StartQTE();
+            
             Debug.Log("Lancemennt du QTE");
             interactItem.GetComponent<CraftTable>().OnDropped();
             Spinner.instance.StopWheel();
