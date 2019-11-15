@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 
     public PlayerRigidBodyEntity _playerRigidBody;
 
-    private Player _mainPlayer;
+    public Player _mainPlayer;
 
 
     public string playerID;

@@ -9,10 +9,12 @@ public class MechaController : MonoBehaviour
     public Player playerHorizontal;
     public Player playerVertical;
 
-    public MechaManager mecha;
+    private MechaManager mecha = MechaManager.Instance;
 
     public bool isActivatedHor = false;
     public bool isActivatedVer = false;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +30,13 @@ public class MechaController : MonoBehaviour
         {
             float dirX = playerHorizontal.GetAxis("MoveHorizontal");
 
-            mecha.HorizontalMovement(dirX);
+            MechaManager.Instance.HorizontalMovement(dirX);
+            
+        }
+        else
+        {
+            MechaManager.Instance.HorizontalMovement(0);
+
             
         }
 
@@ -36,7 +44,14 @@ public class MechaController : MonoBehaviour
         {
             float dirY = playerVertical.GetAxis("MoveVertical");
 
-            mecha.VerticalMovement(dirY);
+            MechaManager.Instance.VerticalMovement(dirY);
+
+        }
+        else
+        {
+            MechaManager.Instance.VerticalMovement(0);
+
+            
         }
         
     }

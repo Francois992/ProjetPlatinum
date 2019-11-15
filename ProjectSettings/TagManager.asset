@@ -5,13 +5,28 @@ TagManager:
   serializedVersion: 2
   tags:
   - Teleporter
-  - Walls
-  - RessourceItem
   - RessourceItem2
   - RessourceItem3
-  - InteractItem
+  - RessourceItem
   - MovePanel
+  - GasCan
+  - FuelBase
+  - MedicBase
+  - MedicKit
   - Plateforme
+  - ExplorationTeleporter
+  - Walls
+  - GunPanel
+  - Fuel
+  - Oxygen
+  - Ammo
+  - RepairKit
+  - HubTeleporter
+  - SpecialPlatform
+  - Rocks
+  - CraftTable
+  - Mecha
+  - Bullet
   - Mines
   layers:
   - Default
@@ -22,10 +37,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - SpecialPlatform
+  - Players
+  - Map
+  - Mecha
   - 
   - 
   - 

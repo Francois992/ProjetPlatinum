@@ -20,6 +20,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
 
     //Movement
     [Header("Movement")]
+    [Range(10, 30)]
     public float acceleration = 20f;
     [Range(0f, 30f)]
     public float speedMax = 10f;
@@ -33,6 +34,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
 
     //Gravity
     [Header("Gravity")]
+    [Range(10, 30)]
     public float gravity = 20f;
     public float fallSpeedMax = 10f;
     private float _verticalSpeed = 0f;
@@ -46,6 +48,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
 
     //Jump
     [Header("Jump")]
+    [Range(1, 10)]
     public float jumpSpeed = 5f;
     public float jumpDuration = 0.3f;
     private float _jumpCountdown = 0.1f;
@@ -67,9 +70,10 @@ public class PlayerRigidBodyEntity : MonoBehaviour
     public bool isGrabing = false;
     public GameObject ressourceItem;
     public GameObject holdItem;
-    private bool holdItem1 = false;
-    private bool holdItem2 = false;
-    private bool holdItem3 = false;
+    private bool holdFBase = false;
+    private bool holdFuel = false;
+    private bool holdMediBase = false;
+    private bool holdMedikit = false;
 
     //Resurrect
     [Header("Resurrect")]
@@ -79,11 +83,13 @@ public class PlayerRigidBodyEntity : MonoBehaviour
     //UI Above player : Gives information about his state or what he holds
     [Header("Player UI")]
     [SerializeField]
-    private GameObject spriteItem1;
+    private GameObject fuelBaseSprite;
     [SerializeField]
-    private GameObject spriteItem2;
+    private GameObject fuelJerrycanSprite;
     [SerializeField]
-    private GameObject spriteItem3;
+    private GameObject mediBaseSprite;
+    [SerializeField]
+    private GameObject medikitSprite;
     [SerializeField]
     private GameObject KOSprite;
 
@@ -96,11 +102,13 @@ public class PlayerRigidBodyEntity : MonoBehaviour
     public bool isDown = false;
 
     [SerializeField]
-    private GameObject prefabItem1;
+    private GameObject fuelBasePrefab;
     [SerializeField]
-    private GameObject prefabItem2;
+    private GameObject fuelJerrycanPrefab;
     [SerializeField]
-    private GameObject prefabItem3;
+    private GameObject MediBasePrefab;
+    [SerializeField]
+    private GameObject MedikitPrefab;
     public GameObject playerHands;
 
 
@@ -135,22 +143,24 @@ public class PlayerRigidBodyEntity : MonoBehaviour
     void Start()
     {
         //rigidBody.gravityscale = 0f;
-        spriteItem1.SetActive(false);
-        spriteItem2.SetActive(false);
-        spriteItem3.SetActive(false);
+        fuelBaseSprite.SetActive(false);
+        fuelJerrycanSprite.SetActive(false);
+        medikitSprite.SetActive(false);
         KOSprite.SetActive(false);
         oxygenBar.enabled = false;
 
         oxygenAmount = maxOxygenAmount;
         halfBox = new Vector3(0.5f, 0.5f, 0.5f);
 
-       
+        Physics.IgnoreLayerCollision(9, 9);
         fullColor = myMesh.material.color;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        
+
         if (isTeleporting)
         {
             elapsedTime += Time.deltaTime;
@@ -162,7 +172,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             if(elapsedTime >= 0.5)
             {
                 myMesh.material.color = Color.Lerp(invisibleColor, fullColor, elapsedTime / 1f);
-                transform.position = new Vector3(myTeleport.arrival.transform.position.x, myTeleport.arrival.transform.position.y, transform.position.z);
+                transform.position = new Vector3(myTeleport.arrival.transform.position.x, myTeleport.arrival.transform.position.y, myTeleport.arrival.transform.position.z -2);
             }
 
             if (teleportCountDown <= 0)
@@ -207,6 +217,11 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             LoseOxygen();
             if (oxygenBar.enabled) return;
             oxygenBar.enabled = true;
+        }
+        else if (!isOutside)
+        {
+            if (!oxygenBar.enabled) return;
+            oxygenBar.enabled = false;
         }
     }
 
@@ -350,9 +365,20 @@ public class PlayerRigidBodyEntity : MonoBehaviour
                 {
                     myTeleport = hit.transform.GetComponent<Teleporter>();
                     StartTeleport();
-                    //transform.position = hit.transform.GetComponent<Teleporter>().arrival.transform.position;
+                    isOutside = false;
+                   
                 }
 
+            }
+            else if(hit.transform.tag == "ExplorationTeleporter")
+            {
+                if (hit.transform.GetComponent<Teleporter>().isActivated)
+                {
+                    myTeleport = hit.transform.GetComponent<Teleporter>();
+                    StartTeleport();
+                    isOutside = true;
+                    
+                }
             }
         }
     }
@@ -391,14 +417,21 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             interactItem.GetComponent<MovementPanel>().user = this;
             interactItem.GetComponent<MovementPanel>().OnUsed();
             isInteracting = true;
-
-            
         }
-        else
+        else if (interactItem.gameObject.tag == "GunPanel")
+        {
+            interactItem.GetComponent<GunPanel>().user = this;
+            interactItem.GetComponent<GunPanel>().OnUsed();
+            isInteracting = true;
+        }
+        else if (interactItem.gameObject.tag == "CraftTable")
         {
             //interactItem.QTE(); -----> Lancer la fonction de QTE
-            interactQTE.StartQTE();
+            //interactQTE.StartQTE();
             Debug.Log("Lancemennt du QTE");
+            interactItem.GetComponent<CraftTable>().user = this;
+            interactItem.GetComponent<CraftTable>().OnUsed();
+            Spinner.instance.LaunchWheel();
             isInteracting = true;
         }
 
@@ -416,12 +449,25 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             isInteracting = false;
             interactItem.GetComponent<MovementPanel>().OnDropped();
         }
+        else if (interactItem.gameObject.tag == "GunPanel")
+        {
+            isInteracting = false;
+            interactItem.GetComponent<GunPanel>().OnDropped();
+        }
+        else if (interactItem.gameObject.tag == "CraftTable")
+        {
+            //interactItem.QTE(); -----> Lancer la fonction de QTE
+            //interactQTE.StartQTE();
+            Debug.Log("Lancemennt du QTE");
+            interactItem.GetComponent<CraftTable>().OnDropped();
+            Spinner.instance.StopWheel();
+            isInteracting = false;
+        }
         else
         {
             if (interactQTE == null) return;
 
             Debug.Log("Fin du QTE, peut bouger à nouveau");
-            interactQTE.EndQTE();
             isInteracting = false;
         }
 
@@ -437,35 +483,53 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         Debug.Log("Grab");
         //holdItem = ressourceItem;
         //ressourceItem = null;
-        if(ressourceItem.gameObject.tag == "RessourceItem")
+        if(ressourceItem.gameObject.tag == "FuelBase")
         {
-            holdItem1 = true;
-            holdItem2 = false;
-            holdItem3 = false;
+            holdFBase = true;
+            holdFuel = false;
+            holdMedikit = false;
+            holdMediBase = false;
 
-            spriteItem1.SetActive(true);
-            spriteItem2.SetActive(false);
-            spriteItem3.SetActive(false);
+            fuelBaseSprite.SetActive(true);
+            fuelJerrycanSprite.SetActive(false);
+            medikitSprite.SetActive(false);
+            mediBaseSprite.SetActive(false);
         }
-        else if (ressourceItem.gameObject.tag == "RessourceItem2")
+        else if (ressourceItem.gameObject.tag == "GasCan")
         {
-            holdItem2 = true;
-            holdItem1 = false;
-            holdItem3 = false;
+            holdFuel = true;
+            holdFBase = false;
+            holdMedikit = false;
+            holdMediBase = false;
 
-            spriteItem1.SetActive(false);
-            spriteItem2.SetActive(true);
-            spriteItem3.SetActive(false);
+            fuelBaseSprite.SetActive(false);
+            fuelJerrycanSprite.SetActive(true);
+            medikitSprite.SetActive(false);
+            mediBaseSprite.SetActive(false);
         }
-        else if (ressourceItem.gameObject.tag == "RessourceItem3")
+        else if (ressourceItem.gameObject.tag == "MedicBase")
         {
-            holdItem3 = true;
-            holdItem1 = false;
-            holdItem2 = false;
+            holdFuel = false;
+            holdFBase = false;
+            holdMedikit = false;
+            holdMediBase = true;
 
-            spriteItem1.SetActive(false);
-            spriteItem2.SetActive(false);
-            spriteItem3.SetActive(true);
+            fuelBaseSprite.SetActive(false);
+            fuelJerrycanSprite.SetActive(false);
+            medikitSprite.SetActive(false);
+            mediBaseSprite.SetActive(true);
+        }
+        else if (ressourceItem.gameObject.tag == "MedicKit")
+        {
+            holdMedikit = true;
+            holdFBase = false;
+            holdFuel = false;
+            holdMediBase = false;
+
+            fuelBaseSprite.SetActive(false);
+            fuelJerrycanSprite.SetActive(false);
+            medikitSprite.SetActive(true);
+            mediBaseSprite.SetActive(false);
         }
         Destroy(ressourceItem.gameObject);
         //holdItem.transform.position = playerHands.transform.position;
@@ -482,37 +546,45 @@ public class PlayerRigidBodyEntity : MonoBehaviour
 
         /*holdItem.transform.parent = null;
         holdItem = null;*/
-        if (holdItem1)
+        if (holdFBase)
         {
             Debug.Log("Reposer");
-            spriteItem1.SetActive(false);
+            fuelBaseSprite.SetActive(false);
             GameObject newItem;
-            newItem = Instantiate(prefabItem1);
+            newItem = Instantiate(fuelBasePrefab);
             newItem.transform.position = playerHands.transform.position;
-            holdItem1 = false;
+            holdFBase = false;
         }
-        else if (holdItem2)
+        else if (holdFuel)
         {
-            spriteItem2.SetActive(false);
+            fuelJerrycanSprite.SetActive(false);
             GameObject newItem;
-            newItem = Instantiate(prefabItem2);
+            newItem = Instantiate(fuelJerrycanPrefab);
             newItem.transform.position = playerHands.transform.position;
-            holdItem2 = false;
+            holdFuel = false;
         }
-        else if (holdItem3)
+        else if (holdMediBase)
         {
-            spriteItem3.SetActive(false);
+            mediBaseSprite.SetActive(false);
+            GameObject newItem;
+            newItem = Instantiate(MediBasePrefab);
+            newItem.transform.position = playerHands.transform.position;
+            holdMediBase = false;
+        }
+        else if (holdMedikit)
+        {
+            medikitSprite.SetActive(false);
             if (!canResurrect)
             {
                 GameObject newItem;
-                newItem = Instantiate(prefabItem3);
+                newItem = Instantiate(MedikitPrefab);
                 newItem.transform.position = playerHands.transform.position;
-                holdItem3 = false;
+                holdMedikit = false;
             }
             else
             {
                 ActionResurrect();
-                holdItem3 = false;
+                holdMedikit = false;
             }
         }
 
@@ -521,24 +593,16 @@ public class PlayerRigidBodyEntity : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if(collision.gameObject.tag == "RessourceItem" || collision.gameObject.tag == "RessourceItem2" || collision.gameObject.tag == "RessourceItem3")
+        
+        if(collision.gameObject.tag == "FuelBase" || collision.gameObject.tag == "GasCan" || collision.gameObject.tag == "MedicBase" || collision.gameObject.tag == "MedicKit")
         {
             canGrab = true;
             if(!isGrabing)
                 ressourceItem = collision.gameObject;
         }
-        else if(collision.gameObject.tag == "InteractItem")
-        {
-            canInteractQTE = true;
-            if (!isInteracting)
-            {
-                interactItem = collision.gameObject;
-                interactQTE = collision.gameObject.GetComponent<InteractItem>();
-            }
-        }
         else if(collision.gameObject.tag == "Player")
         {
-            if (collision.gameObject.GetComponent<PlayerRigidBodyEntity>().isDown && holdItem3)
+            if (collision.gameObject.GetComponent<PlayerRigidBodyEntity>().isDown && holdMedikit)
             {
                 canResurrect = true;
                 downedPlayer = collision.gameObject.GetComponent<PlayerRigidBodyEntity>();
@@ -552,22 +616,33 @@ public class PlayerRigidBodyEntity : MonoBehaviour
                 interactItem = collision.gameObject;
             }
         }
+        else if(collision.gameObject.tag == "GunPanel")
+        {
+            canInteractQTE = true;
+            if (!isInteracting)
+            {
+                interactItem = collision.gameObject;
+            }
+        }
+        else if (collision.gameObject.tag == "CraftTable")
+        {
+            canInteractQTE = true;
+            if (!isInteracting)
+            {
+                interactItem = collision.gameObject;
+            }
+        }
+
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.tag == "RessourceItem" || collision.gameObject.tag == "RessourceItem2" || collision.gameObject.tag == "RessourceItem3")
+        if (collision.gameObject.tag == "FuelBase" || collision.gameObject.tag == "GasCan" || collision.gameObject.tag == "MedicBase" || collision.gameObject.tag == "MedicKit")
         {
             canGrab = false;
             ressourceItem = null;
         }
-        else if (collision.gameObject.tag == "InteractItem")
-        {
-            canInteractQTE = false; ;
-            interactQTE = null;
-            interactItem = null;
-        }
-        else if (collision.gameObject.tag == "Player" && holdItem3)
+        else if (collision.gameObject.tag == "Player" && holdMedikit)
         {
             if (collision.gameObject.GetComponent<PlayerRigidBodyEntity>().isDown)
             {
@@ -575,6 +650,17 @@ public class PlayerRigidBodyEntity : MonoBehaviour
                 downedPlayer = null;
             }
         }
+        else if (collision.gameObject.tag == "MovePanel")
+        {
+            canInteractQTE = false;
+            interactItem = null;
+        }
+        else if (collision.gameObject.tag == "GunPanel")
+        {
+            canInteractQTE = false;
+            interactItem = null;
+        }
+
     }
     #endregion
 
@@ -630,6 +716,8 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         _isJumping = true;
         _jumpCountdown = jumpDuration;
         _isGrounded = false;
+
+        
     }
 
     public void StopJump()
@@ -651,7 +739,6 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             _verticalSpeed = jumpSpeed;
         }
     }
-
 
     #endregion
 
