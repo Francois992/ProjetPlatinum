@@ -39,7 +39,7 @@ public class UIManager : MonoBehaviour
         fuelJerrycanAmount = 0;
         ammoAmount = 0;
         repairKitAmount = 0;
-        scrapsAmount = 0;
+        scrapsAmount = 5;
 
         UpdateHUD();
     }

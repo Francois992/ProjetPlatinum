@@ -222,7 +222,7 @@ Transform:
   m_GameObject: {fileID: 3475748831304865360}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
   m_LocalPosition: {x: -0.37, y: -5.491165, z: 0}
-  m_LocalScale: {x: 10.560201, y: 10.560201, z: 10.560201}
+  m_LocalScale: {x: 21.516407, y: 20.172096, z: 10.560201}
   m_Children: []
   m_Father: {fileID: 3475748832698560140}
   m_RootOrder: 0
@@ -265,10 +265,10 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d8d0848aa9c8c494591f48daba414c3f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: ef2892dd4d08a784391278bbe83cfa8a, type: 3}
+  m_Color: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
@@ -287,8 +287,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.109262995, y: 1.4442616, z: 2.844827}
-  m_Center: {x: 0.0033681404, y: -0.27787077, z: 0.9359506}
+  m_Size: {x: 0.03335191, y: 1.3396935, z: 2.844827}
+  m_Center: {x: 0.00068821403, y: -0.3301548, z: 0.93595064}
 --- !u!54 &3475748831304865367
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c55f9b93e1977747b570b164f2c857f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theWheel: {fileID: 3475748832698560141}
+  isDoingQTE: 0
 --- !u!1 &3475748831743914819
 GameObject:
   m_ObjectHideFlags: 0
