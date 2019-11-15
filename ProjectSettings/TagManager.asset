@@ -27,6 +27,8 @@ TagManager:
   - CraftTable
   - Mecha
   - Bullet
+  - Mines
+  - Map
   layers:
   - Default
   - TransparentFX
