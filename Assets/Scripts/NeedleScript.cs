@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Rewired;
 
 public class NeedleScript : MonoBehaviour
 {
 
     public GameObject theWheel;
 
-    public PlayerController pOne;
-    public PlayerController pTwo;
+    public Player playerController;
+    
 
-    public PlayerRigidBodyEntity entityOne;
-    public PlayerRigidBodyEntity entityTwo;
-
+    public bool isDoingQTE = false;
+    
 
     private void Start()
     {
@@ -31,41 +31,39 @@ public class NeedleScript : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (entityOne.canInteractQTE)
+        if (playerController != null)
         {
-            entityOne.isInteracting = true;
-            if (pOne._mainPlayer.GetButtonDown("Action"))
-            {
-                entityOne.isInteracting = false;
+                Spinner.instance.LaunchWheel();
                 if (other.gameObject.CompareTag("Fuel"))
                 {
-                    Debug.Log("Addfuel");
-                    Spinner.instance.StopWheel();
+                    if (playerController.GetButtonDown("Shoot"))
+                    {
+                        UIManager.instance.ChangeInventory("Add", ref UIManager.instance.fuelJerrycanAmount, 1);
+                        UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.scrapsAmount, 1);
+                        
+                    }
                 }
-
+                    
+                /*
                 if (other.gameObject.CompareTag("Oxygen"))
                 {
                     Debug.Log("Addoxygen");
-                    Spinner.instance.isRotating = true;
-                    theWheel.SetActive(false);
+                    Spinner.instance.StopWheel();
                 }
 
                 if (other.gameObject.CompareTag("Ammo"))
                 {
                     Debug.Log("Addammo");
-                    Spinner.instance.isRotating = true;
-                    theWheel.SetActive(false);
+                    Spinner.instance.StopWheel();
                 }
 
                 if (other.gameObject.CompareTag("RepairKit"))
                 {
                     Debug.Log("Addrepairkit");
-                    Spinner.instance.isRotating = true;
-                    theWheel.SetActive(false);
-                }
-            }
+                    Spinner.instance.StopWheel();
+                }*/
+          
         }
-            Debug.Log("W is pushed");
             
 
         if (!Spinner.instance.isRotating)

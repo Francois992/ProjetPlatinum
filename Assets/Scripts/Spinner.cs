@@ -14,6 +14,11 @@ public class Spinner : MonoBehaviour
         instance = this;
     }
 
+    private void Start()
+    {
+        StopWheel();
+    }
+
     private void Update()
     {
         
