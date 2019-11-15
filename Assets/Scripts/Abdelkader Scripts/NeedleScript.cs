@@ -12,7 +12,10 @@ public class NeedleScript : MonoBehaviour
     
 
     public bool isDoingQTE = false;
-    
+
+
+    public UIAnimation UIAnimatorManager;
+
 
     private void Start()
     {
@@ -51,6 +54,7 @@ public class NeedleScript : MonoBehaviour
             {
                 if (playerController.GetButtonDown("Shoot"))
                 {
+                    UIAnimatorManager.LaunchAnimFuel();
                     UIManager.instance.ChangeInventory("Add", ref UIManager.instance.fuelJerrycanAmount, 1);
                     UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.scrapsAmount, 1);
                         
@@ -61,6 +65,7 @@ public class NeedleScript : MonoBehaviour
             {
                 if (playerController.GetButtonDown("Shoot"))
                 {
+                    UIAnimatorManager.LaunchAnimOxygen();
                     UIManager.instance.ChangeInventory("Add", ref UIManager.instance.scubaTankAmount, 1);
                     UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.scrapsAmount, 1);
 
@@ -71,6 +76,7 @@ public class NeedleScript : MonoBehaviour
             {
                 if (playerController.GetButtonDown("Shoot"))
                 {
+                    UIAnimatorManager.LaunchAnimAmmo();
                     UIManager.instance.ChangeInventory("Add", ref UIManager.instance.ammoAmount, 1);
                     UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.scrapsAmount, 1);
 
@@ -81,6 +87,7 @@ public class NeedleScript : MonoBehaviour
             {
                 if (playerController.GetButtonDown("Shoot"))
                 {
+                    UIAnimatorManager.LaunchAnimRepairKit();
                     UIManager.instance.ChangeInventory("Add", ref UIManager.instance.repairKitAmount, 1);
                     UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.scrapsAmount, 1);
 

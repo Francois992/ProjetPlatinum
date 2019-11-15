@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Mine : MonoBehaviour
 {
+
+    public GameObject explosion;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +36,8 @@ public class Mine : MonoBehaviour
 
     public void Explode()
     {
+        GameObject thisExplosion = Instantiate(explosion, transform.position, transform.rotation);
+        Destroy(thisExplosion, 0.5f);
         Destroy(gameObject);
     }
 }
