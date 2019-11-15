@@ -654,7 +654,7 @@ GameObject:
   - component: {fileID: 3547069098899622176}
   - component: {fileID: 5862708544116796087}
   - component: {fileID: 2106448626746402067}
-  - component: {fileID: 2562275288290749976}
+  - component: {fileID: 5853065966674716939}
   m_Layer: 11
   m_Name: Platform
   m_TagString: Untagged
@@ -722,8 +722,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &2562275288290749976
-BoxCollider:
+--- !u!64 &5853065966674716939
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -732,9 +732,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -1919812241983488695, guid: 8b7bfcdfd2d10804b8f467ecabaf3b92, type: 3}
 --- !u!1 &1240127853367124972
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,7 +747,7 @@ GameObject:
   - component: {fileID: 4133083335406100067}
   - component: {fileID: 9110869501119029035}
   - component: {fileID: 6149463993182240932}
-  - component: {fileID: 6079514406992711939}
+  - component: {fileID: 351437358562850206}
   m_Layer: 11
   m_Name: Cube (5)
   m_TagString: Untagged
@@ -814,8 +815,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &6079514406992711939
-BoxCollider:
+--- !u!64 &351437358562850206
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -824,9 +825,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -2450034535664709060, guid: 8b7bfcdfd2d10804b8f467ecabaf3b92, type: 3}
 --- !u!1 &1250775307567645003
 GameObject:
   m_ObjectHideFlags: 0
@@ -1563,7 +1565,7 @@ GameObject:
   - component: {fileID: 1159393413494842344}
   - component: {fileID: 3497402679701582404}
   - component: {fileID: 3448907133648718387}
-  - component: {fileID: 3326785072648422518}
+  - component: {fileID: 7132092098916433896}
   m_Layer: 11
   m_Name: Cube (10)
   m_TagString: Untagged
@@ -1631,8 +1633,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &3326785072648422518
-BoxCollider:
+--- !u!64 &7132092098916433896
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1641,9 +1643,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -2924696924951352463, guid: 8b7bfcdfd2d10804b8f467ecabaf3b92, type: 3}
 --- !u!1 &5343690926865391106
 GameObject:
   m_ObjectHideFlags: 0
@@ -1655,7 +1658,7 @@ GameObject:
   - component: {fileID: 7950394428642470711}
   - component: {fileID: 1227343595114053714}
   - component: {fileID: 8774076215400790216}
-  - component: {fileID: 7044557034663709302}
+  - component: {fileID: 6096029255125528839}
   m_Layer: 11
   m_Name: Cube (7)
   m_TagString: Untagged
@@ -1723,8 +1726,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &7044557034663709302
-BoxCollider:
+--- !u!64 &6096029255125528839
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1733,9 +1736,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 5616425539279878938, guid: 8b7bfcdfd2d10804b8f467ecabaf3b92, type: 3}
 --- !u!1 &5429974552402194414
 GameObject:
   m_ObjectHideFlags: 0
@@ -1747,7 +1751,7 @@ GameObject:
   - component: {fileID: 6565645731136287515}
   - component: {fileID: 509407268543488165}
   - component: {fileID: 162498477412928569}
-  - component: {fileID: 2277714956527654577}
+  - component: {fileID: 7355863437694084474}
   m_Layer: 11
   m_Name: Cube (6)
   m_TagString: Untagged
@@ -1815,8 +1819,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &2277714956527654577
-BoxCollider:
+--- !u!64 &7355863437694084474
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1825,9 +1829,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -4702072340123411596, guid: 8b7bfcdfd2d10804b8f467ecabaf3b92, type: 3}
 --- !u!1 &5515896462461073469
 GameObject:
   m_ObjectHideFlags: 0
@@ -1839,7 +1844,7 @@ GameObject:
   - component: {fileID: 4747760244201490827}
   - component: {fileID: 4453248478221076721}
   - component: {fileID: 5919183480045008797}
-  - component: {fileID: 5009817270167787266}
+  - component: {fileID: 8146274020655659578}
   m_Layer: 11
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -1907,8 +1912,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &5009817270167787266
-BoxCollider:
+--- !u!64 &8146274020655659578
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1917,9 +1922,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 1360993972601723544, guid: 8b7bfcdfd2d10804b8f467ecabaf3b92, type: 3}
 --- !u!1 &5857985889960944598
 GameObject:
   m_ObjectHideFlags: 0
@@ -1962,7 +1968,7 @@ GameObject:
   - component: {fileID: 4745315049164976678}
   - component: {fileID: 176288653111098985}
   - component: {fileID: 479588597689262009}
-  - component: {fileID: 8328863113291650546}
+  - component: {fileID: 8667883953420392705}
   m_Layer: 11
   m_Name: Cube (8)
   m_TagString: Untagged
@@ -2030,8 +2036,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8328863113291650546
-BoxCollider:
+--- !u!64 &8667883953420392705
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2040,9 +2046,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -1556088948227603920, guid: 8b7bfcdfd2d10804b8f467ecabaf3b92, type: 3}
 --- !u!1 &6090170032442598667
 GameObject:
   m_ObjectHideFlags: 0
@@ -2161,7 +2168,7 @@ GameObject:
   - component: {fileID: 6457451972178964274}
   - component: {fileID: 1425164475873664972}
   - component: {fileID: 615151930710109623}
-  - component: {fileID: 5921681854942606643}
+  - component: {fileID: 9089115295168540769}
   m_Layer: 11
   m_Name: LD
   m_TagString: Untagged
@@ -2229,8 +2236,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &5921681854942606643
-BoxCollider:
+--- !u!64 &9089115295168540769
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2239,9 +2246,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 8952508986266414589, guid: 8b7bfcdfd2d10804b8f467ecabaf3b92, type: 3}
 --- !u!1 &6829726623746876870
 GameObject:
   m_ObjectHideFlags: 0
@@ -2951,7 +2959,7 @@ GameObject:
   - component: {fileID: 5666309007095610610}
   - component: {fileID: 291454147585598875}
   - component: {fileID: 2300496723613802167}
-  - component: {fileID: 4469714866263833627}
+  - component: {fileID: 7955160896222342516}
   m_Layer: 11
   m_Name: Platform (1)
   m_TagString: Untagged
@@ -3019,8 +3027,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &4469714866263833627
-BoxCollider:
+--- !u!64 &7955160896222342516
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3029,9 +3037,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -3710652624261060222, guid: 8b7bfcdfd2d10804b8f467ecabaf3b92, type: 3}
 --- !u!1001 &1329646567
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3057,7 +3066,7 @@ PrefabInstance:
     - target: {fileID: 3698542203318886903, guid: 726d7b59e9d0cd34080236d35839b120,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3698542203318886903, guid: 726d7b59e9d0cd34080236d35839b120,
         type: 3}
@@ -3197,12 +3206,12 @@ PrefabInstance:
     - target: {fileID: 1860121037596510476, guid: 5891679bb5bfac246813498acf078e66,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 1860121037596510476, guid: 5891679bb5bfac246813498acf078e66,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.77
+      value: 1.01
       objectReference: {fileID: 0}
     - target: {fileID: 1860121037596510476, guid: 5891679bb5bfac246813498acf078e66,
         type: 3}
@@ -3454,12 +3463,12 @@ PrefabInstance:
     - target: {fileID: 1860121037596510476, guid: 5891679bb5bfac246813498acf078e66,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.73
+      value: -4.511
       objectReference: {fileID: 0}
     - target: {fileID: 1860121037596510476, guid: 5891679bb5bfac246813498acf078e66,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.73
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: 1860121037596510476, guid: 5891679bb5bfac246813498acf078e66,
         type: 3}
@@ -3529,27 +3538,27 @@ PrefabInstance:
     - target: {fileID: 3382477461508459513, guid: c96c0c1f0ffe2164aaf3456857746d58,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3382477461508459513, guid: c96c0c1f0ffe2164aaf3456857746d58,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.34
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3382477461508459513, guid: c96c0c1f0ffe2164aaf3456857746d58,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4357279720496681848, guid: c96c0c1f0ffe2164aaf3456857746d58,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.88
+      value: 6.46
       objectReference: {fileID: 0}
     - target: {fileID: 4357279720496681848, guid: c96c0c1f0ffe2164aaf3456857746d58,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.72
       objectReference: {fileID: 0}
     - target: {fileID: 4357279720496681848, guid: c96c0c1f0ffe2164aaf3456857746d58,
         type: 3}
@@ -3723,6 +3732,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 126
+      objectReference: {fileID: 0}
+    - target: {fileID: 4574446526046440152, guid: 6beebcd75a400094d98448108ea1519b,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6beebcd75a400094d98448108ea1519b, type: 3}
