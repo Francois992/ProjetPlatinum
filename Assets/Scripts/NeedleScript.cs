@@ -6,8 +6,7 @@ using Rewired;
 
 public class NeedleScript : MonoBehaviour
 {
-
-    public GameObject theWheel;
+    
 
     public Player playerController;
     
@@ -17,7 +16,7 @@ public class NeedleScript : MonoBehaviour
 
     private void Start()
     {
-
+        GetComponent<SpriteRenderer>().enabled = false;
     }
 
     private void Update()
@@ -33,36 +32,61 @@ public class NeedleScript : MonoBehaviour
     {
         if (playerController != null)
         {
-                Spinner.instance.LaunchWheel();
-                if (other.gameObject.CompareTag("Fuel"))
+            if (!isDoingQTE)
+            {
+                GetComponent<SpriteRenderer>().enabled = false;
+                return;
+            }
+            else
+            {
+                GetComponent<SpriteRenderer>().enabled = true;
+            }
+            if (UIManager.instance.scrapsAmount <= 0)
+            {
+                return;
+            }
+            GetComponent<SpriteRenderer>().enabled = true;
+            Spinner.instance.LaunchWheel();
+            if (other.gameObject.CompareTag("Fuel"))
+            {
+                if (playerController.GetButtonDown("Shoot"))
                 {
-                    if (playerController.GetButtonDown("Shoot"))
-                    {
-                        UIManager.instance.ChangeInventory("Add", ref UIManager.instance.fuelJerrycanAmount, 1);
-                        UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.scrapsAmount, 1);
+                    UIManager.instance.ChangeInventory("Add", ref UIManager.instance.fuelJerrycanAmount, 1);
+                    UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.scrapsAmount, 1);
                         
-                    }
                 }
-                    
-                /*
-                if (other.gameObject.CompareTag("Oxygen"))
-                {
-                    Debug.Log("Addoxygen");
-                    Spinner.instance.StopWheel();
-                }
+            }
 
-                if (other.gameObject.CompareTag("Ammo"))
+            if (other.gameObject.CompareTag("Oxygen"))
+            {
+                if (playerController.GetButtonDown("Shoot"))
                 {
-                    Debug.Log("Addammo");
-                    Spinner.instance.StopWheel();
-                }
+                    UIManager.instance.ChangeInventory("Add", ref UIManager.instance.scubaTankAmount, 1);
+                    UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.scrapsAmount, 1);
 
-                if (other.gameObject.CompareTag("RepairKit"))
+                }
+            }
+
+            if (other.gameObject.CompareTag("Ammo"))
+            {
+                if (playerController.GetButtonDown("Shoot"))
                 {
-                    Debug.Log("Addrepairkit");
-                    Spinner.instance.StopWheel();
-                }*/
-          
+                    UIManager.instance.ChangeInventory("Add", ref UIManager.instance.ammoAmount, 1);
+                    UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.scrapsAmount, 1);
+
+                }
+            }
+
+            if (other.gameObject.CompareTag("RepairKit"))
+            {
+                if (playerController.GetButtonDown("Shoot"))
+                {
+                    UIManager.instance.ChangeInventory("Add", ref UIManager.instance.repairKitAmount, 1);
+                    UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.scrapsAmount, 1);
+
+                }
+            }
+
         }
             
 
