@@ -31,6 +31,7 @@ public class CraftTable : MonoBehaviour
     public void OnDropped()
     {
         user.isInteracting = false;
+        user = null;
         NeedleController.playerController = null;
         NeedleController.isDoingQTE = false;
     }
