@@ -12,10 +12,7 @@ public class PlayerController : MonoBehaviour
 
     public Player _mainPlayer;
 
-
     public string playerID;
-
-
 
     // Start is called before the first frame update
     void Start()

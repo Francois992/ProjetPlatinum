@@ -10,8 +10,6 @@ public class GunPanel : MonoBehaviour
 
     public GunController gunController;
 
-    public Turret myTurret;
-
     public Canvas myUi;
 
     private bool reload = false;
