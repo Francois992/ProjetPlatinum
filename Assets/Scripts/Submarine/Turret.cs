@@ -44,42 +44,7 @@ public class Turret : MonoBehaviour
     {     
         if (target.transform.position.x >= Canon.transform.position.x)
         {
-            float newPosX = target.transform.position.x;
-            float newPosY = target.transform.position.y;
-
-            if(_dirX != 0)
-            {
-                newPosX = target.transform.position.x + _dirX;
-                newPosX = Mathf.Clamp(newPosX, Canon.transform.position.x + minOffsetX, Canon.transform.position.x + maxOffsetX);
-            }
-            else
-            {
-                newPosX = target.transform.position.x;
-            }
-
-            if (_dirY != 0)
-            {
-                newPosY = target.transform.position.y + _dirY;
-                newPosY = Mathf.Clamp(newPosY, Canon.transform.position.y - minOffsetY, Canon.transform.position.y + maxOffsetY);
-            }
-            else
-            {
-                newPosY = target.transform.position.y;
-            }
-
-
-            Vector3 newPos = new Vector3(newPosX, newPosY, target.transform.position.z);
-            target.transform.position = Vector3.MoveTowards(target.transform.position, newPos, targetSpeed * Time.deltaTime);
-
-            Canon.transform.LookAt(target.transform);
-
-            float rotX = Canon.transform.eulerAngles.x;
-
-            if (rotX >= 180) rotX -= 360;
-
-            rotX = Mathf.Clamp(rotX, minCanonRot, maxCanonRot);
-
-            Canon.transform.localRotation = Quaternion.Euler(rotX, Canon.transform.eulerAngles.y, Canon.transform.eulerAngles.z);
+            UpdateRot();
         }
 
         if (hasShot)
@@ -95,6 +60,46 @@ public class Turret : MonoBehaviour
             flash.Stop();
         }
                 
+    }
+
+    private void UpdateRot()
+    {
+        float newPosX = target.transform.position.x;
+        float newPosY = target.transform.position.y;
+
+        if (_dirX != 0)
+        {
+            newPosX = target.transform.position.x + _dirX;
+            newPosX = Mathf.Clamp(newPosX, Canon.transform.position.x + minOffsetX, Canon.transform.position.x + maxOffsetX);
+        }
+        else
+        {
+            newPosX = target.transform.position.x;
+        }
+
+        if (_dirY != 0)
+        {
+            newPosY = target.transform.position.y + _dirY;
+            newPosY = Mathf.Clamp(newPosY, Canon.transform.position.y - minOffsetY, Canon.transform.position.y + maxOffsetY);
+        }
+        else
+        {
+            newPosY = target.transform.position.y;
+        }
+
+
+        Vector3 newPos = new Vector3(newPosX, newPosY, target.transform.position.z);
+        target.transform.position = Vector3.MoveTowards(target.transform.position, newPos, targetSpeed * Time.deltaTime);
+
+        Canon.transform.LookAt(target.transform);
+
+        float rotX = Canon.transform.eulerAngles.x;
+
+        if (rotX >= 180) rotX -= 360;
+
+        rotX = Mathf.Clamp(rotX, minCanonRot, maxCanonRot);
+
+        Canon.transform.localRotation = Quaternion.Euler(rotX, Canon.transform.eulerAngles.y, Canon.transform.eulerAngles.z);
     }
 
     public void Action()

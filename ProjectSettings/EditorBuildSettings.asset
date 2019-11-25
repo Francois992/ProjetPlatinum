@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Francois.unity
     guid: 4a9fe619dd47bc942b05614458c58c74
+  - enabled: 1
+    path: Assets/Scenes/LD Alpha.unity
+    guid: 82828b0e9cd0ac74bb37065fe08dc799
   m_configObjects: {}
