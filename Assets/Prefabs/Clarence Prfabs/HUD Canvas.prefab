@@ -725,6 +725,7 @@ GameObject:
   - component: {fileID: 3103578414811056892}
   - component: {fileID: 3103578414811056893}
   - component: {fileID: 3103578414811056889}
+  - component: {fileID: 4392143375234596877}
   m_Layer: 5
   m_Name: HUD Canvas
   m_TagString: Untagged
@@ -838,6 +839,25 @@ MonoBehaviour:
   ammoAmount: 0
   repairKitAmount: 0
   scrapsAmount: 0
+--- !u!95 &4392143375234596877
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3103578414811056894}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fa6f8370a19be9a4f9e9ac73a1c3da14, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3103578414811727446
 GameObject:
   m_ObjectHideFlags: 0

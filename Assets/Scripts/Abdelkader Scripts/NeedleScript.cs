@@ -46,6 +46,7 @@ public class NeedleScript : MonoBehaviour
             }
             if (UIManager.instance.scrapsAmount <= 0)
             {
+                UIManager.instance.UIAnimator.SetTrigger("NoScraps");
                 return;
             }
             GetComponent<SpriteRenderer>().enabled = true;
@@ -54,7 +55,8 @@ public class NeedleScript : MonoBehaviour
             {
                 if (playerController.GetButtonDown("Shoot"))
                 {
-                    UIAnimatorManager.LaunchAnimFuel();
+                    //UIAnimatorManager.LaunchAnimFuel();
+                    UIManager.instance.UIAnimator.SetTrigger("AddFuel");
                     UIManager.instance.ChangeInventory("Add", ref UIManager.instance.fuelJerrycanAmount, 1);
                     UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.scrapsAmount, 1);
                         
@@ -65,7 +67,8 @@ public class NeedleScript : MonoBehaviour
             {
                 if (playerController.GetButtonDown("Shoot"))
                 {
-                    UIAnimatorManager.LaunchAnimOxygen();
+                    //UIAnimatorManager.LaunchAnimOxygen();
+                    UIManager.instance.UIAnimator.SetTrigger("AddOxygen");
                     UIManager.instance.ChangeInventory("Add", ref UIManager.instance.scubaTankAmount, 1);
                     UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.scrapsAmount, 1);
 
@@ -76,7 +79,8 @@ public class NeedleScript : MonoBehaviour
             {
                 if (playerController.GetButtonDown("Shoot"))
                 {
-                    UIAnimatorManager.LaunchAnimAmmo();
+                    //UIAnimatorManager.LaunchAnimAmmo();
+                    UIManager.instance.UIAnimator.SetTrigger("AddAmmo");
                     UIManager.instance.ChangeInventory("Add", ref UIManager.instance.ammoAmount, 1);
                     UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.scrapsAmount, 1);
 
@@ -87,7 +91,8 @@ public class NeedleScript : MonoBehaviour
             {
                 if (playerController.GetButtonDown("Shoot"))
                 {
-                    UIAnimatorManager.LaunchAnimRepairKit();
+                    //UIAnimatorManager.LaunchAnimRepairKit();
+                    UIManager.instance.UIAnimator.SetTrigger("AddRepairKit");
                     UIManager.instance.ChangeInventory("Add", ref UIManager.instance.repairKitAmount, 1);
                     UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.scrapsAmount, 1);
 
