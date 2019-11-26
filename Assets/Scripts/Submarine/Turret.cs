@@ -104,12 +104,14 @@ public class Turret : MonoBehaviour
 
     public void Action()
     {
-        if(!hasShot) Shoot();
+        if (!hasShot && UIManager.instance.ammoAmount > 0) Shoot();
+        else if (!hasShot) UIManager.instance.UIAnimator.SetTrigger("NoAmmo");
     }
 
     private void Shoot()
     {
         hasShot = true;
+        UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.ammoAmount, 1);
         Instantiate(bullet, muzzle.transform.position, Canon.transform.rotation);
         panel.OnShoot();
         flash.Play();

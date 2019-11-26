@@ -40,7 +40,7 @@ public class UIManager : MonoBehaviour
         UIAnimator = GetComponent<Animator>();
         scubaTankAmount = 0;
         fuelJerrycanAmount = 0;
-        ammoAmount = 0;
+        ammoAmount = 5;
         repairKitAmount = 0;
         scrapsAmount = 5;
 

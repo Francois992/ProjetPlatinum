@@ -37,11 +37,11 @@ public class ButtonFeedback : MonoBehaviour
             {
                 xButton.SetActive(false);
                 redCross.SetActive(false);
-                InteractButton.SetActive(true);
+                if(gameObject.tag == "CraftTable") InteractButton.SetActive(true);
             }
             else
             {
-                if(this.gameObject.tag == "CraftTable")
+                if(gameObject.tag == "CraftTable")
                 {
                     if(UIManager.instance.scrapsAmount > 0)
                     {
@@ -52,7 +52,7 @@ public class ButtonFeedback : MonoBehaviour
                         redCross.SetActive(true);
                     }
                 }
-                else if (this.gameObject.tag == "GunPanel")
+                else if (gameObject.tag == "GunPanel")
                 {
                     if (UIManager.instance.ammoAmount > 0)
                     {
