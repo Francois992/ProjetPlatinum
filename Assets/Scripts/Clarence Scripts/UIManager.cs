@@ -27,6 +27,7 @@ public class UIManager : MonoBehaviour
 
     public static UIManager instance;
 
+    public Animator UIAnimator;
 
     private void Awake()
     {
@@ -36,6 +37,7 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        UIAnimator = GetComponent<Animator>();
         scubaTankAmount = 0;
         fuelJerrycanAmount = 0;
         ammoAmount = 0;
