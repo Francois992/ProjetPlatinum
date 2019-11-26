@@ -14372,6 +14372,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mecha
       objectReference: {fileID: 0}
+    - target: {fileID: 913655196, guid: 51870300cbd77d744948b0a169fc8fd8, type: 3}
+      propertyPath: speedMax
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1761311726077727072, guid: 51870300cbd77d744948b0a169fc8fd8,
         type: 3}
       propertyPath: m_LocalPosition.x
