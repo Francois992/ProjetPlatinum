@@ -7304,6 +7304,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 931194799}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!198 &971656499 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3606357197781883952, guid: 51870300cbd77d744948b0a169fc8fd8,
+    type: 3}
+  m_PrefabInstance: {fileID: 954889016011067001}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &984792288
 GameObject:
   m_ObjectHideFlags: 0
@@ -8627,6 +8633,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204231164}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!198 &1207478919 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6833745543515953551, guid: 51870300cbd77d744948b0a169fc8fd8,
+    type: 3}
+  m_PrefabInstance: {fileID: 954889016011067001}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1228037280 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1549936776388095315, guid: 7bafe5d6158368a45841e79d60e68ebd,
@@ -16286,6 +16298,10 @@ PrefabInstance:
       value: Mecha
       objectReference: {fileID: 0}
     - target: {fileID: 913655196, guid: 51870300cbd77d744948b0a169fc8fd8, type: 3}
+      propertyPath: particles.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 913655196, guid: 51870300cbd77d744948b0a169fc8fd8, type: 3}
       propertyPath: CamDezoom
       value: -30
       objectReference: {fileID: 0}
@@ -16297,6 +16313,14 @@ PrefabInstance:
       propertyPath: wantedCamOffsetX
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 913655196, guid: 51870300cbd77d744948b0a169fc8fd8, type: 3}
+      propertyPath: particles.Array.data[0]
+      value: 
+      objectReference: {fileID: 1207478919}
+    - target: {fileID: 913655196, guid: 51870300cbd77d744948b0a169fc8fd8, type: 3}
+      propertyPath: particles.Array.data[1]
+      value: 
+      objectReference: {fileID: 971656499}
     - target: {fileID: 1761311726077727072, guid: 51870300cbd77d744948b0a169fc8fd8,
         type: 3}
       propertyPath: m_LocalPosition.x
