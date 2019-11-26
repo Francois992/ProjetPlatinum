@@ -23,10 +23,19 @@ public class UIAnimation : MonoBehaviour
     float initialScale_y = 1.0f;
 
     bool isAnimScraps = false;
+    bool isAnimEmptyScraps = false;
     bool isAnimFuel = false;
+    bool isAnimEmptyFuel = false;
     bool isAnimOxygen = false;
+    bool isAnimEmptyOxygen = false;
     bool isAnimAmmo = false;
+    bool isAnimEmptyAmmo = false;
     bool isAnimRepairKit = false;
+    bool isAnimEmptyRepairKit = false;
+
+
+    bool step1 = false;
+    bool step2 = false;
 
     // Start is called before the first frame update
     void Start()
@@ -43,12 +52,9 @@ public class UIAnimation : MonoBehaviour
         AnimAmmo();
         AnimRepairKit();
 
-        if (Input.GetKeyDown(KeyCode.Space)) LaunchAnimScraps();
-        if (Input.GetKeyDown(KeyCode.Space)) LaunchAnimFuel();
-        if (Input.GetKeyDown(KeyCode.Space)) LaunchAnimOxygen();
-        if (Input.GetKeyDown(KeyCode.Space)) LaunchAnimAmmo();
-        if (Input.GetKeyDown(KeyCode.Space)) LaunchAnimRepairKit();
-        
+        AnimEmpty();
+
+        if(Input.GetKeyDown(KeyCode.Space)) LaunchAnimNoScraps();
     }
 
     public void AnimScraps()
@@ -73,12 +79,43 @@ public class UIAnimation : MonoBehaviour
         
     }
 
+    public void AnimEmpty()
+    {
+        if (isAnimEmptyScraps)
+        {
+            animationTimer += Time.deltaTime * animationSpeed;
+            Vector3 initialPosition = scrap.transform.position;
+            if (animationTimer <= 1)
+            {
+                scrap.transform.position += new Vector3(Time.deltaTime * animationSpeed, Time.deltaTime * animationSpeed);
+            }
+            else
+            {
+                scrap.transform.position += new Vector3(Time.deltaTime * -animationSpeed, Time.deltaTime * -animationSpeed);
+            }
+            if (scrap.transform.position.x <= initialPosition.x && scrap.transform.position.y <= initialPosition.y)
+            {
+                scrap.transform.position = new Vector3(initialPosition.x, initialPosition.y);
+                isAnimScraps = false;
+            }
+        }
+    }
+
     public void LaunchAnimScraps()
     {
         if (isAnimScraps) return;
         animationTimer = 0f;
         isAnimScraps = true;
     }
+
+    public void LaunchAnimNoScraps()
+    {
+        if (isAnimEmptyScraps) return;
+        animationTimer = 0f;
+        isAnimEmptyScraps = true;
+    }
+
+    
 
     public void AnimFuel()
     {
