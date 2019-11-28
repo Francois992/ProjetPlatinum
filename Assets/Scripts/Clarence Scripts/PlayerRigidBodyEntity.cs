@@ -420,6 +420,11 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         }
         else if (interactItem.gameObject.tag == "GunPanel")
         {
+            if (UIManager.instance.ammoAmount <= 0)
+            {
+                UIManager.instance.UIAnimator.SetTrigger("NoAmmo");
+                return;
+            }
             interactItem.GetComponent<GunPanel>().user = this;
             interactItem.GetComponent<GunPanel>().OnUsed();
             isInteracting = true;
@@ -428,7 +433,11 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         {
             //interactItem.QTE(); -----> Lancer la fonction de QTE
             //interactQTE.StartQTE();
-            if (UIManager.instance.scrapsAmount <= 0) return;
+            if (UIManager.instance.scrapsAmount <= 0)
+            {
+                UIManager.instance.UIAnimator.SetTrigger("NoScraps");
+                return;
+            }
 
             Debug.Log("Lancemennt du QTE");
             interactItem.GetComponent<CraftTable>().user = this;
