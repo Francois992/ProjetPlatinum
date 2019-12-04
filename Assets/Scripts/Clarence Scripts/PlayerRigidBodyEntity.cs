@@ -431,11 +431,8 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         }
         else if (interactItem.gameObject.tag == "Tank")
         {
-            if(UIManager.instance.fuelJerrycanAmount <= 0)
-            {
-                UIManager.instance.UIAnimator.SetTrigger("NoFuel");
-                return;
-            }
+            FuelSystem.Instance.ReplenishFuel();
+            
         }
         else if (interactItem.gameObject.tag == "CraftTable")
         {

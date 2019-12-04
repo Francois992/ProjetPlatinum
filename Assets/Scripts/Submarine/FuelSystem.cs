@@ -5,6 +5,21 @@ using UnityEngine.UI;
 
 public class FuelSystem : MonoBehaviour
 {
+    private static FuelSystem _instance = null;
+
+    public static FuelSystem Instance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
+
+    private void Awake()
+    {
+        _instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
 
     public float startFuel = 0f; //starting fuel
     public float maxFuel = 100f;
@@ -58,7 +73,7 @@ public class FuelSystem : MonoBehaviour
         }
     }
 
-    private void ReplenishFuel()
+    public void ReplenishFuel()
     {
 
         if(UIManager.instance.fuelJerrycanAmount > 0)
@@ -70,7 +85,7 @@ public class FuelSystem : MonoBehaviour
         }
         else
         {
-            //UIManager.instance.UIAnimator.SetTrigger("NoFuel");
+            UIManager.instance.UIAnimator.SetTrigger("NoFuel");
         }
 
         UpdateUI();
