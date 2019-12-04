@@ -16,6 +16,8 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Text scrapsText;
 
+    [SerializeField] private Image Lifebar;
+
     public int scubaTankAmount;
     public int fuelJerrycanAmount;
     public int ammoAmount;
@@ -88,7 +90,11 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    
+    public void UpdateLifeBar()
+    {
+        Lifebar.fillAmount -= 0.1f;
+    }
+
     //Met à jour les éléments d'UI du HUD
     private void UpdateHUD()
     {

@@ -282,5 +282,6 @@ public class MechaManager : MonoBehaviour
     public void TakeDamage()
     {
         CameraShaker.Instance.startShake();
+        UIManager.instance.UpdateLifeBar();
     }
 }
