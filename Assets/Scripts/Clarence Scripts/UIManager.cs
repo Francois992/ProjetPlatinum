@@ -24,6 +24,8 @@ public class UIManager : MonoBehaviour
 
     private const int _MAXAMOUNT = 99;
     private const int _MINAMOUNT = 0;
+    public int _initialCost = 1;
+    public int _initialGain = 1;
 
     public static UIManager instance;
 
