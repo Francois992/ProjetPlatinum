@@ -16321,6 +16321,11 @@ PrefabInstance:
       propertyPath: particles.Array.data[1]
       value: 
       objectReference: {fileID: 971656499}
+    - target: {fileID: 6833745543515953551, guid: 51870300cbd77d744948b0a169fc8fd8,
+        type: 3}
+      propertyPath: SizeModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1761311726077727072, guid: 51870300cbd77d744948b0a169fc8fd8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16612,11 +16617,6 @@ PrefabInstance:
       propertyPath: maxZoom
       value: 80
       objectReference: {fileID: 0}
-    - target: {fileID: 6833745543515953551, guid: 51870300cbd77d744948b0a169fc8fd8,
-        type: 3}
-      propertyPath: SizeModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5921681854942606643, guid: 51870300cbd77d744948b0a169fc8fd8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 51870300cbd77d744948b0a169fc8fd8, type: 3}
@@ -16645,12 +16645,12 @@ PrefabInstance:
     - target: {fileID: 1549936776388095314, guid: 7bafe5d6158368a45841e79d60e68ebd,
         type: 3}
       propertyPath: isActivatedHor
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1549936776388095314, guid: 7bafe5d6158368a45841e79d60e68ebd,
         type: 3}
       propertyPath: isActivatedVer
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1549936776388095315, guid: 7bafe5d6158368a45841e79d60e68ebd,
         type: 3}
@@ -16798,7 +16798,7 @@ PrefabInstance:
     - target: {fileID: 1580716731890469502, guid: c7675225722da894c80d7d6634e7d68d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 184.61
+      value: 67.6
       objectReference: {fileID: 0}
     - target: {fileID: 1580716731890469502, guid: c7675225722da894c80d7d6634e7d68d,
         type: 3}

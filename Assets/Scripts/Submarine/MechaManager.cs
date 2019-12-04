@@ -281,6 +281,6 @@ public class MechaManager : MonoBehaviour
 
     public void TakeDamage()
     {
-        Debug.Log("ouille");
+        CameraShaker.Instance.startShake();
     }
 }
