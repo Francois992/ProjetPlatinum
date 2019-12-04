@@ -67,12 +67,15 @@ public class MechaManager : MonoBehaviour
 
     public multipleTargetCamera cameraMultiple;
 
+    public float fullLife = 15;
+    private float currentLife = 15;
+
     [SerializeField] private List<ParticleSystem> particles = new List<ParticleSystem>();
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentLife = fullLife;
     }
 
     // Update is called once per frame
@@ -281,6 +284,9 @@ public class MechaManager : MonoBehaviour
 
     public void TakeDamage()
     {
-        Debug.Log("ouille");
+        currentLife--;
+
+        CameraShaker.Instance.startShake();
+        UIManager.instance.UpdateLifeBar(currentLife/fullLife);
     }
 }
