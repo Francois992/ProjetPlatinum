@@ -29,6 +29,7 @@ TagManager:
   - Bullet
   - Mines
   - Map
+  - Tank
   layers:
   - Default
   - TransparentFX
