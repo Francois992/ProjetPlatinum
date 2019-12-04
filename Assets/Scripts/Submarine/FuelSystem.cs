@@ -9,8 +9,8 @@ public class FuelSystem : MonoBehaviour
     public float startFuel = 0f; //starting fuel
     public float maxFuel = 100f;
     public float fuelConsumptionRate = 0.2f;
-    public Slider fuelIndicatorSld;
-    public Text fuelIndicatorTxt;
+    public Image fuelIndicatorImg;
+    //public Text fuelIndicatorTxt;
 
     private float addedFuelAmount = 20f;
 
@@ -22,7 +22,7 @@ public class FuelSystem : MonoBehaviour
         if(startFuel > maxFuel)
             startFuel = maxFuel;
 
-        fuelIndicatorSld.maxValue = maxFuel;
+        //fuelIndicatorImg.fillAmount = maxFuel;
         UpdateUI();
     }
 
@@ -37,13 +37,15 @@ public class FuelSystem : MonoBehaviour
 
     void UpdateUI()
     {
-        fuelIndicatorSld.value = startFuel;
-        fuelIndicatorTxt.text = "Fuel left : " + startFuel.ToString("0") + " %";
+
+        fuelIndicatorImg.fillAmount = startFuel/100;
+        
+        //fuelIndicatorTxt.text = "Fuel left : " + startFuel.ToString("0") + " %";
 
         if (startFuel <= 0)
         {
             startFuel = 0;
-            fuelIndicatorTxt.text = "Out of fuel !!!";
+            //fuelIndicatorTxt.text = "Out of fuel !!!";
         }
     }
 
