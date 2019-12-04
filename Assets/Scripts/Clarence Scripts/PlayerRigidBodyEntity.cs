@@ -111,6 +111,8 @@ public class PlayerRigidBodyEntity : MonoBehaviour
     private GameObject MedikitPrefab;
     public GameObject playerHands;
 
+    public static List<PlayerRigidBodyEntity> playerList = new List<PlayerRigidBodyEntity>();
+
 
     //Debug
     [Header("Debug")]
@@ -143,6 +145,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
     void Start()
     {
         //rigidBody.gravityscale = 0f;
+        playerList.Add(this);
         fuelBaseSprite.SetActive(false);
         fuelJerrycanSprite.SetActive(false);
         medikitSprite.SetActive(false);
