@@ -60,12 +60,21 @@ public class FuelSystem : MonoBehaviour
 
     private void ResplenishFuel()
     {
-        startFuel += addedFuelAmount;
-        if (startFuel > maxFuel)
-            startFuel = maxFuel;
+
+        if(UIManager.instance.fuelJerrycanAmount > 0)
+        {
+            UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.fuelJerrycanAmount, UIManager.instance._initialCost);
+            startFuel += addedFuelAmount;
+            if (startFuel > maxFuel)
+                startFuel = maxFuel;
+        }
+        else
+        {
+            //UIManager.instance.UIAnimator.SetTrigger("NoFuel");
+        }
+
         UpdateUI();
-
-
+        
     }
 
     public void LoseFuel()

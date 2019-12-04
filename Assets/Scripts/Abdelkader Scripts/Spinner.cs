@@ -8,6 +8,7 @@ public class Spinner : MonoBehaviour
 
     public bool isRotating = true;
     public float speed;
+    public GameObject Needle;
 
     private void Awake()
     {
@@ -33,12 +34,14 @@ public class Spinner : MonoBehaviour
     {
         isRotating = true;
         this.gameObject.SetActive(true);
+        Needle.SetActive(true);
     }
 
     public void StopWheel()
     {
         isRotating = false;
         this.gameObject.SetActive(false);
+        Needle.SetActive(false);
     }
 
 }
