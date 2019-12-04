@@ -57,8 +57,8 @@ public class NeedleScript : MonoBehaviour
                 {
                     //UIAnimatorManager.LaunchAnimFuel();
                     UIManager.instance.UIAnimator.SetTrigger("AddFuel");
-                    UIManager.instance.ChangeInventory("Add", ref UIManager.instance.fuelJerrycanAmount, 1);
-                    UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.scrapsAmount, 1);
+                    UIManager.instance.ChangeInventory("Add", ref UIManager.instance.fuelJerrycanAmount, UIManager.instance._initialGain);
+                    UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.scrapsAmount, UIManager.instance._initialCost);
                         
                 }
             }
@@ -69,8 +69,8 @@ public class NeedleScript : MonoBehaviour
                 {
                     //UIAnimatorManager.LaunchAnimOxygen();
                     UIManager.instance.UIAnimator.SetTrigger("AddOxygen");
-                    UIManager.instance.ChangeInventory("Add", ref UIManager.instance.scubaTankAmount, 1);
-                    UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.scrapsAmount, 1);
+                    UIManager.instance.ChangeInventory("Add", ref UIManager.instance.scubaTankAmount, UIManager.instance._initialGain);
+                    UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.scrapsAmount, UIManager.instance._initialCost);
 
                 }
             }
@@ -81,8 +81,8 @@ public class NeedleScript : MonoBehaviour
                 {
                     //UIAnimatorManager.LaunchAnimAmmo();
                     UIManager.instance.UIAnimator.SetTrigger("AddAmmo");
-                    UIManager.instance.ChangeInventory("Add", ref UIManager.instance.ammoAmount, 1);
-                    UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.scrapsAmount, 1);
+                    UIManager.instance.ChangeInventory("Add", ref UIManager.instance.ammoAmount, UIManager.instance._initialGain);
+                    UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.scrapsAmount, UIManager.instance._initialCost);
 
                 }
             }
@@ -93,8 +93,8 @@ public class NeedleScript : MonoBehaviour
                 {
                     //UIAnimatorManager.LaunchAnimRepairKit();
                     UIManager.instance.UIAnimator.SetTrigger("AddRepairKit");
-                    UIManager.instance.ChangeInventory("Add", ref UIManager.instance.repairKitAmount, 1);
-                    UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.scrapsAmount, 1);
+                    UIManager.instance.ChangeInventory("Add", ref UIManager.instance.repairKitAmount, UIManager.instance._initialGain);
+                    UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.scrapsAmount, UIManager.instance._initialCost);
 
                 }
             }
