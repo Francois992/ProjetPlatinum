@@ -429,6 +429,14 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             interactItem.GetComponent<GunPanel>().OnUsed();
             isInteracting = true;
         }
+        else if (interactItem.gameObject.tag == "Tank")
+        {
+            if(UIManager.instance.fuelJerrycanAmount <= 0)
+            {
+                UIManager.instance.UIAnimator.SetTrigger("NoFuel");
+                return;
+            }
+        }
         else if (interactItem.gameObject.tag == "CraftTable")
         {
             //interactItem.QTE(); -----> Lancer la fonction de QTE
@@ -475,6 +483,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             Spinner.instance.StopWheel();
             isInteracting = false;
         }
+        
         else
         {
             if (interactQTE == null) return;
@@ -639,6 +648,13 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         else if (collision.gameObject.tag == "CraftTable")
         {
             canInteractQTE = true;
+            if (!isInteracting)
+            {
+                interactItem = collision.gameObject;
+            }
+        }
+        else if (collision.gameObject.tag == "Tank")
+        {
             if (!isInteracting)
             {
                 interactItem = collision.gameObject;
