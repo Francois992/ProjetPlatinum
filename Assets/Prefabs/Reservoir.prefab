@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3771694468234886990}
   m_LocalRotation: {x: -0.0000020823861, y: -0.70710784, z: -0.7071058, w: 0.0000021606684}
-  m_LocalPosition: {x: 0, y: -0.5, z: 1.91}
+  m_LocalPosition: {x: -1.29, y: -0.5, z: 0.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8726570107433591226}
@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7390871704515345542, guid: 8b7bfcdfd2d10804b8f467ecabaf3b92, type: 3}
+  - {fileID: 2100000, guid: 0930944b74ef65b4393a08d02189d87c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -101,11 +101,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8726570107433591226}
-  - component: {fileID: 8726570107433591227}
   - component: {fileID: 8726570107433591231}
   - component: {fileID: 8726570107433591230}
-  - component: {fileID: 4574446526046440152}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Reservoir
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,28 +119,12 @@ Transform:
   m_GameObject: {fileID: 8726570107433591217}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -399, y: -153, z: 669.4}
-  m_LocalScale: {x: 74.65, y: 71.27, z: 82.55}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6917556193003915561}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &8726570107433591227
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8726570107433591217}
-  serializedVersion: 2
-  m_Mass: 0.0000001
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &8726570107433591231
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -154,8 +136,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.625595, y: 1, z: 1}
+  m_Center: {x: -1.7283316, y: 0, z: -1}
 --- !u!114 &8726570107433591230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,16 +155,3 @@ MonoBehaviour:
   fuelConsumptionRate: 0.2
   fuelIndicatorSld: {fileID: 0}
   fuelIndicatorTxt: {fileID: 0}
---- !u!65 &4574446526046440152
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8726570107433591217}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.559043, y: 1.2383732, z: 1}
-  m_Center: {x: 0.7183243, y: 0.119186945, z: 0}
