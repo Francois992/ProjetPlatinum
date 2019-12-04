@@ -53,12 +53,12 @@ public class FuelSystem : MonoBehaviour
     {
         if (other.CompareTag("GasCan"))
         {
-            ResplenishFuel();
+            ReplenishFuel();
             Destroy(other.gameObject);
         }
     }
 
-    private void ResplenishFuel()
+    private void ReplenishFuel()
     {
 
         if(UIManager.instance.fuelJerrycanAmount > 0)
