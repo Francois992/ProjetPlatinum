@@ -90,9 +90,9 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void UpdateLifeBar()
+    public void UpdateLifeBar(float fillValue)
     {
-        Lifebar.fillAmount -= 0.1f;
+        Lifebar.fillAmount = fillValue;
     }
 
     //Met à jour les éléments d'UI du HUD
