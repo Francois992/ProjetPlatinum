@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6232989262496197273}
   - component: {fileID: 1295096161046841380}
   - component: {fileID: 1425472407059875672}
+  - component: {fileID: 1759519734789644127}
   m_Layer: 0
   m_Name: Scraps
   m_TagString: Untagged
@@ -92,3 +93,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1759519734789644127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2749568761439641595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5415e8daf084e1a46be91c94a5d077eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrapValue: 5
