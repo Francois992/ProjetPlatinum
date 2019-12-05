@@ -111,6 +111,8 @@ public class PlayerRigidBodyEntity : MonoBehaviour
     private GameObject MedikitPrefab;
     public GameObject playerHands;
 
+    public static List<PlayerRigidBodyEntity> playerList = new List<PlayerRigidBodyEntity>();
+
 
     //Debug
     [Header("Debug")]
@@ -143,6 +145,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
     void Start()
     {
         //rigidBody.gravityscale = 0f;
+        playerList.Add(this);
         fuelBaseSprite.SetActive(false);
         fuelJerrycanSprite.SetActive(false);
         medikitSprite.SetActive(false);
@@ -420,15 +423,34 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         }
         else if (interactItem.gameObject.tag == "GunPanel")
         {
+            if (UIManager.instance.ammoAmount <= 0)
+            {
+                UIManager.instance.UIAnimator.SetTrigger("NoAmmo");
+                return;
+            }
             interactItem.GetComponent<GunPanel>().user = this;
             interactItem.GetComponent<GunPanel>().OnUsed();
             isInteracting = true;
         }
-        else
+        else if (interactItem.gameObject.tag == "Tank")
+        {
+            FuelSystem.Instance.ReplenishFuel();
+            
+        }
+        else if (interactItem.gameObject.tag == "CraftTable")
         {
             //interactItem.QTE(); -----> Lancer la fonction de QTE
-            interactQTE.StartQTE();
+            //interactQTE.StartQTE();
+            if (UIManager.instance.scrapsAmount <= 0)
+            {
+                UIManager.instance.UIAnimator.SetTrigger("NoScraps");
+                return;
+            }
+
             Debug.Log("Lancemennt du QTE");
+            interactItem.GetComponent<CraftTable>().user = this;
+            interactItem.GetComponent<CraftTable>().OnUsed();
+            Spinner.instance.LaunchWheel();
             isInteracting = true;
         }
 
@@ -451,12 +473,22 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             isInteracting = false;
             interactItem.GetComponent<GunPanel>().OnDropped();
         }
+        else if (interactItem.gameObject.tag == "CraftTable")
+        {
+            //interactItem.QTE(); -----> Lancer la fonction de QTE
+            //interactQTE.StartQTE();
+            
+            Debug.Log("Lancemennt du QTE");
+            interactItem.GetComponent<CraftTable>().OnDropped();
+            Spinner.instance.StopWheel();
+            isInteracting = false;
+        }
+        
         else
         {
             if (interactQTE == null) return;
 
             Debug.Log("Fin du QTE, peut bouger à nouveau");
-            interactQTE.EndQTE();
             isInteracting = false;
         }
 
@@ -613,6 +645,21 @@ public class PlayerRigidBodyEntity : MonoBehaviour
                 interactItem = collision.gameObject;
             }
         }
+        else if (collision.gameObject.tag == "CraftTable")
+        {
+            canInteractQTE = true;
+            if (!isInteracting)
+            {
+                interactItem = collision.gameObject;
+            }
+        }
+        else if (collision.gameObject.tag == "Tank")
+        {
+            if (!isInteracting)
+            {
+                interactItem = collision.gameObject;
+            }
+        }
 
     }
 
@@ -637,6 +684,11 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             interactItem = null;
         }
         else if (collision.gameObject.tag == "GunPanel")
+        {
+            canInteractQTE = false;
+            interactItem = null;
+        }
+        else if (collision.gameObject.tag == "CraftTable")
         {
             canInteractQTE = false;
             interactItem = null;

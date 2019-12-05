@@ -24,6 +24,12 @@ TagManager:
   - HubTeleporter
   - SpecialPlatform
   - Rocks
+  - CraftTable
+  - Mecha
+  - Bullet
+  - Mines
+  - Map
+  - Tank
   layers:
   - Default
   - TransparentFX
@@ -37,7 +43,7 @@ TagManager:
   - Players
   - Map
   - Mecha
-  - 
+  - EventZone
   - 
   - 
   - 

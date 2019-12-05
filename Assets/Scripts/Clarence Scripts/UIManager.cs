@@ -16,6 +16,8 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Text scrapsText;
 
+    [SerializeField] private Image Lifebar;
+
     public int scubaTankAmount;
     public int fuelJerrycanAmount;
     public int ammoAmount;
@@ -24,8 +26,12 @@ public class UIManager : MonoBehaviour
 
     private const int _MAXAMOUNT = 99;
     private const int _MINAMOUNT = 0;
+    public int _initialCost = 1;
+    public int _initialGain = 1;
 
     public static UIManager instance;
+
+    public Animator UIAnimator;
 
     private void Awake()
     {
@@ -35,11 +41,12 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        UIAnimator = GetComponent<Animator>();
         scubaTankAmount = 0;
         fuelJerrycanAmount = 0;
-        ammoAmount = 0;
+        ammoAmount = 5;
         repairKitAmount = 0;
-        scrapsAmount = 0;
+        scrapsAmount = 5;
 
         UpdateHUD();
     }
@@ -83,7 +90,11 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    
+    public void UpdateLifeBar(float fillValue)
+    {
+        Lifebar.fillAmount = fillValue;
+    }
+
     //Met à jour les éléments d'UI du HUD
     private void UpdateHUD()
     {
