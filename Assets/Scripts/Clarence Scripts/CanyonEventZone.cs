@@ -44,8 +44,8 @@ public class CanyonEventZone : EventZone
         {
             PlayerRigidBodyEntity.playerList[i]._speed = _playerInitialSpeed;
         }*/
-        playerOne._speed = _playerInitialSpeed;
-        playerTwo._speed = _playerInitialSpeed;
+        playerOne.speedMax = _playerInitialSpeed;
+        playerTwo.speedMax = _playerInitialSpeed;
         playerOne.acceleration = _playerInitialAcceleration;
         playerTwo.acceleration = _playerInitialAcceleration;
     }

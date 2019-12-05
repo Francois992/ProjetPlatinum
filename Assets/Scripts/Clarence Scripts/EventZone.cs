@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EventZone : MonoBehaviour
+public abstract class EventZone : MonoBehaviour
 {
     protected MechaManager _submarine;
     protected float initialWheelSpeed;
@@ -18,14 +18,8 @@ public class EventZone : MonoBehaviour
         initialWheelSpeed = Spinner.instance.speed;
     }
 
-    protected virtual void EnterZone()
-    {
-        
-    }
-    protected virtual void ExitZone()
-    {
-
-    }
+    protected abstract void EnterZone();
+    protected abstract void ExitZone();
 
     private void OnTriggerEnter(Collider other)
     {
