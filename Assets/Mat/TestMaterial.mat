@@ -64,9 +64,9 @@ Material:
     - _DstBlend: 10
     - _FirstOutlineWidth: 0.15
     - _GlossMapScale: 1
-    - _Glossiness: 0.57
+    - _Glossiness: 0.289
     - _GlossyReflections: 1
-    - _Metallic: 0.438
+    - _Metallic: 0.32
     - _Mode: 3
     - _OcclusionStrength: 1
     - _Parallax: 0.02
