@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -134,6 +135,8 @@ public class PlayerRigidBodyEntity : MonoBehaviour
     private float elapsedTime;
 
     public string reController;
+
+    public static event Action onRepairs;
 
     private void Awake()
     {
@@ -318,14 +321,11 @@ public class PlayerRigidBodyEntity : MonoBehaviour
     #region Action Commands
     public void Actions()
     {
-        if (isTeleporting) return;
 
         if (!isTeleporting)
         {
             CheckTeleport();
         }
-
-        if (isTeleporting) return;
 
         if (canGrab && !isGrabing)
         {
@@ -360,28 +360,12 @@ public class PlayerRigidBodyEntity : MonoBehaviour
 
         Debug.DrawRay(transform.position, transform.forward, Color.blue);
 
-        if (Physics.Raycast(transform.position, Vector3.forward, out hit, 5f))
+        if (Physics.Raycast(transform.position, Vector3.forward, out hit, 6f))
         {
-            if (hit.transform.tag == "Teleporter")
+            if (hit.transform.tag == "RepairHub")
             {
-                if (hit.transform.GetComponent<Teleporter>().isActivated)
-                {
-                    myTeleport = hit.transform.GetComponent<Teleporter>();
-                    StartTeleport();
-                    isOutside = false;
-                   
-                }
+                onRepairs?.Invoke();
 
-            }
-            else if(hit.transform.tag == "ExplorationTeleporter")
-            {
-                if (hit.transform.GetComponent<Teleporter>().isActivated)
-                {
-                    myTeleport = hit.transform.GetComponent<Teleporter>();
-                    StartTeleport();
-                    isOutside = true;
-                    
-                }
             }
         }
     }
