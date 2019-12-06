@@ -754,6 +754,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         if (_isJumping) return;
 
         _isJumping = true;
+        FindObjectOfType<SoundManager>().Play("Jumping");
         _jumpCountdown = jumpDuration;
         _isGrounded = false;
 
