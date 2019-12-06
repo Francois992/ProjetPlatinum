@@ -54,7 +54,7 @@ public class UIManager : MonoBehaviour
         scubaTankAmount = 0;
         fuelJerrycanAmount = 0;
         ammoAmount = 5;
-        repairKitAmount = 0;
+        repairKitAmount = 1;
         scrapsAmount = 5;
 
         PlayerRigidBodyEntity.onRepairs += StartRepairs;
@@ -113,10 +113,12 @@ public class UIManager : MonoBehaviour
         {
             Repairing();
 
-            if(Lifebar.fillAmount == endRepairValue)
+            if(Lifebar.fillAmount >= endRepairValue || Lifebar.fillAmount == 1)
             {
                 isRepairing = false;
                 MechaManager.Instance.currentLife += Mathf.RoundToInt((repairValue / 100) * MechaManager.Instance.fullLife);
+                if (MechaManager.Instance.currentLife > MechaManager.Instance.fullLife) MechaManager.Instance.currentLife = MechaManager.Instance.fullLife;
+                ChangeInventory("Remove", ref repairKitAmount, 1);
                 elapsedTime = 0;
             }
         }
@@ -134,6 +136,8 @@ public class UIManager : MonoBehaviour
 
     private void StartRepairs()
     {
+        if (repairKitAmount <= 0 || MechaManager.Instance.currentLife == MechaManager.Instance.fullLife) return; 
+
         if (isRepairing)
         {
             return;
