@@ -34,8 +34,13 @@ public class PlayerController : MonoBehaviour
         {
             _playerRigidBody._speed = 0;
         }
-        
-        if(_mainPlayer.GetButtonDown("jump") && _playerRigidBody.IsOnGround() && !_playerRigidBody.isInteracting && !_playerRigidBody.isDown)
+
+        if (_mainPlayer.GetButtonDown("FillOxygen") && !_playerRigidBody.isInteracting && !_playerRigidBody.isDown)
+        {
+            _playerRigidBody.ActionOxygen();
+        }
+
+        if (_mainPlayer.GetButtonDown("jump") && _playerRigidBody.IsOnGround() && !_playerRigidBody.isInteracting && !_playerRigidBody.isDown)
         {
             _playerRigidBody.Jump();
         }
