@@ -111,6 +111,8 @@ public class PlayerRigidBodyEntity : MonoBehaviour
     private GameObject MedikitPrefab;
     public GameObject playerHands;
 
+    public static List<PlayerRigidBodyEntity> playerList = new List<PlayerRigidBodyEntity>();
+
 
     //Debug
     [Header("Debug")]
@@ -143,6 +145,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
     void Start()
     {
         //rigidBody.gravityscale = 0f;
+        playerList.Add(this);
         fuelBaseSprite.SetActive(false);
         fuelJerrycanSprite.SetActive(false);
         medikitSprite.SetActive(false);
@@ -429,6 +432,11 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             interactItem.GetComponent<GunPanel>().OnUsed();
             isInteracting = true;
         }
+        else if (interactItem.gameObject.tag == "Tank")
+        {
+            FuelSystem.Instance.ReplenishFuel();
+            
+        }
         else if (interactItem.gameObject.tag == "CraftTable")
         {
             //interactItem.QTE(); -----> Lancer la fonction de QTE
@@ -475,6 +483,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             Spinner.instance.StopWheel();
             isInteracting = false;
         }
+        
         else
         {
             if (interactQTE == null) return;
@@ -639,6 +648,13 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         else if (collision.gameObject.tag == "CraftTable")
         {
             canInteractQTE = true;
+            if (!isInteracting)
+            {
+                interactItem = collision.gameObject;
+            }
+        }
+        else if (collision.gameObject.tag == "Tank")
+        {
             if (!isInteracting)
             {
                 interactItem = collision.gameObject;

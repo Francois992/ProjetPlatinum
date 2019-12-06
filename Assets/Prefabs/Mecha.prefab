@@ -499,6 +499,7 @@ MonoBehaviour:
   isCamMoving: 0
   isMoving: 0
   cameraMultiple: {fileID: 1745184437}
+  fullLife: 15
   particles:
   - {fileID: 6833745543515953551}
   - {fileID: 3606357197781883952}
@@ -4016,15 +4017,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Reservoir
       objectReference: {fileID: 0}
-    - target: {fileID: 8726570107433591217, guid: 6beebcd75a400094d98448108ea1519b,
+    - target: {fileID: 8726570107433591231, guid: 6beebcd75a400094d98448108ea1519b,
         type: 3}
-      propertyPath: m_Layer
-      value: 11
+      propertyPath: m_Size.y
+      value: 1.1026368
       objectReference: {fileID: 0}
-    - target: {fileID: 8726570107433591227, guid: 6beebcd75a400094d98448108ea1519b,
+    - target: {fileID: 8726570107433591231, guid: 6beebcd75a400094d98448108ea1519b,
         type: 3}
-      propertyPath: m_Constraints
-      value: 126
+      propertyPath: m_Center.y
+      value: 0.051318407
       objectReference: {fileID: 0}
     - target: {fileID: 8726570107433591226, guid: 6beebcd75a400094d98448108ea1519b,
         type: 3}
@@ -4039,7 +4040,7 @@ PrefabInstance:
     - target: {fileID: 8726570107433591226, guid: 6beebcd75a400094d98448108ea1519b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.77
       objectReference: {fileID: 0}
     - target: {fileID: 8726570107433591226, guid: 6beebcd75a400094d98448108ea1519b,
         type: 3}
@@ -4081,32 +4082,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8726570107433591226, guid: 6beebcd75a400094d98448108ea1519b,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8726570107433591226, guid: 6beebcd75a400094d98448108ea1519b,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8726570107433591226, guid: 6beebcd75a400094d98448108ea1519b,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6917556193003915561, guid: 6beebcd75a400094d98448108ea1519b,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 6917556193003915561, guid: 6beebcd75a400094d98448108ea1519b,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.91
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4574446526046440152, guid: 6beebcd75a400094d98448108ea1519b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6beebcd75a400094d98448108ea1519b, type: 3}
 --- !u!114 &2268355248904661889 stripped
 MonoBehaviour:

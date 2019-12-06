@@ -4,9 +4,10 @@ using UnityEngine;
 
 public abstract class EventZone : MonoBehaviour
 {
-    private MechaManager _submarine;
-    private float initialWheelSpeed;
-    private UIManager _uiManager;
+    protected MechaManager _submarine;
+    protected float initialWheelSpeed;
+    protected UIManager _uiManager;
+    protected float _playerInitialSpeed;
 
 
     // Start is called before the first frame update
@@ -18,11 +19,16 @@ public abstract class EventZone : MonoBehaviour
     }
 
     protected abstract void EnterZone();
-    protected abstract void QuitZone();
+    protected abstract void ExitZone();
 
     private void OnTriggerEnter(Collider other)
     {
         EnterZone();
         
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        ExitZone();
     }
 }
