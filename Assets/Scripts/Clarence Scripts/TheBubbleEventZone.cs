@@ -2,24 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CaveEventZone : EventZone
+public class TheBubbleEventZone : EventZone
 {
     //Clarence Berard C# Script
 
     [Header("Facteur de vitesse de la roue")]
     [SerializeField]
     [Range(1, 5)]
-    private float multiplicator;
+    private float dividor;
 
+    private float initialSpinnerSpeed;
+
+    private void Start()
+    {
+        initialSpinnerSpeed = Spinner.instance.speed;
+    }
     protected override void EnterZone()
     {
         //throw new System.NotImplementedException();
-        Spinner.instance.speed *= multiplicator;
+        Spinner.instance.speed /= dividor;
     }
 
     protected override void ExitZone()
     {
         //throw new System.NotImplementedException();
-        Spinner.instance.speed = initialWheelSpeed;
+        Spinner.instance.speed = initialSpinnerSpeed;
     }
 }
