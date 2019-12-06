@@ -99,7 +99,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
     private Image oxygenBar;
     private float oxygenAmount = 0;
     private float maxOxygenAmount = 100;
-    public bool isOutside = false;
+    private bool isOutside = true;
     public bool isDown = false;
 
     [SerializeField]
@@ -233,12 +233,20 @@ public class PlayerRigidBodyEntity : MonoBehaviour
 
     #region Oxygen
 
+    public void FillOxygen()
+    {
+        if (UIManager.instance.scubaTankAmount == 0) return;
+        oxygenAmount = maxOxygenAmount;
+        UIManager.instance.scubaTankAmount -= UIManager.instance._initialCost;
+    }
+
     public void LoseOxygen()
     {
-        oxygenAmount -= Time.deltaTime * 5;
+        oxygenAmount -= Time.deltaTime;
         if (oxygenAmount <= 0)
         {
             isDown = true;
+            //la condition de défaite
             oxygenAmount = 0;
             KOSprite.SetActive(true);
         }
@@ -375,6 +383,21 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         isTeleporting = true;
         //myRenderer.GetComponent<MeshRenderer>().material.color = invisibleColor;
 
+    }
+
+    public void ActionOxygen()
+    {
+        if (!isDown)
+        {
+            if(UIManager.instance.scubaTankAmount > 0)
+            {
+                FillOxygen();
+            }
+            else
+            {
+                UIManager.instance.UIAnimator.SetTrigger("NoOxygen");
+            }
+        } 
     }
 
     public void ActionResurrect()
