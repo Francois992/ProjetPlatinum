@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -67,10 +68,12 @@ public class MechaManager : MonoBehaviour
 
     public multipleTargetCamera cameraMultiple;
 
-    public float fullLife = 15;
-    private float currentLife = 15;
+    [SerializeField] public float fullLife = 15;
+    public float currentLife = 15;
 
     [SerializeField] private List<ParticleSystem> particles = new List<ParticleSystem>();
+
+    public static event Action CancelRepairs;
 
     // Start is called before the first frame update
     void Start()
@@ -285,8 +288,10 @@ public class MechaManager : MonoBehaviour
     public void TakeDamage()
     {
         currentLife--;
+        CancelRepairs?.Invoke();
 
         CameraShaker.Instance.startShake();
         UIManager.instance.UpdateLifeBar(currentLife/fullLife);
+
     }
 }
