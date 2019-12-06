@@ -33,6 +33,15 @@ public class UIManager : MonoBehaviour
 
     public Animator UIAnimator;
 
+    [SerializeField] private float repairTime = 3;
+    [SerializeField] private float repairValue = 20;
+    private float startRepairValue;
+    private float endRepairValue;
+
+    private bool isRepairing = false;
+
+    private float elapsedTime = 0f;
+
     private void Awake()
     {
         instance = this;
@@ -47,6 +56,9 @@ public class UIManager : MonoBehaviour
         ammoAmount = 5;
         repairKitAmount = 0;
         scrapsAmount = 5;
+
+        PlayerRigidBodyEntity.onRepairs += StartRepairs;
+        MechaManager.CancelRepairs += StopRepairs;
 
         UpdateHUD();
     }
@@ -95,6 +107,21 @@ public class UIManager : MonoBehaviour
         Lifebar.fillAmount = fillValue;
     }
 
+    private void Update()
+    {
+        if (isRepairing)
+        {
+            Repairing();
+
+            if(Lifebar.fillAmount == endRepairValue)
+            {
+                isRepairing = false;
+                MechaManager.Instance.currentLife += Mathf.RoundToInt((repairValue / 100) * MechaManager.Instance.fullLife);
+                elapsedTime = 0;
+            }
+        }
+    }
+
     //Met à jour les éléments d'UI du HUD
     private void UpdateHUD()
     {
@@ -105,5 +132,38 @@ public class UIManager : MonoBehaviour
         scrapsText.text = ": " + scrapsAmount;
     }
 
-    
+    private void StartRepairs()
+    {
+        if (isRepairing)
+        {
+            return;
+        }
+        else
+        {
+            isRepairing = true;
+            startRepairValue = Lifebar.fillAmount;
+            endRepairValue = startRepairValue + (repairValue / 100);
+        }
+    }
+
+    private void StopRepairs()
+    {
+        if (!isRepairing) return;
+
+        else
+        {
+            isRepairing = false;
+            Lifebar.fillAmount = startRepairValue;
+            elapsedTime = 0;
+        }
+    }
+
+    private void Repairing()
+    {
+        elapsedTime += Time.deltaTime;
+
+        float ratio = elapsedTime / repairTime;
+
+        Lifebar.fillAmount = Mathf.Lerp(startRepairValue, endRepairValue, ratio);
+    }
 }
