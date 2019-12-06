@@ -59,7 +59,7 @@ public class NeedleScript : MonoBehaviour
                     UIManager.instance.UIAnimator.SetTrigger("AddFuel");
                     UIManager.instance.ChangeInventory("Add", ref UIManager.instance.fuelJerrycanAmount, UIManager.instance._initialGain);
                     UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.scrapsAmount, UIManager.instance._initialCost);
-                        
+                    FindObjectOfType<SoundManager>().Play("AddFuel");
                 }
             }
 
@@ -71,7 +71,7 @@ public class NeedleScript : MonoBehaviour
                     UIManager.instance.UIAnimator.SetTrigger("AddOxygen");
                     UIManager.instance.ChangeInventory("Add", ref UIManager.instance.scubaTankAmount, UIManager.instance._initialGain);
                     UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.scrapsAmount, UIManager.instance._initialCost);
-
+                    FindObjectOfType<SoundManager>().Play("AddOxygen");
                 }
             }
 
@@ -83,7 +83,7 @@ public class NeedleScript : MonoBehaviour
                     UIManager.instance.UIAnimator.SetTrigger("AddAmmo");
                     UIManager.instance.ChangeInventory("Add", ref UIManager.instance.ammoAmount, UIManager.instance._initialGain);
                     UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.scrapsAmount, UIManager.instance._initialCost);
-
+                    FindObjectOfType<SoundManager>().Play("AddAmmo");
                 }
             }
 
@@ -95,7 +95,7 @@ public class NeedleScript : MonoBehaviour
                     UIManager.instance.UIAnimator.SetTrigger("AddRepairKit");
                     UIManager.instance.ChangeInventory("Add", ref UIManager.instance.repairKitAmount, UIManager.instance._initialGain);
                     UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.scrapsAmount, UIManager.instance._initialCost);
-
+                    FindObjectOfType<SoundManager>().Play("AddRepairKit");
                 }
             }
 

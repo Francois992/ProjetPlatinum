@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CanyonEventZone : EventZone
 {
+    //Clarence Berard C# Script
+
     [SerializeField]
     [Range(0, 5)]private float speedMultiplicator;
     [SerializeField]
