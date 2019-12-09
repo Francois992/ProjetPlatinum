@@ -25,7 +25,7 @@ public abstract class EventZone : MonoBehaviour
         initialSubmarineAccelerationY = MechaManager.Instance.accelerationY;
         _uiManager = UIManager.instance;
         initialWheelSpeed = Spinner.instance.speed;
-        //_fuelInitialSpeed = FuelSystem.Instance.fuelConsumptionRate;
+        _fuelInitialSpeed = FuelSystem.Instance.fuelConsumptionRate;
     }
 
     protected abstract void EnterZone();

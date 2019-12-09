@@ -5639,6 +5639,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1212947695}
   m_CullTransparentMesh: 0
+--- !u!114 &1236912890 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7432144419340702445, guid: 6dabd3ff49b57a7428dadc3129f4b43c,
+    type: 3}
+  m_PrefabInstance: {fileID: 909955118}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1243258213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14457,6 +14469,11 @@ PrefabInstance:
       propertyPath: fuelIndicatorTxt
       value: 
       objectReference: {fileID: 1496766742}
+    - target: {fileID: 2268355248904661889, guid: 51870300cbd77d744948b0a169fc8fd8,
+        type: 3}
+      propertyPath: fuelIndicatorImg
+      value: 
+      objectReference: {fileID: 1236912890}
     - target: {fileID: 106214319, guid: 51870300cbd77d744948b0a169fc8fd8, type: 3}
       propertyPath: mechaController
       value: 
@@ -14483,7 +14500,7 @@ PrefabInstance:
     - target: {fileID: 2268355248904661902, guid: 51870300cbd77d744948b0a169fc8fd8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4501548114529795509, guid: 51870300cbd77d744948b0a169fc8fd8,
         type: 3}
