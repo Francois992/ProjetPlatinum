@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 5992962176785870269}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -423.99927, y: -219.77727, z: -265.30472}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 639.4533, y: 370.69757, z: 370.69757}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -43,4 +43,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07efe14eb00e62d49a311deff4be0a24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: AddFuel
+    clip: {fileID: 8300000, guid: a9bcebf8a2096eb49bd73674b1937bf6, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AddOxygen
+    clip: {fileID: 8300000, guid: a12ee53506faa9b4a8c9d20973ce6b9f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AddAmmo
+    clip: {fileID: 8300000, guid: 7134d2a3fb10d244fae76c08e6ccad71, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AddRepairKit
+    clip: {fileID: 8300000, guid: 7b8e07a076a41644686c14bd5f506428, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Jumping
+    clip: {fileID: 8300000, guid: e02a6e94cd3960e49992a95ed362d541, type: 3}
+    volume: 0.029
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Explosion
+    clip: {fileID: 8300000, guid: 34137b043555ebb49ba1be94bca9564b, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Shoot
+    clip: {fileID: 8300000, guid: f0775d3c603228340acb90291b92e94a, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
