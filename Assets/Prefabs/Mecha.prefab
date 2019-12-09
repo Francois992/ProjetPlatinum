@@ -500,6 +500,7 @@ MonoBehaviour:
   isMoving: 0
   cameraMultiple: {fileID: 1745184437}
   fullLife: 15
+  currentLife: 15
   particles:
   - {fileID: 6833745543515953551}
   - {fileID: 3606357197781883952}
@@ -3995,7 +3996,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4114503929526853776, guid: 6beebcd75a400094d98448108ea1519b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6beebcd75a400094d98448108ea1519b, type: 3}
 --- !u!114 &2268355248904661889 stripped
 MonoBehaviour:

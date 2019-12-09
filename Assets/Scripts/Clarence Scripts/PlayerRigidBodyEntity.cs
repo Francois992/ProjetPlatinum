@@ -419,6 +419,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
 
     private void ActionInteract()
     {
+
         if (interactItem == null) return;
         if (isInteracting) return;
 
@@ -441,6 +442,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         }
         else if (interactItem.gameObject.tag == "Tank")
         {
+            
             FuelSystem.Instance.ReplenishFuel();
             
         }
@@ -663,6 +665,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Tank")
         {
+            canInteractQTE = true;
             if (!isInteracting)
             {
                 interactItem = collision.gameObject;

@@ -52,7 +52,7 @@ public class UIManager : MonoBehaviour
     {
         UIAnimator = GetComponent<Animator>();
         scubaTankAmount = 5;
-        fuelJerrycanAmount = 0;
+        fuelJerrycanAmount = 1;
         ammoAmount = 5;
         repairKitAmount = 1;
         scrapsAmount = 5;
