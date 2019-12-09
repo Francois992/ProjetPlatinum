@@ -29,5 +29,6 @@ public class Scraps : MonoBehaviour
     {
         Destroy(gameObject);
         UIManager.instance.ChangeInventory("Add", ref UIManager.instance.scrapsAmount, scrapValue);
+        FindObjectOfType<SoundManager>().Play("Scraps");
     }
 }
