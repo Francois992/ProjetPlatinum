@@ -25,7 +25,7 @@ public class WaterfallEventZone : EventZone
         MechaManager.Instance.speedMax += (initialSubmarineSpeed * PercentToFloat(percentage));
         MechaManager.Instance.accelerationX += (initialSubmarineAccelerationX * PercentToFloat(percentage));
         MechaManager.Instance.accelerationY += (initialSubmarineAccelerationY * PercentToFloat(percentage));
-        //FuelSystem.Instance.fuelConsumptionRate += (_fuelInitialSpeed * PercentToFloat(fuelPercentage));
+        FuelSystem.Instance.fuelConsumptionRate += (_fuelInitialSpeed * PercentToFloat(fuelPercentage));
     }
 
     protected override void ExitZone()
@@ -33,6 +33,6 @@ public class WaterfallEventZone : EventZone
         MechaManager.Instance.speedMax = initialSubmarineSpeed;
         MechaManager.Instance.accelerationX = initialSubmarineAccelerationX;
         MechaManager.Instance.accelerationY = initialSubmarineAccelerationY;
-        //FuelSystem.Instance.fuelConsumptionRate = _fuelInitialSpeed;
+        FuelSystem.Instance.fuelConsumptionRate = _fuelInitialSpeed;
     }
 }
