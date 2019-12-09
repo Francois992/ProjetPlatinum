@@ -256,7 +256,10 @@ public class MechaManager : MonoBehaviour
 
         updtateCamPos();
 
-        if (_speedX > 0 || _speedY > 0) fuel.LoseFuel();
+        if (_speedX > 0 || _speedY > 0)
+        {
+            fuel.LoseFuel();
+        } 
         
     }
 
@@ -292,6 +295,7 @@ public class MechaManager : MonoBehaviour
 
         CameraShaker.Instance.startShake();
         UIManager.instance.UpdateLifeBar(currentLife/fullLife);
+        FindObjectOfType<SoundManager>().Play("Damage");
 
     }
 }

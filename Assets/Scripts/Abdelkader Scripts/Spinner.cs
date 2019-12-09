@@ -43,5 +43,5 @@ public class Spinner : MonoBehaviour
         this.gameObject.SetActive(false);
         Needle.SetActive(false);
     }
-
+    
 }
