@@ -30,11 +30,13 @@ public class MovementPanel : MonoBehaviour
         {
             mechaController.playerHorizontal = ReInput.players.GetPlayer(user.reController);
             mechaController.isActivatedHor = true;
+            FindObjectOfType<SoundManager>().Play("MechaMove");
         }
         else
         {
             mechaController.playerVertical = ReInput.players.GetPlayer(user.reController);
             mechaController.isActivatedVer = true;
+            FindObjectOfType<SoundManager>().Play("MechaMove");
         }
     }
 

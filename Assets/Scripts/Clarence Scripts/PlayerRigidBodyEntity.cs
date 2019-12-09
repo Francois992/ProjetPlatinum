@@ -237,7 +237,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
     {
         if (UIManager.instance.scubaTankAmount == 0) return;
         oxygenAmount = maxOxygenAmount;
-        UIManager.instance.scubaTankAmount -= UIManager.instance._initialCost;
+        UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.scubaTankAmount, UIManager.instance._initialCost);
     }
 
     public void LoseOxygen()

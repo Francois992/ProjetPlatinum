@@ -70,25 +70,37 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Jumping
     clip: {fileID: 8300000, guid: e02a6e94cd3960e49992a95ed362d541, type: 3}
-    volume: 0.029
+    volume: 0.1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Explosion
     clip: {fileID: 8300000, guid: 34137b043555ebb49ba1be94bca9564b, type: 3}
-    volume: 0.7
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Shoot
     clip: {fileID: 8300000, guid: f0775d3c603228340acb90291b92e94a, type: 3}
-    volume: 0.2
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Scraps
     clip: {fileID: 8300000, guid: 50c4d3addea124945af2480329ed3548, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MechaMove
+    clip: {fileID: 8300000, guid: bdfc3c1cc43a23c43a10bb16c96bb52e, type: 3}
     volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Damage
+    clip: {fileID: 8300000, guid: fc4b4e1753538a64cabb14685cbbc5da, type: 3}
+    volume: 0.026
     pitch: 1
     loop: 0
     source: {fileID: 0}

@@ -60,6 +60,7 @@ public class FuelSystem : MonoBehaviour
         if (startFuel <= 0)
         {
             startFuel = 0;
+            
             //fuelIndicatorTxt.text = "Out of fuel !!!";
         }
     }
