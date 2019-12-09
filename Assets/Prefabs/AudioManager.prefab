@@ -104,3 +104,15 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: RotatingWheel
+    clip: {fileID: 8300000, guid: 32317359f8713684ab72e39bf76b9ff2, type: 3}
+    volume: 0.211
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: NoScraps
+    clip: {fileID: 8300000, guid: 3e38794c8ba62ee4d8089be7309cde92, type: 3}
+    volume: 0.211
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

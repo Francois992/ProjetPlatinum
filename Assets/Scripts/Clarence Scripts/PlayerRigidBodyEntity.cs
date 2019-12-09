@@ -451,6 +451,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             if (UIManager.instance.scrapsAmount <= 0)
             {
                 UIManager.instance.UIAnimator.SetTrigger("NoScraps");
+                FindObjectOfType<SoundManager>().Play("NoScraps");
                 return;
             }
 
