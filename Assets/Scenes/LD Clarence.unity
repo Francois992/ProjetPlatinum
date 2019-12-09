@@ -3584,6 +3584,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 7432144419357627762, guid: 6dabd3ff49b57a7428dadc3129f4b43c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dabd3ff49b57a7428dadc3129f4b43c, type: 3}
 --- !u!1 &910341171
@@ -19882,6 +19887,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 315535218632211747, guid: 7d7579d8623628d4c883f167089e6ca1,
+        type: 3}
+      propertyPath: multiplicator
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d7579d8623628d4c883f167089e6ca1, type: 3}
 --- !u!1001 &2758658519226224389
@@ -19951,6 +19961,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2758658520362177990, guid: fbc3cd4a8e3c5ca43a56e9c0ef27cd9d,
+        type: 3}
+      propertyPath: percentage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758658520362177990, guid: fbc3cd4a8e3c5ca43a56e9c0ef27cd9d,
+        type: 3}
+      propertyPath: fuelPercentage
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbc3cd4a8e3c5ca43a56e9c0ef27cd9d, type: 3}
 --- !u!1001 &5147325931923057648
@@ -20019,6 +20039,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5147325932034000673, guid: 58dbf4d0573239b48ad033d269def96e,
+        type: 3}
+      propertyPath: percentage
+      value: 120
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58dbf4d0573239b48ad033d269def96e, type: 3}
@@ -20168,5 +20193,10 @@ PrefabInstance:
       propertyPath: playerTwo
       value: 
       objectReference: {fileID: 1542278829}
+    - target: {fileID: 8809312268227768408, guid: 0125b6c157e5ca2489a0873205133b70,
+        type: 3}
+      propertyPath: speedMultiplicator
+      value: 0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0125b6c157e5ca2489a0873205133b70, type: 3}

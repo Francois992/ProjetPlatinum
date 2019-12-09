@@ -59,6 +59,7 @@ public class GunPanel : MonoBehaviour
     public void OnShoot()
     {
         reload = true;
+        FindObjectOfType<SoundManager>().Play("Shoot");
         triggerText.gameObject.SetActive(false);
         loadFill.fillAmount = 0;
     }
