@@ -138,6 +138,8 @@ public class PlayerRigidBodyEntity : MonoBehaviour
 
     public static event Action onRepairs;
 
+    private Transform repairHub;
+
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody>();
@@ -210,6 +212,25 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             velocity.x = _speed * _orientX;
             velocity.y = _verticalSpeed;
             rigidBody.velocity = velocity;
+        }
+
+        RaycastHit hit;
+
+        Debug.DrawRay(transform.position, transform.forward);
+
+        if (Physics.Raycast(transform.position, Vector3.forward, out hit, 6f))
+        {
+            if (hit.transform.tag == "RepairHub")
+            {
+                repairHub = hit.transform;
+                repairHub.GetComponent<ButtonFeedback>().RepairHubCheck();
+
+            }
+            else
+            {
+                repairHub.GetComponent<ButtonFeedback>().StopRepairCheck();
+                repairHub = null;
+            }
         }
     }
 

@@ -27,6 +27,26 @@ public class ButtonFeedback : MonoBehaviour
         
     }
 
+    public void RepairHubCheck()
+    {
+        if (UIManager.instance.repairKitAmount > 0)
+        {
+            redCross.SetActive(false);
+        }
+        else
+        {
+            redCross.SetActive(true);
+        }
+        xButton.SetActive(true);
+        InteractButton.SetActive(false);
+    }
+
+    public void StopRepairCheck()
+    {
+        redCross.SetActive(false);
+        xButton.SetActive(false);
+    }
+
     private void OnCollisionStay(Collision collision)
     {
         if(collision.gameObject.tag == "Player")
