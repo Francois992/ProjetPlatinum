@@ -326,7 +326,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b5fe1f5b69b84ce469520f6e510e0330, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4b0cc05f13debae4393c917b69c967a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -351,6 +351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRotating: 0
   speed: 100
+  Needle: {fileID: 0}
 --- !u!1 &3475748831294805160
 GameObject:
   m_ObjectHideFlags: 0
