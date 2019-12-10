@@ -116,3 +116,9 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: AddingFuel
+    clip: {fileID: 8300000, guid: 30b5e94cb208f7d40878f0b197a30935, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
