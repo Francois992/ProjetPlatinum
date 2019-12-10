@@ -1100,6 +1100,9 @@ MonoBehaviour:
   repairKitText: {fileID: 3103578413266700578}
   scrapsText: {fileID: 3103578414460811714}
   Lifebar: {fileID: 1321633680429010609}
+  oxygenBar: {fileID: 5657250372116238807}
+  maxOxygen: 100
+  oxygenGain: 25
   scubaTankAmount: 0
   fuelJerrycanAmount: 0
   ammoAmount: 0

@@ -18,6 +18,11 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private Image Lifebar;
 
+    [SerializeField] private Image oxygenBar = null;
+    [SerializeField] private float maxOxygen = 100;
+    private float _oxygen;
+    [SerializeField] private int oxygenGain = 0; 
+
     public int scubaTankAmount;
     public int fuelJerrycanAmount;
     public int ammoAmount;
@@ -50,6 +55,7 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _oxygen = maxOxygen;
         UIAnimator = GetComponent<Animator>();
         scubaTankAmount = 5;
         fuelJerrycanAmount = 1;
@@ -122,6 +128,8 @@ public class UIManager : MonoBehaviour
                 elapsedTime = 0;
             }
         }
+
+        UpdateOxygen();
     }
 
     //Met à jour les éléments d'UI du HUD
@@ -169,5 +177,26 @@ public class UIManager : MonoBehaviour
         float ratio = elapsedTime / repairTime;
 
         Lifebar.fillAmount = Mathf.Lerp(startRepairValue, endRepairValue, ratio);
+    }
+
+    private void UpdateOxygen()
+    {
+        oxygenBar.fillAmount = _oxygen / maxOxygen;
+        _oxygen -= Time.deltaTime;
+        if (_oxygen <= 0)
+        {
+            _oxygen = 0;
+        }
+        else
+        {
+            oxygenBar.fillAmount = _oxygen / maxOxygen;
+            _oxygen -= Time.deltaTime;
+        }
+    }
+
+    public void FillOxygen()
+    {
+        _oxygen += oxygenGain;
+        ChangeInventory("Remove", ref UIManager.instance.scubaTankAmount, UIManager.instance._initialCost);
     }
 }
