@@ -728,7 +728,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
     {
         RaycastHit raycastHit;
         Vector3 raycastOrigin = transform.position;
-        raycastOrigin.y += 0.005f;
+        raycastOrigin.y += 0.01f;
         if(Physics.BoxCast(raycastOrigin, halfBox, Vector3.down,out raycastHit, transform.rotation, 0.01f))
         {
             if (raycastHit.collider != null)
