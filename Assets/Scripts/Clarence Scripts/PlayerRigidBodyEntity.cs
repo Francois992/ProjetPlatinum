@@ -99,7 +99,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
     private Image oxygenBar;
     private float oxygenAmount = 0;
     private float maxOxygenAmount = 100;
-    private bool isOutside = true;
+    private bool isOutside = false;
     public bool isDown = false;
 
     [SerializeField]
@@ -241,7 +241,6 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         oxygenBar.fillAmount = oxygenAmount / maxOxygenAmount;
         if (isOutside && !isDown)
         {
-            LoseOxygen();
             if (oxygenBar.enabled) return;
             oxygenBar.enabled = true;
         }
@@ -254,29 +253,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
 
     #region Oxygen
 
-    public void FillOxygen()
-    {
-        if (UIManager.instance.scubaTankAmount == 0) return;
-        oxygenAmount = maxOxygenAmount;
-        UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.scubaTankAmount, UIManager.instance._initialCost);
-    }
-
-    public void LoseOxygen()
-    {
-        oxygenAmount -= Time.deltaTime;
-        if (oxygenAmount <= 0)
-        {
-            isDown = true;
-            //la condition de défaite
-            oxygenAmount = 0;
-            KOSprite.SetActive(true);
-        }
-        else
-        {
-            isDown = false;
-            KOSprite.SetActive(false);
-        }
-    }
+    
 
     #endregion
 
@@ -412,7 +389,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         {
             if(UIManager.instance.scubaTankAmount > 0)
             {
-                FillOxygen();
+                UIManager.instance.FillOxygen();
             }
             else
             {
