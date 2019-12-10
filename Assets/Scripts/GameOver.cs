@@ -51,7 +51,7 @@ public class GameOver : MonoBehaviour
 
     void GameOverDie()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("GameOver");
     }
 
     void UpdateTimer()
