@@ -138,6 +138,8 @@ public class PlayerRigidBodyEntity : MonoBehaviour
 
     public static event Action onRepairs;
 
+    private Transform repairHub;
+
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody>();
@@ -211,6 +213,25 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             velocity.y = _verticalSpeed;
             rigidBody.velocity = velocity;
         }
+
+        RaycastHit hit;
+
+        Debug.DrawRay(transform.position, transform.forward);
+
+        if (Physics.Raycast(transform.position, Vector3.forward, out hit, 6f))
+        {
+            if (hit.transform.tag == "RepairHub")
+            {
+                repairHub = hit.transform;
+                repairHub.GetComponent<ButtonFeedback>().RepairHubCheck();
+
+            }
+            else
+            {
+                if(repairHub !=null) repairHub.GetComponent<ButtonFeedback>().StopRepairCheck();
+                repairHub = null;
+            }
+        }
     }
 
     
@@ -237,7 +258,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
     {
         if (UIManager.instance.scubaTankAmount == 0) return;
         oxygenAmount = maxOxygenAmount;
-        UIManager.instance.scubaTankAmount -= UIManager.instance._initialCost;
+        UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.scubaTankAmount, UIManager.instance._initialCost);
     }
 
     public void LoseOxygen()
@@ -419,6 +440,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
 
     private void ActionInteract()
     {
+
         if (interactItem == null) return;
         if (isInteracting) return;
 
@@ -441,6 +463,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         }
         else if (interactItem.gameObject.tag == "Tank")
         {
+            
             FuelSystem.Instance.ReplenishFuel();
             
         }
@@ -451,6 +474,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             if (UIManager.instance.scrapsAmount <= 0)
             {
                 UIManager.instance.UIAnimator.SetTrigger("NoScraps");
+                FindObjectOfType<SoundManager>().Play("NoScraps");
                 return;
             }
 
@@ -662,6 +686,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Tank")
         {
+            canInteractQTE = true;
             if (!isInteracting)
             {
                 interactItem = collision.gameObject;

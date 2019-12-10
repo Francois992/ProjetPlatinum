@@ -104,8 +104,8 @@ public class NeedleScript : MonoBehaviour
 
         if (!Spinner.instance.isRotating)
         {
-            
-            
+
+
         }
     }
 

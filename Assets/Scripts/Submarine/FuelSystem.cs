@@ -60,6 +60,7 @@ public class FuelSystem : MonoBehaviour
         if (startFuel <= 0)
         {
             startFuel = 0;
+            
             //fuelIndicatorTxt.text = "Out of fuel !!!";
         }
     }
@@ -80,6 +81,7 @@ public class FuelSystem : MonoBehaviour
         {
             UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.fuelJerrycanAmount, UIManager.instance._initialCost);
             startFuel += addedFuelAmount;
+            FindObjectOfType<SoundManager>().Play("AddingFuel");
             if (startFuel > maxFuel)
                 startFuel = maxFuel;
         }
