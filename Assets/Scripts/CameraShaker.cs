@@ -16,7 +16,6 @@ public class CameraShaker : MonoBehaviour
     private void Awake()
     {
         _instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 
     public Transform positionSub;
