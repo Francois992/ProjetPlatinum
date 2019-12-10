@@ -19,7 +19,6 @@ public class MechaManager : MonoBehaviour
     {
         _instance = this;
         transform.parent = null;
-        DontDestroyOnLoad(gameObject);
     }
 
     public float _dirX;
