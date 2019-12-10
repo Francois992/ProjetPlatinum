@@ -228,7 +228,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             }
             else
             {
-                repairHub.GetComponent<ButtonFeedback>().StopRepairCheck();
+                if(repairHub !=null) repairHub.GetComponent<ButtonFeedback>().StopRepairCheck();
                 repairHub = null;
             }
         }
