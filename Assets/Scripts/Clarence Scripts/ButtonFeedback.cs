@@ -63,6 +63,17 @@ public class ButtonFeedback : MonoBehaviour
                         redCross.SetActive(true);
                     }
                 }
+                else if (gameObject.tag == "Tank")
+                {
+                    if(UIManager.instance.fuelJerrycanAmount > 0)
+                    {
+                        redCross.SetActive(false);
+                    }
+                    else
+                    {
+                        redCross.SetActive(true);
+                    }
+                }
                 xButton.SetActive(true);
                 InteractButton.SetActive(false);
             }
