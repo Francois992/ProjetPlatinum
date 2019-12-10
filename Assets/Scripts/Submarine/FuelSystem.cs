@@ -18,7 +18,6 @@ public class FuelSystem : MonoBehaviour
     private void Awake()
     {
         _instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 
     public float startFuel = 0f; //starting fuel
