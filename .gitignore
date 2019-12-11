@@ -34,3 +34,9 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+Assets/3DModels.meta
+
+Assets/UI.meta
+
+*.meta
