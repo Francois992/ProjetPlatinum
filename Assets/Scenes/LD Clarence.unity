@@ -1062,18 +1062,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 417fa48f6332745449024747cdf800d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &109193394 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3103578414148694037, guid: 6dabd3ff49b57a7428dadc3129f4b43c,
-    type: 3}
-  m_PrefabInstance: {fileID: 909955118}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &117762266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2359,18 +2347,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 570789637}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &585752603 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3103578414990991631, guid: 6dabd3ff49b57a7428dadc3129f4b43c,
-    type: 3}
-  m_PrefabInstance: {fileID: 909955118}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &608123535
 GameObject:
   m_ObjectHideFlags: 0
@@ -3537,41 +3513,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3103578414811056889, guid: 6dabd3ff49b57a7428dadc3129f4b43c,
-        type: 3}
-      propertyPath: ammoAmount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9000466518390260447, guid: 6dabd3ff49b57a7428dadc3129f4b43c,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7432144419357627762, guid: 6dabd3ff49b57a7428dadc3129f4b43c,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2829084730890120471, guid: 6dabd3ff49b57a7428dadc3129f4b43c,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2645177081309310194, guid: 6dabd3ff49b57a7428dadc3129f4b43c,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 881740559602332560, guid: 6dabd3ff49b57a7428dadc3129f4b43c,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1842375877024288396, guid: 6dabd3ff49b57a7428dadc3129f4b43c,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dabd3ff49b57a7428dadc3129f4b43c, type: 3}
@@ -5649,18 +5590,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1300636697}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1308233832 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3103578412920503505, guid: 6dabd3ff49b57a7428dadc3129f4b43c,
-    type: 3}
-  m_PrefabInstance: {fileID: 909955118}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1312954072
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6466,29 +6395,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1445485818}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1449026713 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3103578414811056894, guid: 6dabd3ff49b57a7428dadc3129f4b43c,
-    type: 3}
-  m_PrefabInstance: {fileID: 909955118}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1449026714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1449026713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dba1a769e62a3746b666561f2e91bf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scubaTank: {fileID: 109193394}
-  fuel: {fileID: 1978269390}
-  ammo: {fileID: 585752603}
-  repairKit: {fileID: 1667346565}
-  scrap: {fileID: 1308233832}
 --- !u!1 &1461755923
 GameObject:
   m_ObjectHideFlags: 0
@@ -8097,18 +8003,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1652768150}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1667346565 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3103578413088589670, guid: 6dabd3ff49b57a7428dadc3129f4b43c,
-    type: 3}
-  m_PrefabInstance: {fileID: 909955118}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1674672546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13859,18 +13753,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977916471}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1978269390 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3103578414863830402, guid: 6dabd3ff49b57a7428dadc3129f4b43c,
-    type: 3}
-  m_PrefabInstance: {fileID: 909955118}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1993275124
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14117,7 +13999,7 @@ PrefabInstance:
         type: 3}
       propertyPath: UIAnimatorManager
       value: 
-      objectReference: {fileID: 1449026714}
+      objectReference: {fileID: 0}
     - target: {fileID: 4501548113179322050, guid: 51870300cbd77d744948b0a169fc8fd8,
         type: 3}
       propertyPath: m_SortingOrder
