@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LD Beta Bis.unity
     guid: 937acd5f44b56524197a8ddec697ba6f
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: d35adef3e13ff21429457f131852cddb
   m_configObjects: {}
