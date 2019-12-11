@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class EventZone : MonoBehaviour
+public class EventZone : MonoBehaviour
 {
     //Clarence Berard C# Script
     
@@ -16,6 +16,13 @@ public abstract class EventZone : MonoBehaviour
 
     private bool isInside = false;
 
+    protected string titleZone;
+    protected string featureOne;
+    protected string featureTwo;
+    protected Color zoneColor = Color.white;
+
+    private bool isEnterZone = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,8 +35,23 @@ public abstract class EventZone : MonoBehaviour
         _fuelInitialSpeed = FuelSystem.Instance.fuelConsumptionRate;
     }
 
-    protected abstract void EnterZone();
-    protected abstract void ExitZone();
+    protected virtual void EnterZone()
+    {
+        if (!isEnterZone)
+        {
+            UIManager.instance.SetZoneTitle(titleZone);
+            UIManager.instance.SetFeatureOne(featureOne);
+            UIManager.instance.SetFeatureTwo(featureTwo);
+            UIManager.instance.SetZoneColor(zoneColor);
+            UIManager.instance.EnterZone();
+            isEnterZone = true;
+        }
+        
+    }
+    protected virtual void ExitZone()
+    {
+
+    }
 
     private void OnTriggerEnter(Collider other)
     {

@@ -9,6 +9,14 @@ public class SunbeamEventZone : EventZone
     [Range(0, 500)]
     private float percentage;
 
+    private void Start()
+    {
+        titleZone = "Sunbeam Entry";
+        featureOne = "- The submarine moves much faster !";
+        featureTwo = "- Aouch ! You lose half of your repair Kit stock !";
+        zoneColor = Color.blue;
+    }
+
     private float PercentToFloat(float thisPercentage)
     {
         thisPercentage = thisPercentage / 100;
@@ -17,6 +25,7 @@ public class SunbeamEventZone : EventZone
 
     protected override void EnterZone()
     {
+        base.EnterZone();
         MechaManager.Instance.speedMax += (initialSubmarineSpeed * PercentToFloat(percentage));
         MechaManager.Instance.accelerationX += (initialSubmarineAccelerationX * PercentToFloat(percentage));
         MechaManager.Instance.accelerationY += (initialSubmarineAccelerationY * PercentToFloat(percentage));

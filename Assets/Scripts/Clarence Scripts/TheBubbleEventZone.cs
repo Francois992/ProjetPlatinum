@@ -15,11 +15,15 @@ public class TheBubbleEventZone : EventZone
 
     private void Start()
     {
+        titleZone = "The Bubble";
+        featureOne = "- Scrap's value is now 2 !";
+        featureTwo = "- The craft wheel turns slower.";
+        zoneColor = Color.yellow;
         initialSpinnerSpeed = Spinner.instance.speed;
     }
     protected override void EnterZone()
     {
-        //throw new System.NotImplementedException();
+        base.EnterZone();
         Spinner.instance.speed /= dividor;
     }
 

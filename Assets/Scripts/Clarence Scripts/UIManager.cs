@@ -47,6 +47,35 @@ public class UIManager : MonoBehaviour
 
     private float elapsedTime = 0f;
 
+    [Header("Entrée de zone")]
+    [SerializeField] private Image upBar = null;
+    [SerializeField] private Image downBar = null;
+    [SerializeField] private Text titleZone = null;
+    [SerializeField] private Text featureOne = null;
+    [SerializeField] private Text featureTwo = null;
+
+    public void SetZoneColor(Color color)
+    {
+        upBar.color = color;
+        downBar.color = color;
+        titleZone.color = color;
+        featureOne.color = color;
+        featureTwo.color = color;
+    }
+
+    public void SetZoneTitle(string title)
+    {
+        titleZone.text = title;
+    }
+    public void SetFeatureOne(string title)
+    {
+        featureOne.text = title;
+    }
+    public void SetFeatureTwo(string title)
+    {
+        featureTwo.text = title;
+    }
+
     private void Awake()
     {
         instance = this;
@@ -107,7 +136,10 @@ public class UIManager : MonoBehaviour
             return;
         }
     }
-
+    public void EnterZone()
+    {
+        UIAnimator.SetTrigger("EnterZone");
+    }
     public void UpdateLifeBar(float fillValue)
     {
         Lifebar.fillAmount = fillValue;
