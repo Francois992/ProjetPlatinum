@@ -5,22 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {   
-    [SerializeField]
-    private PlayerRigidBodyEntity player1;
-    [SerializeField]
-    private PlayerRigidBodyEntity player2;
+    
 
     [SerializeField]
     private bool isGameOver = false;
 
-    private float Timer;
-    public float maxTimer;
+    
 
 
     // Start is called before the first frame update
     void Start()
     {
-        Timer = maxTimer;
+        
     }
 
     // Update is called once per frame
@@ -32,7 +28,7 @@ public class GameOver : MonoBehaviour
         }
         else
         {
-            if (player1.isDown || player2.isDown)
+            if (UIManager.instance.GetOxygen() <= 0)
             {
                 isGameOver = true;
             }
@@ -54,15 +50,18 @@ public class GameOver : MonoBehaviour
         SceneManager.LoadScene("GameOver");
     }
 
-    void UpdateTimer()
-    {
-        if(Timer<= 0)
-        {
-            isGameOver = true;
-            return;
-        }
-        Timer -= Time.deltaTime;
+   
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Mecha"))
+        {
+            IsWin();
+        }
     }
 
+    void IsWin()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
