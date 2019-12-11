@@ -10,14 +10,13 @@ public class GameOver : MonoBehaviour
     [SerializeField]
     private bool isGameOver = false;
 
-    private float Timer;
-    public float maxTimer;
+    
 
 
     // Start is called before the first frame update
     void Start()
     {
-        Timer = maxTimer;
+        
     }
 
     // Update is called once per frame
@@ -29,7 +28,7 @@ public class GameOver : MonoBehaviour
         }
         else
         {
-            if (UIManager.instance.)
+            if (UIManager.instance.GetOxygen() <= 0)
             {
                 isGameOver = true;
             }
@@ -51,16 +50,7 @@ public class GameOver : MonoBehaviour
         SceneManager.LoadScene("GameOver");
     }
 
-    void UpdateTimer()
-    {
-        if(Timer<= 0)
-        {
-            isGameOver = true;
-            return;
-        }
-        Timer -= Time.deltaTime;
-
-    }
+   
 
     private void OnTriggerEnter(Collider other)
     {
