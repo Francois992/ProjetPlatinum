@@ -199,4 +199,9 @@ public class UIManager : MonoBehaviour
         _oxygen += oxygenGain;
         ChangeInventory("Remove", ref UIManager.instance.scubaTankAmount, UIManager.instance._initialCost);
     }
+
+    public float GetOxygen()
+    {
+        return _oxygen;
+    }
 }
