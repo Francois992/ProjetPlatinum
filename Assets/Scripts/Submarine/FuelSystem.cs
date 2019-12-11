@@ -87,6 +87,7 @@ public class FuelSystem : MonoBehaviour
         else
         {
             UIManager.instance.UIAnimator.SetTrigger("NoFuel");
+            FindObjectOfType<SoundManager>().Play("NoScraps");
         }
 
         UpdateUI();

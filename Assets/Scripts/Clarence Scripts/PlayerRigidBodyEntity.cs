@@ -54,6 +54,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
     public float jumpDuration = 0.3f;
     private float _jumpCountdown = 0.1f;
     public bool _isJumping = false;
+    [SerializeField] private float raycastValue = 0.01f;
 
     //ActionBool
     [Header("Actions")]
@@ -394,6 +395,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             else
             {
                 UIManager.instance.UIAnimator.SetTrigger("NoOxygen");
+                FindObjectOfType<SoundManager>().Play("NoScraps");
             }
         } 
     }
@@ -729,7 +731,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
         RaycastHit raycastHit;
         Vector3 raycastOrigin = transform.position;
         raycastOrigin.y += 0.01f;
-        if(Physics.BoxCast(raycastOrigin, halfBox, Vector3.down,out raycastHit, transform.rotation, 0.01f))
+        if(Physics.BoxCast(raycastOrigin, halfBox, Vector3.down,out raycastHit, transform.rotation, raycastValue))
         {
             if (raycastHit.collider != null)
             {

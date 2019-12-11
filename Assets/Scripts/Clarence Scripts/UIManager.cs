@@ -209,6 +209,7 @@ public class UIManager : MonoBehaviour
         float ratio = elapsedTime / repairTime;
 
         Lifebar.fillAmount = Mathf.Lerp(startRepairValue, endRepairValue, ratio);
+        FindObjectOfType<SoundManager>().Play("UpdatingGauges");
     }
 
     private void UpdateOxygen()
@@ -230,6 +231,7 @@ public class UIManager : MonoBehaviour
     {
         _oxygen += oxygenGain;
         ChangeInventory("Remove", ref UIManager.instance.scubaTankAmount, UIManager.instance._initialCost);
+        FindObjectOfType<SoundManager>().Play("UpdatingGauges");
     }
 
     public float GetOxygen()

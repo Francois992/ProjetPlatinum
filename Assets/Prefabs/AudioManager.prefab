@@ -122,3 +122,9 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: UpdatingGauges
+    clip: {fileID: 8300000, guid: 551e896c7d175d546aa31bb93bef8a89, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
