@@ -201,4 +201,9 @@ public class UIManager : MonoBehaviour
         ChangeInventory("Remove", ref UIManager.instance.scubaTankAmount, UIManager.instance._initialCost);
         FindObjectOfType<SoundManager>().Play("UpdatingGauges");
     }
+
+    public float GetOxygen()
+    {
+        return _oxygen;
+    }
 }
