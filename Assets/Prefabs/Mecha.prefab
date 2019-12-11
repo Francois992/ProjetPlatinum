@@ -483,7 +483,7 @@ MonoBehaviour:
   _speedY: 0
   waterFriction:
     friction: 2
-    turnAroundFriction: 0.8
+    turnAroundFriction: 1.2
   top: {fileID: 6610149421498679790}
   bottom: {fileID: 3290170052409930721}
   front: {fileID: 3502852158536001334}
@@ -3841,7 +3841,7 @@ MonoBehaviour:
   offset: {x: -5, y: 2, z: -20}
   smoothTime: 2
   minZoom: 40
-  maxZoom: 80
+  maxZoom: 55
   zoomLimiter: 50
 --- !u!82 &2045948526
 AudioSource:
