@@ -394,6 +394,7 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             else
             {
                 UIManager.instance.UIAnimator.SetTrigger("NoOxygen");
+                FindObjectOfType<SoundManager>().Play("NoScraps");
             }
         } 
     }
