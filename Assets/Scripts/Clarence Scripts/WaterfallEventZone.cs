@@ -14,6 +14,14 @@ public class WaterfallEventZone : EventZone
     [Range(0, 500)]
     private float fuelPercentage;
 
+    private void Start()
+    {
+        titleZone = "Waterfall";
+        featureOne = "- The submarine moves faster !";
+        featureTwo = "- Fuel is consummed faster !";
+        zoneColor = Color.cyan;
+    }
+
     private float PercentToFloat(float thisPercentage)
     {
         thisPercentage = thisPercentage / 100;
@@ -22,6 +30,7 @@ public class WaterfallEventZone : EventZone
 
     protected override void EnterZone()
     {
+        base.EnterZone();
         MechaManager.Instance.speedMax += (initialSubmarineSpeed * PercentToFloat(percentage));
         MechaManager.Instance.accelerationX += (initialSubmarineAccelerationX * PercentToFloat(percentage));
         MechaManager.Instance.accelerationY += (initialSubmarineAccelerationY * PercentToFloat(percentage));

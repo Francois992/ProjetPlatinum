@@ -17,6 +17,10 @@ public class CanyonEventZone : EventZone
 
     private void Start()
     {
+        titleZone = "The Canyon";
+        featureOne = "- Players move slower !";
+        featureTwo = "- Aouch ! You lose half of your ammo stock !";
+        zoneColor = new Color(1, 0.5f, 0);
         _playerInitialSpeed = playerOne.speedMax;
         _playerInitialAcceleration = playerOne.acceleration;
         //Debug.Log(PlayerRigidBodyEntity.playerList[0]);
@@ -24,17 +28,12 @@ public class CanyonEventZone : EventZone
     protected override void EnterZone()
     {
 
-        //throw new System.NotImplementedException();
-        /*
-        for(int i = 0; i < PlayerRigidBodyEntity.playerList.Count; i++)
-        {
-            PlayerRigidBodyEntity.playerList[i]._speed = _playerInitialSpeed / speedMultiplicator;
-        }*/
+        base.EnterZone();
         playerOne.speedMax = _playerInitialSpeed * speedMultiplicator;
         playerTwo.speedMax = _playerInitialSpeed * speedMultiplicator;
         playerOne.acceleration = _playerInitialSpeed * _playerInitialAcceleration;
         playerTwo.acceleration = _playerInitialSpeed * _playerInitialAcceleration;
-        UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.fuelJerrycanAmount, UIManager.instance.fuelJerrycanAmount / 2);
+        UIManager.instance.ChangeInventory("Remove", ref UIManager.instance.ammoAmount, UIManager.instance.ammoAmount / 2);
     }
 
     
