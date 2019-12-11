@@ -5,10 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {   
-    [SerializeField]
-    private PlayerRigidBodyEntity player1;
-    [SerializeField]
-    private PlayerRigidBodyEntity player2;
+    
 
     [SerializeField]
     private bool isGameOver = false;
@@ -32,7 +29,7 @@ public class GameOver : MonoBehaviour
         }
         else
         {
-            if (player1.isDown || player2.isDown)
+            if (UIManager.instance.)
             {
                 isGameOver = true;
             }
@@ -65,4 +62,16 @@ public class GameOver : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Mecha"))
+        {
+            IsWin();
+        }
+    }
+
+    void IsWin()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
