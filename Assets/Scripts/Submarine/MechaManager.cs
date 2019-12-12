@@ -74,7 +74,7 @@ public class MechaManager : MonoBehaviour
 
     public static event Action CancelRepairs;
 
-    [SerializeField] private float fallingSpeed = 0.5f;
+    [SerializeField] private float fallingSpeed = 0.25f;
 
     // Start is called before the first frame update
     void Start()
