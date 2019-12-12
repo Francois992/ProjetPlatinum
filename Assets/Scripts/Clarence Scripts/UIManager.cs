@@ -54,6 +54,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Text featureOne = null;
     [SerializeField] private Text featureTwo = null;
 
+    [Header("Images -Warning-")]
+    [SerializeField] private Image healthWarning = null;
+    [SerializeField] private Image fuelWarning = null;
+    [SerializeField] private Image oxygenWarning = null;
+
     public void SetZoneColor(Color color)
     {
         upBar.color = color;
@@ -84,6 +89,10 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        oxygenWarning.enabled = false;
+        fuelWarning.enabled = false;
+        healthWarning.enabled = false;
+
         _oxygen = maxOxygen;
         UIAnimator = GetComponent<Animator>();
         scubaTankAmount = 5;
@@ -147,6 +156,35 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
+        if (MechaManager.Instance.currentLife <= MechaManager.Instance.fullLife / 4)
+        {
+            if (!healthWarning.enabled)
+                healthWarning.enabled = true;
+        }
+        else
+        {
+            healthWarning.enabled = false;
+        }
+
+        if (FuelSystem.Instance.startFuel <= FuelSystem.Instance.maxFuel / 4)
+        {
+            if (!fuelWarning.enabled)
+                fuelWarning.enabled = true;
+        }
+        else
+        {
+            fuelWarning.enabled = false;
+        }
+        if (_oxygen <= maxOxygen / 4)
+        {
+            if (!oxygenWarning.enabled)
+                oxygenWarning.enabled = true;
+        }
+        else
+        {
+            oxygenWarning.enabled = false;
+        }
+
         if (isRepairing)
         {
             Repairing();

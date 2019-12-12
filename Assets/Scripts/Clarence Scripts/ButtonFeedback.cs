@@ -57,7 +57,7 @@ public class ButtonFeedback : MonoBehaviour
             {
                 xButton.SetActive(false);
                 redCross.SetActive(false);
-                if(gameObject.tag == "CraftTable") InteractButton.SetActive(true);
+                if(gameObject.tag == "CraftTable" || gameObject.tag == "MovePanel") InteractButton.SetActive(true);
             }
             else
             {

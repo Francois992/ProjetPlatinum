@@ -26,7 +26,11 @@ public class MechFace : MonoBehaviour
         {
             if (collision.gameObject.tag == "Walls")
             {
-                if (!isColliding) MechaManager.Instance.TakeDamage();
+                if (!isColliding)
+                {
+                    MechaManager.Instance.TakeDamage();
+                    CameraShaker.Instance.startShake();
+                }
                 isColliding = true;
             }
         }
