@@ -47,6 +47,40 @@ public class UIManager : MonoBehaviour
 
     private float elapsedTime = 0f;
 
+    [Header("Entrée de zone")]
+    [SerializeField] private Image upBar = null;
+    [SerializeField] private Image downBar = null;
+    [SerializeField] private Text titleZone = null;
+    [SerializeField] private Text featureOne = null;
+    [SerializeField] private Text featureTwo = null;
+
+    [Header("Images -Warning-")]
+    [SerializeField] private Image healthWarning = null;
+    [SerializeField] private Image fuelWarning = null;
+    [SerializeField] private Image oxygenWarning = null;
+
+    public void SetZoneColor(Color color)
+    {
+        upBar.color = color;
+        downBar.color = color;
+        titleZone.color = color;
+        featureOne.color = color;
+        featureTwo.color = color;
+    }
+
+    public void SetZoneTitle(string title)
+    {
+        titleZone.text = title;
+    }
+    public void SetFeatureOne(string title)
+    {
+        featureOne.text = title;
+    }
+    public void SetFeatureTwo(string title)
+    {
+        featureTwo.text = title;
+    }
+
     private void Awake()
     {
         instance = this;
@@ -55,6 +89,9 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        oxygenWarning.enabled = false;
+        fuelWarning.enabled = false;
+        healthWarning.enabled = false;
         _oxygen = maxOxygen;
         UIAnimator = GetComponent<Animator>();
         scubaTankAmount = 5;
@@ -107,7 +144,10 @@ public class UIManager : MonoBehaviour
             return;
         }
     }
-
+    public void EnterZone()
+    {
+        UIAnimator.SetTrigger("EnterZone");
+    }
     public void UpdateLifeBar(float fillValue)
     {
         Lifebar.fillAmount = fillValue;
@@ -115,6 +155,34 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
+        if(MechaManager.Instance.currentLife <= MechaManager.Instance.fullLife/4)
+        {
+            if (!healthWarning.enabled)
+                healthWarning.enabled = true;
+        }
+        else
+        {
+            healthWarning.enabled = false;
+        }
+
+        if (FuelSystem.Instance.startFuel <= FuelSystem.Instance.maxFuel / 4)
+        {
+            if (!fuelWarning.enabled)
+                fuelWarning.enabled = true;
+        }
+        else
+        {
+            fuelWarning.enabled = false;
+        }
+        if (_oxygen <= maxOxygen / 4)
+        {
+            if (!oxygenWarning.enabled)
+                oxygenWarning.enabled = true;
+        }
+        else
+        {
+            oxygenWarning.enabled = false;
+        }
         if (isRepairing)
         {
             Repairing();

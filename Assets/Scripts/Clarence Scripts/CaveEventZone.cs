@@ -11,9 +11,17 @@ public class CaveEventZone : EventZone
     [Range(1, 5)]
     private float multiplicator;
 
+    private void Start()
+    {
+        titleZone = "Cave of Mines";
+        featureOne = "- The craft wheel turns faster.";
+        featureTwo = "- Watch out for mines !";
+        zoneColor = Color.red;
+    }
+
     protected override void EnterZone()
     {
-        //throw new System.NotImplementedException();
+        base.EnterZone();
         Spinner.instance.speed *= multiplicator;
     }
 

@@ -46,25 +46,25 @@ MonoBehaviour:
   sounds:
   - name: AddFuel
     clip: {fileID: 8300000, guid: a9bcebf8a2096eb49bd73674b1937bf6, type: 3}
-    volume: 1
+    volume: 0.3
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: AddOxygen
     clip: {fileID: 8300000, guid: a12ee53506faa9b4a8c9d20973ce6b9f, type: 3}
-    volume: 1
+    volume: 0.3
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: AddAmmo
     clip: {fileID: 8300000, guid: 7134d2a3fb10d244fae76c08e6ccad71, type: 3}
-    volume: 1
+    volume: 0.3
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: AddRepairKit
     clip: {fileID: 8300000, guid: 7b8e07a076a41644686c14bd5f506428, type: 3}
-    volume: 1
+    volume: 0.3
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -82,7 +82,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Shoot
     clip: {fileID: 8300000, guid: f0775d3c603228340acb90291b92e94a, type: 3}
-    volume: 1
+    volume: 0.6
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -100,31 +100,31 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Damage
     clip: {fileID: 8300000, guid: fc4b4e1753538a64cabb14685cbbc5da, type: 3}
-    volume: 0.026
+    volume: 0.2
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: RotatingWheel
     clip: {fileID: 8300000, guid: 32317359f8713684ab72e39bf76b9ff2, type: 3}
-    volume: 0.211
+    volume: 0.2
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: NoScraps
     clip: {fileID: 8300000, guid: 3e38794c8ba62ee4d8089be7309cde92, type: 3}
-    volume: 0.211
+    volume: 0.2
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: AddingFuel
     clip: {fileID: 8300000, guid: 30b5e94cb208f7d40878f0b197a30935, type: 3}
-    volume: 0.4
+    volume: 0.3
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: UpdatingGauges
     clip: {fileID: 8300000, guid: 551e896c7d175d546aa31bb93bef8a89, type: 3}
-    volume: 0.4
+    volume: 0.3
     pitch: 1
     loop: 0
     source: {fileID: 0}
