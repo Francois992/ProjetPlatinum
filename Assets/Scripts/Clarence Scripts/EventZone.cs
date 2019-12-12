@@ -9,7 +9,7 @@ public class EventZone : MonoBehaviour
     protected float initialSubmarineSpeed;
     protected float initialSubmarineAccelerationX;
     protected float initialSubmarineAccelerationY;
-    protected float initialWheelSpeed;
+    protected float initialWheelSpeed = 100;
     protected UIManager _uiManager;
     protected float _playerInitialSpeed;
     protected float _fuelInitialSpeed;
@@ -31,7 +31,7 @@ public class EventZone : MonoBehaviour
         initialSubmarineAccelerationX = MechaManager.Instance.accelerationX;
         initialSubmarineAccelerationY = MechaManager.Instance.accelerationY;
         _uiManager = UIManager.instance;
-        initialWheelSpeed = Spinner.instance.speed;
+        //initialWheelSpeed = Spinner.instance.speed;
         _fuelInitialSpeed = FuelSystem.Instance.fuelConsumptionRate;
     }
 
