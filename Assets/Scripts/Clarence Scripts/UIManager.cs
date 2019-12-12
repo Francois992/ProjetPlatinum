@@ -262,6 +262,10 @@ public class UIManager : MonoBehaviour
         {
             oxygenBar.fillAmount = _oxygen / maxOxygen;
             _oxygen -= Time.deltaTime;
+            if(_oxygen > maxOxygen)
+            {
+                _oxygen = maxOxygen;
+            }
         }
     }
 
