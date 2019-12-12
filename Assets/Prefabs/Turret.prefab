@@ -425,7 +425,7 @@ MonoBehaviour:
   minCanonRot: -45
   shotCoolDown: 3
   minOffsetX: 4
-  maxOffsetX: 30
+  maxOffsetX: 20
   minOffsetY: 10
   maxOffsetY: 10
   flash: {fileID: 643348430545633134}
