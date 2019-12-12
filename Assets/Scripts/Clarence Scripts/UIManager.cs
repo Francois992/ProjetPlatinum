@@ -187,6 +187,7 @@ public class UIManager : MonoBehaviour
             isRepairing = true;
             startRepairValue = Lifebar.fillAmount;
             endRepairValue = startRepairValue + (repairValue / 100);
+            FindObjectOfType<SoundManager>().Play("EndingRepairs");
         }
     }
 
@@ -209,7 +210,6 @@ public class UIManager : MonoBehaviour
         float ratio = elapsedTime / repairTime;
 
         Lifebar.fillAmount = Mathf.Lerp(startRepairValue, endRepairValue, ratio);
-        FindObjectOfType<SoundManager>().Play("UpdatingGauges");
     }
 
     private void UpdateOxygen()
