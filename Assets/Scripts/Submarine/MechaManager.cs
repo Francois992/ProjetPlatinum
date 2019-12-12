@@ -292,6 +292,7 @@ public class MechaManager : MonoBehaviour
         currentLife--;
         CancelRepairs?.Invoke();
 
+        CameraShaker.Instance.startShake();
         UIManager.instance.UpdateLifeBar(currentLife/fullLife);
         FindObjectOfType<SoundManager>().Play("Damage");
 
