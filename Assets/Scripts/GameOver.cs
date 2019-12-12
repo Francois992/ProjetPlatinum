@@ -19,6 +19,8 @@ public class GameOver : MonoBehaviour
         
     }
 
+    
+
     // Update is called once per frame
     void Update()
     {
@@ -62,6 +64,6 @@ public class GameOver : MonoBehaviour
 
     void IsWin()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("WinScreen");
     }
 }

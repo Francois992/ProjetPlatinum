@@ -34,4 +34,12 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
     }
+    public void BackGame()
+    {
+        SceneManager.LoadScene("LD Beta Bis");
+    }
+    public void OnApplicationQuit()
+    {
+        Application.Quit();        
+    }
 }

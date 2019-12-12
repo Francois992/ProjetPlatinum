@@ -36,7 +36,6 @@ public class Mine : MonoBehaviour
 
     public void Explode()
     {
-        CameraShaker.Instance.startShake();
         GameObject thisExplosion = Instantiate(explosion, transform.position, transform.rotation);
         FindObjectOfType<SoundManager>().Play("Explosion");
         Destroy(thisExplosion, 0.5f);

@@ -111,8 +111,8 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: NoScraps
-    clip: {fileID: 8300000, guid: 3e38794c8ba62ee4d8089be7309cde92, type: 3}
-    volume: 0.2
+    clip: {fileID: 8300000, guid: 477c7d9476f8b3146b1d74ad8a0ecc80, type: 3}
+    volume: 0.1
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -124,7 +124,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: UpdatingGauges
     clip: {fileID: 8300000, guid: 551e896c7d175d546aa31bb93bef8a89, type: 3}
-    volume: 0.3
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: EndingRepairs
+    clip: {fileID: 8300000, guid: 3f3b8ec03e8dbeb429677132c035bc8d, type: 3}
+    volume: 0.7
     pitch: 1
     loop: 0
     source: {fileID: 0}
