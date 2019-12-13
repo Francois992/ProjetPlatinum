@@ -6,13 +6,13 @@ public class EventZone : MonoBehaviour
 {
     //Clarence Berard C# Script
     
-    protected float initialSubmarineSpeed;
-    protected float initialSubmarineAccelerationX;
-    protected float initialSubmarineAccelerationY;
-    protected float initialWheelSpeed;
+    protected float initialSubmarineSpeed = 5.5f;
+    protected float initialSubmarineAccelerationX = 2f;
+    protected float initialSubmarineAccelerationY = 2f;
+    protected float initialWheelSpeed = 100;
     protected UIManager _uiManager;
     protected float _playerInitialSpeed;
-    protected float _fuelInitialSpeed;
+    protected float _fuelInitialSpeed = 0.2f;
 
     private bool isInside = false;
 
@@ -27,12 +27,7 @@ public class EventZone : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        initialSubmarineSpeed = MechaManager.Instance.speedMax;
-        initialSubmarineAccelerationX = MechaManager.Instance.accelerationX;
-        initialSubmarineAccelerationY = MechaManager.Instance.accelerationY;
         _uiManager = UIManager.instance;
-        initialWheelSpeed = Spinner.instance.speed;
-        _fuelInitialSpeed = FuelSystem.Instance.fuelConsumptionRate;
     }
 
     protected virtual void EnterZone()

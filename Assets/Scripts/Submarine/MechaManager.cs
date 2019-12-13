@@ -74,6 +74,8 @@ public class MechaManager : MonoBehaviour
 
     public static event Action CancelRepairs;
 
+    [SerializeField] private float fallingSpeed = 0.25f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -128,6 +130,11 @@ public class MechaManager : MonoBehaviour
         {
             cameraMultiple.minZoom = 75;
             isCamMoving = false;
+        }
+
+        if(_dirX == 0 && _dirY == 0 && !bottom.isColliding)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, transform.position + Vector3.down, fallingSpeed * Time.deltaTime);
         }
 
         
@@ -211,6 +218,8 @@ public class MechaManager : MonoBehaviour
             }
         }
 
+        bottom.checkCollisions = true;
+
         if (_speedX > 0)
         {
             front.checkCollisions = true;
@@ -225,7 +234,7 @@ public class MechaManager : MonoBehaviour
         if (_speedY > 0)
         {
             top.checkCollisions = true;
-            bottom.checkCollisions = true;
+            
         }
         else if (_speedY < 0)
         {
