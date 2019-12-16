@@ -9,4 +9,13 @@ public class FadeInScript : MonoBehaviour
     {
         SceneManager.LoadScene("LD Beta Bis");
     }
+
+    public void PlayGameOver()
+    {
+        SceneManager.LoadScene("GameOver");
+    }
+    public void PlayGameWin()
+    {
+        SceneManager.LoadScene("WinScreen");
+    }
 }
