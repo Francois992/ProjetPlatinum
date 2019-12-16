@@ -704,7 +704,11 @@ public class PlayerRigidBodyEntity : MonoBehaviour
             canInteractQTE = false;
             interactItem = null;
         }
-
+        else if (collision.gameObject.tag == "Tank")
+        {
+            canInteractQTE = false;
+            interactItem = null;
+        }
     }
     #endregion
 
