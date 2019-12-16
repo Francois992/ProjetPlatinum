@@ -76,6 +76,9 @@ public class MechaManager : MonoBehaviour
 
     [SerializeField] private float fallingSpeed = 0.25f;
 
+    private float camInitMinZoom;
+    private float camWantedMinZoom = 100;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -88,14 +91,16 @@ public class MechaManager : MonoBehaviour
         if(_dirX > 0)
         {
             wantedCamPosX = wantedCamOffsetX;
-            cameraMultiple.minZoom = 100;
+            if(cameraMultiple.minZoom != camWantedMinZoom) camInitMinZoom = cameraMultiple.minZoom;
+            cameraMultiple.minZoom = camWantedMinZoom;
             if (!isCamMoving) isCamMoving = true;
             isMoving = true;
         }
         else if(_dirX < 0)
         {
             wantedCamPosX = -wantedCamOffsetX;
-            cameraMultiple.minZoom = 100;
+            if (cameraMultiple.minZoom != camWantedMinZoom) camInitMinZoom = cameraMultiple.minZoom;
+            cameraMultiple.minZoom = camWantedMinZoom;
             if (!isCamMoving) isCamMoving = true;
             isMoving = true;
         }
@@ -109,14 +114,16 @@ public class MechaManager : MonoBehaviour
         if (_dirY > 0)
         {
             wantedCamPosY = wantedCamOffsetY;
-            cameraMultiple.minZoom = 100;
+            if (cameraMultiple.minZoom != camWantedMinZoom) camInitMinZoom = cameraMultiple.minZoom;
+            cameraMultiple.minZoom = camWantedMinZoom;
             if (!isCamMoving) isCamMoving = true;
             isMoving = true;
         }
         else if (_dirY < 0)
         {
             wantedCamPosY = -wantedCamOffsetY;
-            cameraMultiple.minZoom = 100;
+            if (cameraMultiple.minZoom != camWantedMinZoom) camInitMinZoom = cameraMultiple.minZoom;
+            cameraMultiple.minZoom = camWantedMinZoom;
             if (!isCamMoving) isCamMoving = true;
             isMoving = true;
         }
@@ -128,7 +135,7 @@ public class MechaManager : MonoBehaviour
         
         if(wantedCamPosX == 0 && wantedCamPosY == 0 && isCamMoving)
         {
-            cameraMultiple.minZoom = 75;
+            cameraMultiple.minZoom = camInitMinZoom;
             isCamMoving = false;
         }
 

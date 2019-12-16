@@ -1141,7 +1141,7 @@ SpriteRenderer:
   m_Size: {x: 19.2, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1521117781539229003
@@ -2513,7 +2513,7 @@ SpriteRenderer:
   m_Size: {x: 19.2, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &5857985889960944598
@@ -3855,8 +3855,8 @@ MonoBehaviour:
   - {fileID: 7246342520810097535}
   offset: {x: -5, y: 2, z: -20}
   smoothTime: 2
-  minZoom: 40
-  maxZoom: 55
+  minZoom: 20
+  maxZoom: 70
   zoomLimiter: 50
 --- !u!82 &2045948526
 AudioSource:
@@ -4723,11 +4723,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1602813493792297616}
     m_Modifications:
-    - target: {fileID: 1090848434370007682, guid: f974a88ac4ac42b42a3c39bee759eb1b,
-        type: 3}
-      propertyPath: m_Name
-      value: MoveParticle (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 6893232447553994816, guid: f974a88ac4ac42b42a3c39bee759eb1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4783,6 +4778,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1090848434370007682, guid: f974a88ac4ac42b42a3c39bee759eb1b,
+        type: 3}
+      propertyPath: m_Name
+      value: MoveParticle (1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f974a88ac4ac42b42a3c39bee759eb1b, type: 3}
 --- !u!4 &8566542846888501683 stripped
@@ -4804,11 +4804,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4681793558501184196}
     m_Modifications:
-    - target: {fileID: 4357279720496681849, guid: c96c0c1f0ffe2164aaf3456857746d58,
-        type: 3}
-      propertyPath: m_Name
-      value: GunConsole
-      objectReference: {fileID: 0}
     - target: {fileID: 4357279720496681848, guid: c96c0c1f0ffe2164aaf3456857746d58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4863,6 +4858,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357279720496681849, guid: c96c0c1f0ffe2164aaf3456857746d58,
+        type: 3}
+      propertyPath: m_Name
+      value: GunConsole
       objectReference: {fileID: 0}
     - target: {fileID: 3382477461508459513, guid: c96c0c1f0ffe2164aaf3456857746d58,
         type: 3}
@@ -5054,11 +5054,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1602813493792297616}
     m_Modifications:
-    - target: {fileID: 1090848434370007682, guid: f974a88ac4ac42b42a3c39bee759eb1b,
-        type: 3}
-      propertyPath: m_Name
-      value: MoveParticle
-      objectReference: {fileID: 0}
     - target: {fileID: 6893232447553994816, guid: f974a88ac4ac42b42a3c39bee759eb1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5114,6 +5109,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1090848434370007682, guid: f974a88ac4ac42b42a3c39bee759eb1b,
+        type: 3}
+      propertyPath: m_Name
+      value: MoveParticle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f974a88ac4ac42b42a3c39bee759eb1b, type: 3}
 --- !u!4 &1889388454641984524 stripped
@@ -5135,26 +5135,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8334290864412504989}
     m_Modifications:
-    - target: {fileID: 8726570107433591217, guid: 6beebcd75a400094d98448108ea1519b,
-        type: 3}
-      propertyPath: m_Name
-      value: Reservoir
-      objectReference: {fileID: 0}
-    - target: {fileID: 8726570107433591217, guid: 6beebcd75a400094d98448108ea1519b,
-        type: 3}
-      propertyPath: m_TagString
-      value: Tank
-      objectReference: {fileID: 0}
-    - target: {fileID: 8726570107433591231, guid: 6beebcd75a400094d98448108ea1519b,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 1.1026368
-      objectReference: {fileID: 0}
-    - target: {fileID: 8726570107433591231, guid: 6beebcd75a400094d98448108ea1519b,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 0.051318407
-      objectReference: {fileID: 0}
     - target: {fileID: 8726570107433591226, guid: 6beebcd75a400094d98448108ea1519b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5210,6 +5190,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8726570107433591217, guid: 6beebcd75a400094d98448108ea1519b,
+        type: 3}
+      propertyPath: m_Name
+      value: Reservoir
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726570107433591217, guid: 6beebcd75a400094d98448108ea1519b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Tank
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726570107433591231, guid: 6beebcd75a400094d98448108ea1519b,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.1026368
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726570107433591231, guid: 6beebcd75a400094d98448108ea1519b,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.051318407
+      objectReference: {fileID: 0}
     - target: {fileID: 7426948579978910081, guid: 6beebcd75a400094d98448108ea1519b,
         type: 3}
       propertyPath: m_Mesh
@@ -5249,11 +5249,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3869183891252953400}
     m_Modifications:
-    - target: {fileID: 8965370440145685865, guid: c5bf63d4fe77eb14fba9e780fdb055cb,
-        type: 3}
-      propertyPath: m_Name
-      value: RepairHub
-      objectReference: {fileID: 0}
     - target: {fileID: 7354147182202331450, guid: c5bf63d4fe77eb14fba9e780fdb055cb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5308,6 +5303,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965370440145685865, guid: c5bf63d4fe77eb14fba9e780fdb055cb,
+        type: 3}
+      propertyPath: m_Name
+      value: RepairHub
       objectReference: {fileID: 0}
     - target: {fileID: 7127559597085923873, guid: c5bf63d4fe77eb14fba9e780fdb055cb,
         type: 3}
