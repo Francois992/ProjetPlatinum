@@ -6,15 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    public GameObject loadingScreen;
-    public Slider slider;
-    
-    public void LoadLevel(int sceneIndex)
+    [SerializeField] private GameObject fadeScreen;
+    //public Slider slider;
+    private void Start()
     {
-        StartCoroutine(LoadAsynchronously(sceneIndex));
+        fadeScreen.SetActive(false);
+    }
+    public void LoadLevel()
+    {
+        //StartCoroutine(LoadAsynchronously(sceneIndex));
+        fadeScreen.SetActive(true);
         
     }
     
+    /*
     IEnumerator LoadAsynchronously (int sceneIndex)
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
@@ -28,7 +33,7 @@ public class Menu : MonoBehaviour
 
             yield return null;
         }
-    }
+    }*/
 
     public void PlayGame()
     {
