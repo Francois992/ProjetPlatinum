@@ -410,6 +410,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9831230}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &11026023 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1745184437, guid: 51870300cbd77d744948b0a169fc8fd8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1023455256}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40cfb38621877433eb00e0333545bbe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &12490394
 GameObject:
   m_ObjectHideFlags: 0
@@ -19795,6 +19807,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 622106754}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &625349798 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1918184872824929894, guid: 51870300cbd77d744948b0a169fc8fd8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1023455256}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &627506022
 GameObject:
   m_ObjectHideFlags: 0
@@ -33455,6 +33473,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mecha
       objectReference: {fileID: 0}
+    - target: {fileID: 573980975123592022, guid: 51870300cbd77d744948b0a169fc8fd8,
+        type: 3}
+      propertyPath: cameraMultiple
+      value: 
+      objectReference: {fileID: 11026023}
+    - target: {fileID: 573980975123592022, guid: 51870300cbd77d744948b0a169fc8fd8,
+        type: 3}
+      propertyPath: wantedCamOffsetX
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1761311726077727072, guid: 51870300cbd77d744948b0a169fc8fd8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33528,6 +33556,14 @@ PrefabInstance:
       propertyPath: gunController
       value: 
       objectReference: {fileID: 673672355}
+    - target: {fileID: 1745184437, guid: 51870300cbd77d744948b0a169fc8fd8, type: 3}
+      propertyPath: targets.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745184437, guid: 51870300cbd77d744948b0a169fc8fd8, type: 3}
+      propertyPath: targets.Array.data[5]
+      value: 
+      objectReference: {fileID: 625349798}
     - target: {fileID: 6923873571489869885, guid: 51870300cbd77d744948b0a169fc8fd8,
         type: 3}
       propertyPath: shakeMagnitude
@@ -33541,7 +33577,7 @@ PrefabInstance:
     - target: {fileID: 6780446397050559651, guid: 51870300cbd77d744948b0a169fc8fd8,
         type: 3}
       propertyPath: MaxAmount
-      value: 50
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6780446397050559651, guid: 51870300cbd77d744948b0a169fc8fd8,
         type: 3}

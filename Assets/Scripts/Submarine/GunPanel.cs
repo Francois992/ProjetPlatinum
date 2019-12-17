@@ -48,12 +48,17 @@ public class GunPanel : MonoBehaviour
         gunController.player = ReInput.players.GetPlayer(user.reController);
         gunController.isActivated = true;
         myUi.gameObject.SetActive(true);
+        gunController.turret.target.SetActive(true);
+        gunController.turret.onActivate = true;
     }
 
     public void OnDropped()
     {
         gunController.isActivated = false;
         myUi.gameObject.SetActive(false);
+        gunController.turret.target.transform.localPosition = gunController.turret.targetPos;
+        gunController.turret.target.SetActive(false);
+        gunController.turret.onActivate = false;
     }
 
     public void OnShoot()
