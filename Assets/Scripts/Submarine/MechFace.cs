@@ -28,7 +28,7 @@ public class MechFace : MonoBehaviour
             {
                 if (!isColliding)
                 {
-                    MechaManager.Instance.TakeDamage();
+                    MechaManager.Instance.TakeDamage(1);
                     CameraShaker.Instance.startShake();
                 }
                 isColliding = true;
