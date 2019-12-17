@@ -6,6 +6,7 @@ public class Mine : MonoBehaviour
 {
 
     public GameObject explosion;
+    [SerializeField] private float damage = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class Mine : MonoBehaviour
 
         if(collision.gameObject.tag == "Mecha")
         {
-            MechaManager.Instance.TakeDamage();
+            MechaManager.Instance.TakeDamage(damage);
             Explode();
         }
         if (collision.gameObject.tag == "Bullet")
@@ -37,6 +38,7 @@ public class Mine : MonoBehaviour
     public void Explode()
     {
         CameraShaker.Instance.startShake();
+        Ripple.instance.RippleEffect();
         GameObject thisExplosion = Instantiate(explosion, transform.position, transform.rotation);
         FindObjectOfType<SoundManager>().Play("Explosion");
         Destroy(thisExplosion, 0.5f);

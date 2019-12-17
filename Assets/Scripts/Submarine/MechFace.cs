@@ -28,10 +28,13 @@ public class MechFace : MonoBehaviour
             {
                 if (!isColliding)
                 {
-                    MechaManager.Instance.TakeDamage();
+
+                    MechaManager.Instance.TakeDamage(1);
                     CameraShaker.Instance.startShake();
+                    Ripple.instance.RippleEffect();
+                    isColliding = true;
                 }
-                isColliding = true;
+                
             }
         }
  
@@ -41,6 +44,7 @@ public class MechFace : MonoBehaviour
     {
         if (collision.gameObject.tag == "Walls")
         {
+
             isColliding = false;
         }
     }

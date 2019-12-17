@@ -55,6 +55,7 @@ public class CameraShaker : MonoBehaviour
     {
         //initialPosition = transform.localPosition;
         shakeDuration = shakeLength;
+        
     }
 
     public void stopShake()

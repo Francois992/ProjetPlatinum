@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
-{   
-    
+{
+    [SerializeField] private GameObject loseFade = null;
+    [SerializeField] private GameObject winFade = null;
 
     [SerializeField]
     private bool isGameOver = false;
@@ -16,7 +17,8 @@ public class GameOver : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        loseFade.SetActive(false);
+        winFade.SetActive(false);
     }
 
     
@@ -49,7 +51,8 @@ public class GameOver : MonoBehaviour
 
     void GameOverDie()
     {
-        SceneManager.LoadScene("GameOver");
+        //SceneManager.LoadScene("GameOver");
+        loseFade.SetActive(true);
     }
 
    
@@ -64,6 +67,7 @@ public class GameOver : MonoBehaviour
 
     void IsWin()
     {
-        SceneManager.LoadScene("WinScreen");
+        winFade.SetActive(true);
+        //SceneManager.LoadScene("WinScreen");
     }
 }

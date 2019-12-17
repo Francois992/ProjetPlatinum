@@ -303,9 +303,10 @@ public class MechaManager : MonoBehaviour
         transform.position = newPos;
     }
 
-    public void TakeDamage()
+    public void TakeDamage(float damage)
     {
-        currentLife--;
+        UIManager.instance.UIAnimator.SetTrigger("TakeDamages");
+        currentLife-= damage;
         CancelRepairs?.Invoke();
 
         UIManager.instance.UpdateLifeBar(currentLife/fullLife);

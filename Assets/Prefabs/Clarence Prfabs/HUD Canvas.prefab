@@ -182,7 +182,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 929.4, y: 29.999878}
+  m_AnchoredPosition: {x: 929.4, y: 29.999756}
   m_SizeDelta: {x: 1525.7, y: 326.4}
   m_Pivot: {x: 0.46472073, y: 0.49999997}
 --- !u!222 &6762016192478165613
@@ -257,7 +257,7 @@ RectTransform:
   - {fileID: 3412429240438593924}
   - {fileID: 2485687963641657669}
   m_Father: {fileID: 3103578414811056890}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -1145,6 +1145,7 @@ GameObject:
   - component: {fileID: 3103578414811056893}
   - component: {fileID: 3103578414811056889}
   - component: {fileID: 4392143375234596877}
+  - component: {fileID: 2113163825}
   m_Layer: 5
   m_Name: HUD Canvas
   m_TagString: Untagged
@@ -1163,10 +1164,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 9000466518390260447}
-  - {fileID: 7432144419357627762}
-  - {fileID: 1842375877024288396}
   - {fileID: 881740559602332560}
+  - {fileID: 9000466518390260447}
+  - {fileID: 1842375877024288396}
+  - {fileID: 7432144419357627762}
   - {fileID: 5695626437240183268}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1255,8 +1256,8 @@ MonoBehaviour:
   scrapsText: {fileID: 3103578414460811714}
   Lifebar: {fileID: 1321633680429010609}
   oxygenBar: {fileID: 5657250372116238807}
-  maxOxygen: 100
-  oxygenGain: 25
+  maxOxygen: 300
+  oxygenGain: 75
   scubaTankAmount: 0
   fuelJerrycanAmount: 0
   ammoAmount: 5
@@ -1294,6 +1295,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2113163825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3103578414811056894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dba1a769e62a3746b666561f2e91bf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scubaTank: {fileID: 3103578414148694037}
+  fuel: {fileID: 3103578414863830402}
+  ammo: {fileID: 3103578414990991631}
+  repairKit: {fileID: 3103578413088589670}
+  scrap: {fileID: 3103578412920503505}
 --- !u!1 &3103578414811727446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1700,7 +1718,7 @@ RectTransform:
   - {fileID: 4536099802590177628}
   - {fileID: 8476882838397239994}
   m_Father: {fileID: 3103578414811056890}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -2806,7 +2824,7 @@ PrefabInstance:
     - target: {fileID: 45555816622269042, guid: 6d0356e9658100a4796462aba27a2c5c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 45555816622269042, guid: 6d0356e9658100a4796462aba27a2c5c,
         type: 3}

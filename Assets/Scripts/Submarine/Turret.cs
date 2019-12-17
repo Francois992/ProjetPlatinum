@@ -7,7 +7,7 @@ public class Turret : MonoBehaviour
 {
     [SerializeField] private GameObject bullet;
     [SerializeField] private GameObject Canon;
-    [SerializeField] private GameObject target;
+    [SerializeField] public GameObject target;
     [SerializeField] private GameObject muzzle;
     [SerializeField] private float targetSpeed = 15f;
 
@@ -33,19 +33,61 @@ public class Turret : MonoBehaviour
     public float _dirX;
     public float _dirY;
 
+    public Vector3 targetPos;
+
+    public GameObject CameraPoint;
+
+    public float camPointSpeed = 5f;
+
+    public float CamDezoom = -30;
+
+    public multipleTargetCamera cameraMultiple;
+
+    public float wantedCamPosX = 0f;
+    public float wantedCamOffsetX = 20f;
+
+    private float camInitMinZoom;
+    private float camWantedMinZoom = 100;
+
+    public bool onActivate = false;
+
     // Start is called before the first frame update
     void Start()
     {
         Canon.transform.LookAt(target.transform);
+        targetPos = target.transform.localPosition;
+
+        target.SetActive(false);
+
+        
     }
 
     // Update is called once per frame
     void Update()
-    {     
-        if (target.transform.position.x >= Canon.transform.position.x)
+    {
+        if (target.activeSelf)
         {
-            UpdateRot();
+            if (target.transform.position.x >= Canon.transform.position.x)
+            {
+                UpdateRot();
+            }
         }
+
+        if (onActivate)
+        {
+            wantedCamPosX = wantedCamOffsetX;
+            if (cameraMultiple.minZoom != camWantedMinZoom) camInitMinZoom = cameraMultiple.minZoom;
+            cameraMultiple.minZoom = camWantedMinZoom;
+            
+        }
+        else
+        {
+            wantedCamPosX = 0;
+        }
+
+        if(wantedCamPosX == 0) cameraMultiple.minZoom = camInitMinZoom;
+
+        updtateCamPos();
 
         if (hasShot)
         {
@@ -60,6 +102,13 @@ public class Turret : MonoBehaviour
             flash.Stop();
         }
                 
+    }
+
+    private void updtateCamPos()
+    {
+        float ratio = Time.deltaTime * camPointSpeed;
+
+        CameraPoint.transform.localPosition = Vector3.Lerp(CameraPoint.transform.localPosition, new Vector3(wantedCamPosX, 0, 0), ratio);
     }
 
     private void UpdateRot()
