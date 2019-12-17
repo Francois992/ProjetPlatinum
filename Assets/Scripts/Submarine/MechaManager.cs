@@ -305,6 +305,7 @@ public class MechaManager : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        UIManager.instance.UIAnimator.SetTrigger("TakeDamages");
         currentLife-= damage;
         CancelRepairs?.Invoke();
 
