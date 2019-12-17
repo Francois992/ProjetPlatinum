@@ -631,6 +631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &16724552
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1863,7 +1864,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &51593159
@@ -2627,6 +2628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &84127857
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2667,6 +2669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &91369621
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3278,6 +3281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &95820285
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3773,6 +3777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &115074033
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4631,6 +4636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &143150124
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4810,6 +4816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &153643836
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4924,6 +4931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &154369181
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5197,6 +5205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &157486387
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6873,6 +6882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &203719858
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7019,6 +7029,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &208885611
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7398,6 +7409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &225183694
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7512,6 +7524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &226993863
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7789,6 +7802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &237007274
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8009,6 +8023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &244027480
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8155,6 +8170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &252331081
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8269,6 +8285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &252590752
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8557,6 +8574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &254476406
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8918,6 +8936,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &263183113
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9472,6 +9491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &282218307
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10171,6 +10191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &311102738
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10475,6 +10496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &314278653
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10642,6 +10664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &319374686
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11153,6 +11176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &328886013
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11510,6 +11534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &335869798
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11761,6 +11786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &343624962
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11801,6 +11827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &345012897
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12787,6 +12814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &380773129
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -13307,6 +13335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &406333713
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -13792,6 +13821,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &423368948
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14475,6 +14505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &457348911
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14949,6 +14980,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &471153952
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15740,6 +15772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &511169906
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15981,6 +16014,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &514107113
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -16821,6 +16855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &539500540
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -16988,6 +17023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &540691645
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -17028,6 +17064,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &543775212
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -17794,6 +17831,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &574217501
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -17987,7 +18025,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &577863427
@@ -19689,6 +19727,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &618729336
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -20121,6 +20160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &637754925
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -20309,6 +20349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &640488363
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -20714,6 +20755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &645453409
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -20891,6 +20933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &648951538
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -21510,6 +21553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &673262352
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -21716,6 +21760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &675122174
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -21936,6 +21981,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &683767397
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -22723,6 +22769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &713922284
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -25761,6 +25808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &802355002
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -26518,6 +26566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &834381803
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -27399,6 +27448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &859044401
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -27792,6 +27842,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &866248178
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -27969,6 +28020,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &866946543
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -28986,6 +29038,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &895190715
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -29852,6 +29905,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &917666313
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -29945,6 +29999,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &922235914
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -30354,6 +30409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &928500604
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -31145,6 +31201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &955503365
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -32126,6 +32183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &982643644
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -33127,6 +33185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1020887349
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -33469,6 +33528,26 @@ PrefabInstance:
       propertyPath: gunController
       value: 
       objectReference: {fileID: 673672355}
+    - target: {fileID: 6923873571489869885, guid: 51870300cbd77d744948b0a169fc8fd8,
+        type: 3}
+      propertyPath: shakeMagnitude
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923873571489869885, guid: 51870300cbd77d744948b0a169fc8fd8,
+        type: 3}
+      propertyPath: shakeLength
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6780446397050559651, guid: 51870300cbd77d744948b0a169fc8fd8,
+        type: 3}
+      propertyPath: MaxAmount
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6780446397050559651, guid: 51870300cbd77d744948b0a169fc8fd8,
+        type: 3}
+      propertyPath: Friction
+      value: 0.95
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51870300cbd77d744948b0a169fc8fd8, type: 3}
 --- !u!1001 &1023848371
@@ -33808,6 +33887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1034437822
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -34702,6 +34782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1066225901
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -35043,6 +35124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1073791871
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -35295,6 +35377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1085864984
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -35826,6 +35909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1093348856
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -36714,6 +36798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1114248465
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -36828,6 +36913,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1123369302
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -36995,6 +37081,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1124333655
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -37162,6 +37249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1128248400
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -37610,6 +37698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1137459215
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -40459,6 +40548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1169291918
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -40589,6 +40679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1171015796
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -41705,6 +41796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1195173669
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -42365,6 +42457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1215025277
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -42979,6 +43072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1227688049
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -44970,6 +45064,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1302660387
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -45721,6 +45816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1326926641
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -45761,6 +45857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1328127856
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -45854,6 +45951,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1330115163
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -46025,6 +46123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1343391757
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -46139,6 +46238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1343538190
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -48235,6 +48335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1415146093
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -48533,6 +48634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1433206921
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -49438,6 +49540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1446134386
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -49658,6 +49761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1460200531
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -49772,6 +49876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1462855019
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -50747,6 +50852,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1493167925
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -51085,6 +51191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1502997991
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -51538,6 +51645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1509899672
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -52086,6 +52194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1529508441
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -52389,6 +52498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1533575106
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -53137,6 +53247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1557335813
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -53463,6 +53574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1572279472
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -53683,6 +53795,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1572987274
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -53723,6 +53836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1575363291
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -54273,6 +54387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1591892044
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -56848,6 +56963,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1605651728
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -57417,6 +57533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1619775542
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -59754,6 +59871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1683641133
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -60945,6 +61063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1727914217
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -61165,6 +61284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1732111017
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -61658,6 +61778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1756575371
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -62126,6 +62247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1770456842
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -62904,6 +63026,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1798655054
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -64628,6 +64751,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1868222079
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -64721,6 +64845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1868853217
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -65291,6 +65416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1880578604
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -65384,6 +65510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1883662771
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -65424,6 +65551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1883991553
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -65538,6 +65666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1886555726
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -66944,6 +67073,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1928533745
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -67115,6 +67245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1932921070
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -67282,6 +67413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1939841229
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -67623,6 +67755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1945442591
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -68392,6 +68525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1968190167
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -69262,6 +69396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &1992336102
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -70567,6 +70702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &2029149756
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -70824,6 +70960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &2031763849
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -70864,6 +71001,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &2034485339
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -72058,6 +72196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &2076766043
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -72726,6 +72865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 4922205062994142221, guid: ec0a87021c15c674eb56ef7e25282fa1,
     type: 3}
+  damage: 3
 --- !u!136 &2097447945
 CapsuleCollider:
   m_ObjectHideFlags: 0
