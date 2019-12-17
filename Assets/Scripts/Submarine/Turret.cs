@@ -50,6 +50,7 @@ public class Turret : MonoBehaviour
     private float camWantedMinZoom = 100;
 
     public bool onActivate = false;
+    public bool isCamMoving = false;
 
     // Start is called before the first frame update
     void Start()
@@ -73,21 +74,21 @@ public class Turret : MonoBehaviour
             }
         }
 
-        if (onActivate)
+        /*if (onActivate)
         {
             wantedCamPosX = wantedCamOffsetX;
             if (cameraMultiple.minZoom != camWantedMinZoom) camInitMinZoom = cameraMultiple.minZoom;
             cameraMultiple.minZoom = camWantedMinZoom;
             
         }
-        else
+        else if(!onActivate && wantedCamPosX != 0)
         {
             wantedCamPosX = 0;
         }
 
         if(wantedCamPosX == 0) cameraMultiple.minZoom = camInitMinZoom;
 
-        updtateCamPos();
+        if(onActivate) updtateCamPos();*/
 
         if (hasShot)
         {
@@ -109,6 +110,8 @@ public class Turret : MonoBehaviour
         float ratio = Time.deltaTime * camPointSpeed;
 
         CameraPoint.transform.localPosition = Vector3.Lerp(CameraPoint.transform.localPosition, new Vector3(wantedCamPosX, 0, 0), ratio);
+
+        
     }
 
     private void UpdateRot()
