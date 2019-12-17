@@ -651,11 +651,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 8953554870884376759, guid: ac80ed491dd1ff5418c5ae4636ee216a,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8953554870884376756, guid: ac80ed491dd1ff5418c5ae4636ee216a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -685,6 +680,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953554870884376759, guid: ac80ed491dd1ff5418c5ae4636ee216a,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac80ed491dd1ff5418c5ae4636ee216a, type: 3}
@@ -744,7 +744,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cf5f14ca338479c42b67085b3a049ae1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f7893d3ef4171bc439fe30e2a571785d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -772,7 +772,7 @@ Animator:
   m_GameObject: {fileID: 894961430}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e9b6dca9b8a3f40478b0c95fe2cbf470, type: 2}
+  m_Controller: {fileID: 9100000, guid: d7b956ca6917a334db72a87c0365d80f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
